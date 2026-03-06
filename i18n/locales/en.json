@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "cta": "Book a Call",
+    "services": "Services",
+    "process": "Process",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tag": "Architects of Scalable Growth",
+    "line1": "Double your Output.",
+    "subtitle": "We build intelligent system architectures that eliminate manual chaos and scale with your business — measurable, scalable, GDPR-compliant.",
+    "learn_more": "See How It Works"
+  },
+  "marquee": {
+    "item1": "Revenue System Architecture",
+    "item2": "Operational Intelligence",
+    "item3": "Executive AI Advisory",
+    "item4": "Lead-to-Quote Automation",
+    "item5": "CRM Integration",
+    "item6": "n8n Workflows",
+    "item7": "Document Processing",
+    "item8": "AI Roadmap"
+  },
+  "stats": {
+    "roi": "Average ROI",
+    "time": "Less Manual Work",
+    "weeks": "Weeks to Go-Live",
+    "custom": "Fully Custom"
+  },
+  "features": {
+    "label": "Our Three Pillars",
+    "title": "Structural Intelligence for Every Level of Your Business",
+    "strategy": {
+      "title": "Revenue System Architecture",
+      "description": "Automated lead qualification, AI-powered quoting, and seamless CRM integration. More closings, faster response times, lower sales costs — your revenue engine on autopilot."
+    },
+    "automation": {
+      "title": "Operational Intelligence",
+      "description": "Intelligent workflows for your back office: From automated document processing to project management and full process automation with n8n. Scale without hiring."
+    },
+    "development": {
+      "title": "Executive AI Advisory",
+      "description": "Strategic AI consulting at the C-level. We develop your long-term AI roadmap, identify the biggest levers, and give you the confidence to make the right decisions in a rapidly changing tech landscape."
+    }
+  },
+  "philosophy": {
+    "label": "Our Philosophy",
+    "title": "We don't sell tools. We build systems.",
+    "text1": "Most companies don't fail because of missing technology — they fail because of missing architecture. Spreadsheet chaos, manual processes, and missed leads cost you real money every single day.",
+    "highlight": "We eliminate structural inefficiency — permanently.",
+    "text2": "Our approach: First understand your value chain, then build the system architecture that replaces manual chaos with automated intelligence. No gimmicks. No proof-of-concept without a plan. Only solutions that pay for themselves in weeks.",
+    "principle1_title": "ROI-Driven",
+    "principle1_desc": "If the system saves 100k, 30k isn't a cost — it's an investment. We communicate results, not features.",
+    "principle2_title": "Architecture Over Action",
+    "principle2_desc": "No tool-hopping. We build infrastructure that still stands in 3 years and keeps pace with your growth.",
+    "principle3_title": "Partnership at Eye Level",
+    "principle3_desc": "We work with decision-makers, not departments. Direct communication, short paths, strategic sparring at the C-level."
+  },
+  "advantages": {
+    "label": "Why Doblyx",
+    "title": "What to Expect From Working With Us",
+    "item1": {
+      "number": "01",
+      "title": "End-to-End Execution",
+      "description": "From analysis to architecture to a running system — everything under one roof. No game of telephone between consultants, developers, and your team."
+    },
+    "item2": {
+      "number": "02",
+      "title": "Enterprise-Grade Security",
+      "description": "GDPR-compliant, secure infrastructure, full data sovereignty. Built for leaders who see compliance as a standard, not an obstacle."
+    },
+    "item3": {
+      "number": "03",
+      "title": "Results in Weeks, Not Months",
+      "description": "First measurable results in under 4 weeks. Agile sprints with weekly reviews — you see progress, not just slide decks."
+    },
+    "item4": {
+      "number": "04",
+      "title": "Systems That Scale",
+      "description": "No island solutions. We build modular architectures that expand seamlessly — from one process to your entire organization."
+    }
+  },
+  "process": {
+    "label": "Our Process",
+    "title": "Four Steps to Your AI System Architecture",
+    "step_label": "Step",
+    "step1": {
+      "title": "Audit",
+      "description": "We analyze your value chain and identify the processes with the highest automation leverage."
+    },
+    "step2": {
+      "title": "Architecture",
+      "description": "Joint development of the system architecture with a clear roadmap, measurable KPIs, and defined ROI."
+    },
+    "step3": {
+      "title": "Build & Integrate",
+      "description": "Agile execution in 2-week sprints with seamless integration into your existing infrastructure."
+    },
+    "step4": {
+      "title": "Scale & Optimize",
+      "description": "Continuous optimization and expansion to additional business areas. Your system grows with your requirements."
+    },
+    "quote": "\"We don't sell AI tools. We build the infrastructure your company needs for the next 10 years.\"",
+    "quote_author": "Eric Dobler, Founder & CEO"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk about your systems.",
+    "subtitle": "30 minutes. No pitch, no commitment. We'll analyze together where the biggest lever in your business lies.",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "your{'@'}email.com",
+    "message_label": "Message",
+    "message_placeholder": "Which processes would you like to automate?",
+    "submit": "Request a Call",
+    "location": "Vienna, Austria",
+    "success_title": "Request received.",
+    "success_message": "We'll get back to you within 24 hours."
+  },
+  "footer": {
+    "description": "We build intelligent system architectures for companies that want to grow faster than their headcount.",
+    "services_title": "Services",
+    "company_title": "Company",
+    "copyright": "Doblyx AI. All rights reserved.",
+    "imprint": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "tagline": "Architects of Scalable Growth."
+  }
+}

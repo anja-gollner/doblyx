@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://doblyx.com/sitemap.xml

@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "cta": "Erstgespräch vereinbaren",
+    "services": "Leistungen",
+    "process": "Prozess",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "tag": "Architects of Scalable Growth",
+    "line1": "Verdoppeln Sie Ihren Output.",
+    "subtitle": "Wir bauen intelligente Systemarchitekturen, die manuelles Chaos eliminieren und mit Ihrem Unternehmen mitwachsen — messbar, skalierbar, DSGVO-konform.",
+    "learn_more": "So funktioniert's"
+  },
+  "marquee": {
+    "item1": "Revenue System Architecture",
+    "item2": "Operational Intelligence",
+    "item3": "Executive AI Advisory",
+    "item4": "Lead-to-Quote Automation",
+    "item5": "CRM-Integration",
+    "item6": "n8n Workflows",
+    "item7": "Dokumentenauswertung",
+    "item8": "KI-Roadmap"
+  },
+  "stats": {
+    "roi": "Durchschnittlicher ROI",
+    "time": "Weniger manuelle Arbeit",
+    "weeks": "Wochen bis zum Go-Live",
+    "custom": "Maßgeschneidert"
+  },
+  "features": {
+    "label": "Unsere drei Säulen",
+    "title": "Strukturelle Intelligenz für jede Ebene Ihres Unternehmens",
+    "strategy": {
+      "title": "Revenue System Architecture",
+      "description": "Automatisierte Lead-Qualifizierung, KI-gestützte Angebotslegung und nahtlose CRM-Integration. Mehr Abschlüsse, schnellere Reaktionszeiten, weniger Vertriebskosten — Ihr Vertrieb auf Autopilot."
+    },
+    "automation": {
+      "title": "Operational Intelligence",
+      "description": "Intelligente Workflows für Ihr Backoffice: Von der automatisierten Dokumentenauswertung über Projektsteuerung bis zur vollständigen Prozessautomatisierung mit n8n. Skalieren ohne neue Stellen zu besetzen."
+    },
+    "development": {
+      "title": "Executive AI Advisory",
+      "description": "Strategische KI-Beratung auf C-Level. Wir entwickeln Ihre langfristige KI-Roadmap, identifizieren die größten Hebel und geben Ihnen die Sicherheit, in einer sich wandelnden Tech-Welt die richtigen Entscheidungen zu treffen."
+    }
+  },
+  "philosophy": {
+    "label": "Unsere Philosophie",
+    "title": "Wir verkaufen keine Tools. Wir bauen Systeme.",
+    "text1": "Die meisten Unternehmen scheitern nicht an fehlender Technologie — sie scheitern an fehlender Architektur. Excel-Wildwuchs, manuelle Prozesse und verpasste Leads kosten Sie jeden Tag bares Geld.",
+    "highlight": "Wir eliminieren strukturelle Ineffizienz — dauerhaft.",
+    "text2": "Unser Ansatz: Erst Ihre Wertschöpfungskette verstehen, dann die Systemarchitektur bauen, die manuelles Chaos durch automatisierte Intelligenz ersetzt. Keine Spielereien. Kein Proof-of-Concept ohne Plan. Nur Lösungen, die sich in Wochen amortisieren.",
+    "principle1_title": "ROI-getrieben",
+    "principle1_desc": "Wenn das System 100k spart, sind 30k kein Kostenpunkt — sie sind ein Investment. Wir kommunizieren Ergebnisse, keine Features.",
+    "principle2_title": "Architektur statt Aktionismus",
+    "principle2_desc": "Kein Tool-Hopping. Wir bauen Infrastruktur, die in 3 Jahren noch steht und mit Ihrem Wachstum Schritt hält.",
+    "principle3_title": "Partnerschaft auf Augenhöhe",
+    "principle3_desc": "Wir arbeiten mit Entscheidern, nicht mit Abteilungen. Direkte Kommunikation, kurze Wege, strategisches Sparring auf C-Level."
+  },
+  "advantages": {
+    "label": "Warum Doblyx",
+    "title": "Was Sie von einer Zusammenarbeit erwarten können",
+    "item1": {
+      "number": "01",
+      "title": "End-to-End Umsetzung",
+      "description": "Von der Analyse über die Architektur bis zum laufenden System — alles aus einer Hand. Kein Stille-Post zwischen Beratern, Entwicklern und Ihrem Team."
+    },
+    "item2": {
+      "number": "02",
+      "title": "Enterprise-Grade Sicherheit",
+      "description": "DSGVO-konform, sichere Infrastruktur, volle Datensouveränität. Gebaut für Geschäftsführer, die Compliance nicht als Hindernis, sondern als Standard sehen."
+    },
+    "item3": {
+      "number": "03",
+      "title": "Ergebnisse in Wochen, nicht Monaten",
+      "description": "Erste messbare Resultate in unter 4 Wochen. Agile Sprints mit wöchentlichen Reviews — Sie sehen den Fortschritt, nicht nur Slide-Decks."
+    },
+    "item4": {
+      "number": "04",
+      "title": "Systeme, die mitwachsen",
+      "description": "Keine Insellösungen. Wir bauen modulare Architekturen, die sich nahtlos erweitern lassen — von einem Prozess auf das gesamte Unternehmen."
+    }
+  },
+  "process": {
+    "label": "Unser Prozess",
+    "title": "Vier Schritte zu Ihrer KI-Systemarchitektur",
+    "step_label": "Schritt",
+    "step1": {
+      "title": "Audit",
+      "description": "Wir analysieren Ihre Wertschöpfungskette und identifizieren die Prozesse mit dem größten Automatisierungshebel."
+    },
+    "step2": {
+      "title": "Architektur",
+      "description": "Gemeinsame Entwicklung der Systemarchitektur mit klarer Roadmap, messbaren KPIs und definiertem ROI."
+    },
+    "step3": {
+      "title": "Build & Integrate",
+      "description": "Agile Umsetzung in 2-Wochen-Sprints mit nahtloser Integration in Ihre bestehende Infrastruktur."
+    },
+    "step4": {
+      "title": "Scale & Optimize",
+      "description": "Kontinuierliche Optimierung und Expansion auf weitere Geschäftsbereiche. Ihr System wächst mit Ihren Anforderungen."
+    },
+    "quote": "\"Wir verkaufen keine KI-Tools. Wir bauen die Infrastruktur, die Ihr Unternehmen für die nächsten 10 Jahre braucht.\"",
+    "quote_author": "Eric Dobler, Gründer & CEO"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Lassen Sie uns über Ihre Systeme sprechen.",
+    "subtitle": "30 Minuten. Kein Pitch, kein Commitment. Wir analysieren gemeinsam, wo der größte Hebel in Ihrem Unternehmen liegt.",
+    "name_label": "Name",
+    "name_placeholder": "Ihr Name",
+    "email_label": "E-Mail",
+    "email_placeholder": "ihre{'@'}email.de",
+    "message_label": "Nachricht",
+    "message_placeholder": "Welche Prozesse möchten Sie automatisieren?",
+    "submit": "Erstgespräch anfragen",
+    "location": "Wien, Österreich",
+    "success_title": "Anfrage erhalten.",
+    "success_message": "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+  },
+  "footer": {
+    "description": "Wir bauen intelligente Systemarchitekturen für Unternehmen, die schneller wachsen wollen als ihr Headcount.",
+    "services_title": "Leistungen",
+    "company_title": "Unternehmen",
+    "copyright": "Doblyx AI. Alle Rechte vorbehalten.",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "tagline": "Architects of Scalable Growth."
+  }
+}

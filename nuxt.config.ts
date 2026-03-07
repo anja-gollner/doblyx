@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/', '/de', '/en', '/impressum', '/datenschutz', '/en/impressum', '/en/datenschutz'],
+      routes: ['/', '/de', '/en', '/impressum', '/datenschutz', '/agb', '/en/impressum', '/en/datenschutz', '/en/agb'],
     },
   },
 

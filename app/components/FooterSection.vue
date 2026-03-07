@@ -34,6 +34,7 @@ const year = new Date().getFullYear()
           <ul class="space-y-3">
             <li><NuxtLink to="/impressum" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.imprint') }}</NuxtLink></li>
             <li><NuxtLink to="/datenschutz" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.privacy') }}</NuxtLink></li>
+            <li><NuxtLink to="/agb" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.terms') }}</NuxtLink></li>
           </ul>
         </div>
 

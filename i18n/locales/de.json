@@ -10,7 +10,10 @@
     "tag": "Architects of Scalable Growth",
     "line1": "Verdoppeln Sie Ihren Output.",
     "subtitle": "Wir bauen intelligente Systemarchitekturen, die manuelles Chaos eliminieren und mit Ihrem Unternehmen mitwachsen — messbar, skalierbar, DSGVO-konform.",
-    "learn_more": "So funktioniert's"
+    "learn_more": "So funktioniert's",
+    "trust1": "DSGVO-konform",
+    "trust2": "Enterprise-ready",
+    "trust3": "Made in Austria"
   },
   "marquee": {
     "item1": "Revenue System Architecture",
@@ -104,29 +107,121 @@
     "quote": "\"Wir verkaufen keine KI-Tools. Wir bauen die Infrastruktur, die Ihr Unternehmen für die nächsten 10 Jahre braucht.\"",
     "quote_author": "Eric Dobler, Gründer & CEO"
   },
+  "processPage": {
+    "hero_tag": "Unsere Vorgehensweise",
+    "hero_title": "Ein Prozess, der mit Ihnen wächst.",
+    "hero_subtitle": "Kein starres Framework. Keine endlosen Workshops. Vier klar definierte Phasen, die Ihr Unternehmen von der Analyse zum laufenden System führen — in Wochen, nicht Monaten.",
+    "phase1": {
+      "number": "01",
+      "label": "Phase 1",
+      "title": "Audit & Discovery",
+      "subtitle": "Verstehen, bevor wir bauen.",
+      "description": "Wir tauchen tief in Ihre Wertschöpfungskette ein. Nicht mit einem generischen Fragebogen, sondern im direkten Austausch mit den Menschen, die Ihre Prozesse jeden Tag leben.",
+      "point1_title": "Prozess-Mapping",
+      "point1_desc": "Vollständige Erfassung Ihrer bestehenden Workflows — vom Lead-Eingang bis zum Projektabschluss. Wir identifizieren Engpässe, Medienbrüche und manuelle Doppelarbeit.",
+      "point2_title": "Hebel-Analyse",
+      "point2_desc": "Nicht alles muss automatisiert werden. Wir finden die 20% der Prozesse, die 80% der Wirkung bringen — und priorisieren gnadenlos.",
+      "point3_title": "ROI-Projektion",
+      "point3_desc": "Bevor wir einen einzigen Workflow bauen, wissen Sie exakt: Was kostet es, was bringt es, wann amortisiert es sich.",
+      "outcome": "Ergebnis: Ein Audit-Report mit priorisierter Roadmap, konkreten ROI-Projektionen und einem klaren Fahrplan für die nächsten 90 Tage."
+    },
+    "phase2": {
+      "number": "02",
+      "label": "Phase 2",
+      "title": "Systemarchitektur",
+      "subtitle": "Das Fundament, das alles trägt.",
+      "description": "Hier trennt sich die Spreu vom Weizen. Während andere direkt loslegen und später flicken, designen wir erst die Architektur — und bauen dann auf einem soliden Fundament.",
+      "point1_title": "System-Design",
+      "point1_desc": "Modulare Architektur, die sich erweitern lässt. Keine Insellösungen, keine Vendor-Lock-ins. Wir setzen auf offene Standards und bewährte Technologien.",
+      "point2_title": "Datenfluss-Architektur",
+      "point2_desc": "Wie fließen Daten durch Ihr Unternehmen? Wir designen den optimalen Datenstrom — von CRM über ERP bis zur automatisierten Berichterstellung.",
+      "point3_title": "Sicherheit & Compliance",
+      "point3_desc": "DSGVO, Datensouveränität, Zugriffskontrollen — Sicherheit ist kein Addon, sondern integraler Bestandteil der Architektur.",
+      "outcome": "Ergebnis: Ein detailliertes Architektur-Dokument mit System-Design, Datenflussdiagrammen und einem Sprint-Plan für die Umsetzung."
+    },
+    "phase3": {
+      "number": "03",
+      "label": "Phase 3",
+      "title": "Build & Integrate",
+      "subtitle": "Agil bauen, nahtlos integrieren.",
+      "description": "Keine monatelange Blackbox-Entwicklung. Wir arbeiten in 2-Wochen-Sprints mit wöchentlichen Reviews. Sie sehen den Fortschritt in Echtzeit und können jederzeit eingreifen.",
+      "point1_title": "Sprint-basierte Umsetzung",
+      "point1_desc": "Jeder Sprint liefert ein funktionsfähiges Inkrement. Nach 2 Wochen sehen Sie erste Ergebnisse — nicht nach 6 Monaten.",
+      "point2_title": "Nahtlose Integration",
+      "point2_desc": "Ihre bestehenden Systeme bleiben intakt. Wir integrieren in CRM, ERP, E-Mail, Dokumentenmanagement — ohne Ihren Betrieb zu stören.",
+      "point3_title": "Testing & Qualität",
+      "point3_desc": "Jeder Workflow wird unter realen Bedingungen getestet. Edge Cases, Fehlerszenarien, Performance — bevor etwas live geht, muss es in der Praxis bestehen.",
+      "outcome": "Ergebnis: Ein laufendes System, integriert in Ihre bestehende Infrastruktur, getestet und bereit für den Produktiveinsatz."
+    },
+    "phase4": {
+      "number": "04",
+      "label": "Phase 4",
+      "title": "Scale & Optimize",
+      "subtitle": "Wachstum ohne Limits.",
+      "description": "Go-Live ist nicht das Ende, sondern der Anfang. Wir monitoren, optimieren und skalieren Ihr System — und machen Ihr Team unabhängig.",
+      "point1_title": "Performance-Monitoring",
+      "point1_desc": "Echtzeit-Dashboards zeigen Ihnen exakt, wie das System performt. Durchlaufzeiten, Fehlerquoten, ROI — alles auf einen Blick.",
+      "point2_title": "Kontinuierliche Optimierung",
+      "point2_desc": "Basierend auf echten Nutzungsdaten identifizieren wir Optimierungspotenziale und passen Workflows an sich ändernde Anforderungen an.",
+      "point3_title": "Team-Enablement",
+      "point3_desc": "Wir schulen Ihr Team und übergeben das Wissen. Ziel: Sie können kleinere Anpassungen selbst vornehmen — ohne dauerhaft von uns abhängig zu sein.",
+      "outcome": "Ergebnis: Ein skalierbares System, das mit Ihrem Unternehmen wächst. Ein Team, das es versteht und weiterentwickeln kann."
+    },
+    "cta_title": "Bereit für den ersten Schritt?",
+    "cta_subtitle": "Lassen Sie uns in 30 Minuten herausfinden, wo der größte Hebel in Ihrem Unternehmen liegt.",
+    "timeline_title": "Typische Timeline",
+    "timeline_audit": "1–2 Wochen",
+    "timeline_architecture": "1–2 Wochen",
+    "timeline_build": "4–8 Wochen",
+    "timeline_scale": "Fortlaufend"
+  },
   "contact": {
     "label": "Kontakt",
     "title": "Lassen Sie uns über Ihre Systeme sprechen.",
     "subtitle": "30 Minuten. Kein Pitch, kein Commitment. Wir analysieren gemeinsam, wo der größte Hebel in Ihrem Unternehmen liegt.",
     "name_label": "Name",
     "name_placeholder": "Ihr Name",
+    "company_label": "Unternehmen",
+    "company_placeholder": "Firmenname",
     "email_label": "E-Mail",
     "email_placeholder": "ihre{'@'}email.de",
+    "phone_label": "Telefon",
+    "phone_placeholder": "+43 ...",
     "message_label": "Nachricht",
     "message_placeholder": "Welche Prozesse möchten Sie automatisieren?",
     "submit": "Erstgespräch anfragen",
-    "location": "Wien, Österreich",
+    "location": "Hartberg, Österreich",
+    "email_address": "office{'@'}doblyx.com",
+    "phone_number": "+43 676 5800866",
     "success_title": "Anfrage erhalten.",
     "success_message": "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
   },
+  "industries": {
+    "label": "Branchen",
+    "title": "Branchenübergreifend. Ergebnisorientiert.",
+    "subtitle": "Wir arbeiten mit wachstumsstarken Unternehmen, die ihre Prozesse skalieren wollen — unabhängig von der Branche.",
+    "energy": {
+      "title": "Erneuerbare Energien",
+      "description": "Automatisierte Angebotslegung und Lead-Qualifizierung für Solar- und Windunternehmen. Von der Anfrage zum Angebot in Minuten statt Tagen."
+    },
+    "realestate": {
+      "title": "Immobilien & Projektentwicklung",
+      "description": "Dokumentenauswertung, automatisierte Due Diligence und Projektsteuerung. Weniger Verwaltung, mehr Abschlüsse."
+    },
+    "industry": {
+      "title": "Mittelständische Industrie",
+      "description": "Veraltete Prozesse modernisieren, Fachkräftemangel kompensieren. Digitalisierung, die sich in Wochen amortisiert — nicht in Jahren."
+    }
+  },
   "footer": {
-    "description": "Wir bauen intelligente Systemarchitekturen für Unternehmen, die schneller wachsen wollen als ihr Headcount.",
+    "description": "Doblyx AI GmbH — Intelligente Systemarchitekturen für Unternehmen, die schneller wachsen wollen als ihr Headcount.",
     "services_title": "Leistungen",
     "company_title": "Unternehmen",
-    "copyright": "Doblyx AI. Alle Rechte vorbehalten.",
+    "copyright": "Doblyx AI GmbH. Alle Rechte vorbehalten.",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "terms": "AGB",
-    "tagline": "Architects of Scalable Growth."
+    "tagline": "Architects of Scalable Growth.",
+    "registration": "FN 670873d | LG f. ZRS Graz | UID: ATU82914937"
   }
 }

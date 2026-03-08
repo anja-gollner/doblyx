@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const steps = [
   { number: '01', key: 'process.step1' },
@@ -72,6 +73,16 @@ const steps = [
         <p class="relative z-10 mt-6 text-[13px] font-medium" style="color: rgba(255,255,255,0.4)">
           {{ t('process.quote_author') }}
         </p>
+        <NuxtLink
+          :to="localePath('/prozess')"
+          class="relative z-10 inline-flex items-center justify-center mt-8 font-medium rounded-full px-8 py-3 text-[13px] transition-all duration-300"
+          style="background: white; color: #0A1F44"
+          @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(255,255,255,0.15)'"
+          @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
+        >
+          {{ t('hero.learn_more') }}
+          <svg class="ml-2 w-3.5 h-3.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </NuxtLink>
       </div>
     </div>
   </section>

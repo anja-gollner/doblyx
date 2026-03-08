@@ -114,7 +114,7 @@ onMounted(() => {
               <div class="absolute bottom-6 left-6 flex items-center gap-3">
                 <div class="px-3 py-1.5 rounded-full" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(12px)">
                   <span class="text-[11px] font-bold uppercase tracking-[0.15em]" style="color: white">
-                    {{ features[activeIndex].number }} / 03
+                    {{ features[activeIndex]?.number }} / 03
                   </span>
                 </div>
               </div>

@@ -7,6 +7,7 @@
     <FeatureGrid />
     <PhilosophySection />
     <AdvantagesSection />
+    <IndustriesSection />
     <ImageBreak />
     <ProcessSection />
     <ContactSection />

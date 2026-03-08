@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/', '/en', '/impressum', '/datenschutz', '/agb', '/en/impressum', '/en/datenschutz', '/en/agb'],
+      routes: ['/', '/en', '/prozess', '/en/prozess', '/impressum', '/datenschutz', '/agb', '/en/impressum', '/en/datenschutz', '/en/agb'],
     },
   },
 
@@ -35,7 +35,6 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
     ],
     defaultLocale: 'de',
-    lazy: true,
     strategy: 'prefix_except_default',
   },
 
@@ -114,7 +113,7 @@ export default defineNuxtConfig({
               contactType: 'sales',
               availableLanguage: ['German', 'English'],
             },
-            sameAs: [],
+            sameAs: ['https://www.linkedin.com/in/eric-dobler/'],
             areaServed: {
               '@type': 'GeoCircle',
               geoMidpoint: {

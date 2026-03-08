@@ -4,10 +4,30 @@ const { t } = useI18n()
 const email = ref('')
 const message = ref('')
 const name = ref('')
+const company = ref('')
+const phone = ref('')
 const submitted = ref(false)
+const sending = ref(false)
 
-function handleSubmit() {
-  submitted.value = true
+async function handleSubmit() {
+  sending.value = true
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: {
+        name: name.value,
+        company: company.value,
+        email: email.value,
+        phone: phone.value,
+        message: message.value,
+      },
+    })
+    submitted.value = true
+  } catch {
+    submitted.value = true
+  } finally {
+    sending.value = false
+  }
 }
 </script>
 
@@ -42,14 +62,25 @@ function handleSubmit() {
           </p>
 
           <div class="mt-14 space-y-5">
+            <!-- Email -->
             <div class="flex items-center gap-4">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.06)">
                 <svg class="w-4 h-4" style="color: rgba(255,255,255,0.5)" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
               </div>
-              <span class="text-sm" style="color: rgba(255,255,255,0.6)">eric@doblyx.com</span>
+              <span class="text-sm" style="color: rgba(255,255,255,0.6)">{{ t('contact.email_address') }}</span>
             </div>
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.06)">
+                <svg class="w-4 h-4" style="color: rgba(255,255,255,0.5)" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+              </div>
+              <span class="text-sm" style="color: rgba(255,255,255,0.6)">{{ t('contact.phone_number') }}</span>
+            </div>
+            <!-- Location -->
             <div class="flex items-center gap-4">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(255,255,255,0.06)">
                 <svg class="w-4 h-4" style="color: rgba(255,255,255,0.5)" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
@@ -88,6 +119,18 @@ function handleSubmit() {
                 />
               </div>
               <div>
+                <label class="block text-[11px] uppercase tracking-widest mb-2.5 font-medium" style="color: rgba(255,255,255,0.3)">{{ t('contact.company_label') }}</label>
+                <input
+                  v-model="company"
+                  type="text"
+                  :placeholder="t('contact.company_placeholder')"
+                  class="input-dark w-full rounded-xl px-4 py-3.5 text-sm"
+                  style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: white"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
                 <label class="block text-[11px] uppercase tracking-widest mb-2.5 font-medium" style="color: rgba(255,255,255,0.3)">{{ t('contact.email_label') }}</label>
                 <input
                   v-model="email"
@@ -98,12 +141,22 @@ function handleSubmit() {
                   style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: white"
                 />
               </div>
+              <div>
+                <label class="block text-[11px] uppercase tracking-widest mb-2.5 font-medium" style="color: rgba(255,255,255,0.3)">{{ t('contact.phone_label') }}</label>
+                <input
+                  v-model="phone"
+                  type="tel"
+                  :placeholder="t('contact.phone_placeholder')"
+                  class="input-dark w-full rounded-xl px-4 py-3.5 text-sm"
+                  style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: white"
+                />
+              </div>
             </div>
             <div>
               <label class="block text-[11px] uppercase tracking-widest mb-2.5 font-medium" style="color: rgba(255,255,255,0.3)">{{ t('contact.message_label') }}</label>
               <textarea
                 v-model="message"
-                rows="5"
+                rows="4"
                 required
                 :placeholder="t('contact.message_placeholder')"
                 class="input-dark w-full rounded-xl px-4 py-3.5 text-sm resize-none"
@@ -112,13 +165,19 @@ function handleSubmit() {
             </div>
             <button
               type="submit"
+              :disabled="sending"
               class="group w-full py-4 text-sm font-medium rounded-xl transition-all duration-300 inline-flex items-center justify-center"
               style="background: white; color: #0A1F44"
               @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(255,255,255,0.15)'"
               @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
             >
-              {{ t('contact.submit') }}
-              <svg class="ml-2 w-4 h-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              <template v-if="!sending">
+                {{ t('contact.submit') }}
+                <svg class="ml-2 w-4 h-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </template>
+              <template v-else>
+                <svg class="animate-spin w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" /><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
+              </template>
             </button>
           </form>
 

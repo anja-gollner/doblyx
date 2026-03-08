@@ -1,11 +1,33 @@
 <script setup lang="ts">
 const { locale, locales, setLocale, t } = useI18n()
 const localePath = useLocalePath()
+const route = useRoute()
 
 const scrolled = ref(false)
 const mobileOpen = ref(false)
 
-async function switchLocale(code: string) {
+const linkColor = computed(() => scrolled.value ? 'rgba(0,0,0,0.45)' : 'rgba(255,255,255,0.5)')
+const linkHoverColor = computed(() => scrolled.value ? '#0F1419' : 'rgba(255,255,255,1)')
+
+const isHome = computed(() => {
+  const path = route.path
+  return path === '/' || path === '/en' || path === '/en/'
+})
+
+function scrollToSection(id: string) {
+  if (isHome.value) {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      mobileOpen.value = false
+      return
+    }
+  }
+  navigateTo(localePath('/') + '#' + id)
+  mobileOpen.value = false
+}
+
+async function switchLocale(code: 'de' | 'en') {
   const scrollY = window.scrollY
   await setLocale(code)
   await nextTick()
@@ -27,46 +49,88 @@ onMounted(() => {
       : 'padding: 1.5rem 0; background: transparent'"
   >
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
-      <!-- Logo -->
-      <NuxtLink :to="localePath('/')" class="flex items-center">
-        <img src="/logos/logo-final-white.svg" alt="Doblyx AI" class="h-7" />
-      </NuxtLink>
+      <!-- Logo: swap between white and dark versions -->
+      <a
+        href="/"
+        class="flex items-center"
+        @click.prevent="isHome ? window.scrollTo({ top: 0, behavior: 'smooth' }) : navigateTo(localePath('/'))"
+      >
+        <img
+          :src="scrolled ? '/logos/logo-final-dark.svg' : '/logos/logo-final-white.svg'"
+          alt="Doblyx AI"
+          class="h-7 transition-opacity duration-300"
+        />
+      </a>
 
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center gap-10">
-        <NuxtLink :to="localePath('/') + '#services'" class="text-[13px] font-medium transition-colors duration-300" style="color: #999" @mouseenter="($event.target as HTMLElement).style.color='#0F1419'" @mouseleave="($event.target as HTMLElement).style.color='#999'">{{ t('nav.services') }}</NuxtLink>
-        <NuxtLink :to="localePath('/') + '#process'" class="text-[13px] font-medium transition-colors duration-300" style="color: #999" @mouseenter="($event.target as HTMLElement).style.color='#0F1419'" @mouseleave="($event.target as HTMLElement).style.color='#999'">{{ t('nav.process') }}</NuxtLink>
-        <NuxtLink :to="localePath('/') + '#contact'" class="text-[13px] font-medium transition-colors duration-300" style="color: #999" @mouseenter="($event.target as HTMLElement).style.color='#0F1419'" @mouseleave="($event.target as HTMLElement).style.color='#999'">{{ t('nav.contact') }}</NuxtLink>
+        <a
+          href="#services"
+          class="text-[13px] font-medium transition-colors duration-300 cursor-pointer"
+          :style="{ color: linkColor }"
+          @mouseenter="($event.target as HTMLElement).style.color = linkHoverColor"
+          @mouseleave="($event.target as HTMLElement).style.color = linkColor"
+          @click.prevent="scrollToSection('services')"
+        >{{ t('nav.services') }}</a>
+        <NuxtLink
+          :to="localePath('/prozess')"
+          class="text-[13px] font-medium transition-colors duration-300"
+          :style="{ color: linkColor }"
+          @mouseenter="($event.target as HTMLElement).style.color = linkHoverColor"
+          @mouseleave="($event.target as HTMLElement).style.color = linkColor"
+        >{{ t('nav.process') }}</NuxtLink>
+        <a
+          href="#contact"
+          class="text-[13px] font-medium transition-colors duration-300 cursor-pointer"
+          :style="{ color: linkColor }"
+          @mouseenter="($event.target as HTMLElement).style.color = linkHoverColor"
+          @mouseleave="($event.target as HTMLElement).style.color = linkColor"
+          @click.prevent="scrollToSection('contact')"
+        >{{ t('nav.contact') }}</a>
       </div>
 
       <!-- Right -->
       <div class="flex items-center gap-4">
-        <!-- Fixed-width language switcher so button doesn't shift -->
-        <div class="flex items-center rounded-full p-0.5" style="background: rgba(0,0,0,0.04); width: 88px">
+        <!-- CTA Button -->
+        <a
+          href="#contact"
+          class="hidden sm:inline-flex items-center justify-center font-medium rounded-full text-[13px] transition-all duration-300"
+          :style="scrolled
+            ? 'background: #0A1F44; color: white; padding: 0.625rem 1.5rem; min-width: 160px; text-align: center'
+            : 'background: white; color: #0A1F44; padding: 0.625rem 1.5rem; min-width: 160px; text-align: center'"
+          @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = scrolled ? '0 8px 30px rgba(10,31,68,0.3)' : '0 8px 30px rgba(255,255,255,0.15)'"
+          @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
+          @click.prevent="scrollToSection('contact')"
+        >
+          {{ t('nav.cta') }}
+        </a>
+
+        <!-- Language switcher -->
+        <div
+          class="flex items-center rounded-full p-0.5 transition-colors duration-300"
+          :style="scrolled
+            ? 'background: rgba(0,0,0,0.04); width: 88px'
+            : 'background: rgba(255,255,255,0.1); width: 88px'"
+        >
           <button
             v-for="loc in locales"
             :key="loc.code"
             class="flex-1 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 text-center"
             :style="locale === loc.code
               ? 'background: #0A1F44; color: white; box-shadow: 0 2px 8px rgba(10,31,68,0.25)'
-              : 'color: #888'"
+              : scrolled ? 'color: #888' : 'color: rgba(255,255,255,0.5)'"
             @click="switchLocale(loc.code)"
           >
             {{ loc.code }}
           </button>
         </div>
 
-        <NuxtLink
-          :to="localePath('/') + '#contact'"
-          class="hidden sm:inline-flex items-center justify-center font-medium rounded-full text-[13px] transition-all duration-300"
-          style="background: #0A1F44; color: white; padding: 0.625rem 1.5rem; min-width: 160px; text-align: center"
-          @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(10,31,68,0.3)'"
-          @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
+        <!-- Mobile hamburger -->
+        <button
+          class="md:hidden transition-colors duration-300"
+          :style="scrolled ? 'color: #555' : 'color: rgba(255,255,255,0.7)'"
+          @click="mobileOpen = !mobileOpen"
         >
-          {{ t('nav.cta') }}
-        </NuxtLink>
-
-        <button class="md:hidden" style="color: #555" @click="mobileOpen = !mobileOpen">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
             <path v-if="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
             <path v-else stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -84,11 +148,11 @@ onMounted(() => {
       leave-to-class="opacity-0"
     >
       <div v-if="mobileOpen" class="md:hidden mx-4 mt-3 rounded-2xl p-6 space-y-4" style="background: white; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 12px 40px rgba(0,0,0,0.08)">
-        <NuxtLink :to="localePath('/') + '#services'" class="block text-sm font-medium" style="color: #555" @click="mobileOpen = false">{{ t('nav.services') }}</NuxtLink>
-        <NuxtLink :to="localePath('/') + '#process'" class="block text-sm font-medium" style="color: #555" @click="mobileOpen = false">{{ t('nav.process') }}</NuxtLink>
-        <NuxtLink :to="localePath('/') + '#contact'" class="block text-sm font-medium" style="color: #555" @click="mobileOpen = false">{{ t('nav.contact') }}</NuxtLink>
+        <a href="#services" class="block text-sm font-medium" style="color: #555" @click.prevent="scrollToSection('services')">{{ t('nav.services') }}</a>
+        <NuxtLink :to="localePath('/prozess')" class="block text-sm font-medium" style="color: #555" @click="mobileOpen = false">{{ t('nav.process') }}</NuxtLink>
+        <a href="#contact" class="block text-sm font-medium" style="color: #555" @click.prevent="scrollToSection('contact')">{{ t('nav.contact') }}</a>
         <div style="height: 1px; background: #F0F0F0" />
-        <NuxtLink :to="localePath('/') + '#contact'" class="block btn-primary text-center py-3 text-sm rounded-xl" @click="mobileOpen = false">{{ t('nav.cta') }}</NuxtLink>
+        <a href="#contact" class="block btn-primary text-center py-3 text-sm rounded-xl" @click.prevent="scrollToSection('contact')">{{ t('nav.cta') }}</a>
       </div>
     </Transition>
   </nav>

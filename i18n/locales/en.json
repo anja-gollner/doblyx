@@ -10,7 +10,10 @@
     "tag": "Architects of Scalable Growth",
     "line1": "Double your Output.",
     "subtitle": "We build intelligent system architectures that eliminate manual chaos and scale with your business — measurable, scalable, GDPR-compliant.",
-    "learn_more": "See How It Works"
+    "learn_more": "See How It Works",
+    "trust1": "GDPR-compliant",
+    "trust2": "Enterprise-ready",
+    "trust3": "Made in Austria"
   },
   "marquee": {
     "item1": "Revenue System Architecture",
@@ -104,29 +107,121 @@
     "quote": "\"We don't sell AI tools. We build the infrastructure your company needs for the next 10 years.\"",
     "quote_author": "Eric Dobler, Founder & CEO"
   },
+  "processPage": {
+    "hero_tag": "Our Process",
+    "hero_title": "A process designed to evolve with you.",
+    "hero_subtitle": "No rigid framework. No endless workshops. Four clearly defined phases that take your business from analysis to a running system — in weeks, not months.",
+    "phase1": {
+      "number": "01",
+      "label": "Phase 1",
+      "title": "Audit & Discovery",
+      "subtitle": "Understand before we build.",
+      "description": "We dive deep into your value chain. Not with a generic questionnaire, but in direct exchange with the people who live your processes every day.",
+      "point1_title": "Process Mapping",
+      "point1_desc": "Complete capture of your existing workflows — from lead intake to project completion. We identify bottlenecks, media breaks, and manual redundancies.",
+      "point2_title": "Leverage Analysis",
+      "point2_desc": "Not everything needs automation. We find the 20% of processes that drive 80% of impact — and prioritize ruthlessly.",
+      "point3_title": "ROI Projection",
+      "point3_desc": "Before we build a single workflow, you know exactly: What does it cost, what does it deliver, when does it pay for itself.",
+      "outcome": "Outcome: An audit report with a prioritized roadmap, concrete ROI projections, and a clear plan for the next 90 days."
+    },
+    "phase2": {
+      "number": "02",
+      "label": "Phase 2",
+      "title": "System Architecture",
+      "subtitle": "The foundation that carries everything.",
+      "description": "This is where we separate ourselves from the pack. While others jump straight to building and patch later, we design the architecture first — then build on a solid foundation.",
+      "point1_title": "System Design",
+      "point1_desc": "Modular architecture that scales. No island solutions, no vendor lock-ins. We rely on open standards and proven technologies.",
+      "point2_title": "Data Flow Architecture",
+      "point2_desc": "How does data flow through your organization? We design the optimal data stream — from CRM to ERP to automated reporting.",
+      "point3_title": "Security & Compliance",
+      "point3_desc": "GDPR, data sovereignty, access controls — security isn't an add-on, it's an integral part of the architecture.",
+      "outcome": "Outcome: A detailed architecture document with system design, data flow diagrams, and a sprint plan for implementation."
+    },
+    "phase3": {
+      "number": "03",
+      "label": "Phase 3",
+      "title": "Build & Integrate",
+      "subtitle": "Build agile, integrate seamlessly.",
+      "description": "No months-long black-box development. We work in 2-week sprints with weekly reviews. You see progress in real-time and can intervene at any point.",
+      "point1_title": "Sprint-Based Execution",
+      "point1_desc": "Every sprint delivers a working increment. After 2 weeks you see first results — not after 6 months.",
+      "point2_title": "Seamless Integration",
+      "point2_desc": "Your existing systems stay intact. We integrate with CRM, ERP, email, document management — without disrupting your operations.",
+      "point3_title": "Testing & Quality",
+      "point3_desc": "Every workflow is tested under real conditions. Edge cases, error scenarios, performance — nothing goes live until it proves itself in practice.",
+      "outcome": "Outcome: A running system, integrated into your existing infrastructure, tested and ready for production."
+    },
+    "phase4": {
+      "number": "04",
+      "label": "Phase 4",
+      "title": "Scale & Optimize",
+      "subtitle": "Growth without limits.",
+      "description": "Go-live isn't the end, it's the beginning. We monitor, optimize, and scale your system — and make your team independent.",
+      "point1_title": "Performance Monitoring",
+      "point1_desc": "Real-time dashboards show you exactly how the system performs. Throughput times, error rates, ROI — everything at a glance.",
+      "point2_title": "Continuous Optimization",
+      "point2_desc": "Based on real usage data, we identify optimization opportunities and adapt workflows to changing requirements.",
+      "point3_title": "Team Enablement",
+      "point3_desc": "We train your team and transfer knowledge. Goal: You can make smaller adjustments yourself — without being permanently dependent on us.",
+      "outcome": "Outcome: A scalable system that grows with your business. A team that understands it and can evolve it."
+    },
+    "cta_title": "Ready for the first step?",
+    "cta_subtitle": "Let's find out in 30 minutes where the biggest lever in your business lies.",
+    "timeline_title": "Typical Timeline",
+    "timeline_audit": "1–2 Weeks",
+    "timeline_architecture": "1–2 Weeks",
+    "timeline_build": "4–8 Weeks",
+    "timeline_scale": "Ongoing"
+  },
   "contact": {
     "label": "Contact",
     "title": "Let's talk about your systems.",
     "subtitle": "30 minutes. No pitch, no commitment. We'll analyze together where the biggest lever in your business lies.",
     "name_label": "Name",
     "name_placeholder": "Your name",
+    "company_label": "Company",
+    "company_placeholder": "Company name",
     "email_label": "Email",
     "email_placeholder": "your{'@'}email.com",
+    "phone_label": "Phone",
+    "phone_placeholder": "+43 ...",
     "message_label": "Message",
     "message_placeholder": "Which processes would you like to automate?",
     "submit": "Request a Call",
-    "location": "Vienna, Austria",
+    "location": "Hartberg, Austria",
+    "email_address": "office{'@'}doblyx.com",
+    "phone_number": "+43 676 5800866",
     "success_title": "Request received.",
     "success_message": "We'll get back to you within 24 hours."
   },
+  "industries": {
+    "label": "Industries",
+    "title": "Cross-Industry. Results-Driven.",
+    "subtitle": "We work with growth-stage companies that need to scale their processes — regardless of industry.",
+    "energy": {
+      "title": "Renewable Energy",
+      "description": "Automated quoting and lead qualification for solar and wind companies. From inquiry to proposal in minutes, not days."
+    },
+    "realestate": {
+      "title": "Real Estate & Development",
+      "description": "Document processing, automated due diligence, and project management. Less administration, more closings."
+    },
+    "industry": {
+      "title": "Mid-Market Manufacturing",
+      "description": "Modernize legacy processes, compensate for talent shortages. Digitization that pays for itself in weeks — not years."
+    }
+  },
   "footer": {
-    "description": "We build intelligent system architectures for companies that want to grow faster than their headcount.",
+    "description": "Doblyx AI GmbH — Intelligent system architectures for companies that want to grow faster than their headcount.",
     "services_title": "Services",
     "company_title": "Company",
-    "copyright": "Doblyx AI. All rights reserved.",
+    "copyright": "Doblyx AI GmbH. All rights reserved.",
     "imprint": "Legal Notice",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
-    "tagline": "Architects of Scalable Growth."
+    "tagline": "Architects of Scalable Growth.",
+    "registration": "FN 670873d | LG f. ZRS Graz | VAT: ATU82914937"
   }
 }

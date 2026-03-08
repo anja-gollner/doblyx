@@ -66,6 +66,31 @@ const { t, locale } = useI18n()
           {{ t('hero.learn_more') }}
         </a>
       </div>
+
+      <!-- Trust badges -->
+      <div class="animate-in-delay-3 mt-16 flex items-center justify-center gap-6 flex-wrap" style="opacity: 0">
+        <div class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5" style="color: rgba(160,196,255,0.6)" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+          </svg>
+          <span class="text-[11px] font-medium uppercase tracking-[0.1em]" style="color: rgba(255,255,255,0.3)">{{ t('hero.trust1') }}</span>
+        </div>
+        <div class="w-px h-3" style="background: rgba(255,255,255,0.1)" />
+        <div class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5" style="color: rgba(160,196,255,0.6)" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+          </svg>
+          <span class="text-[11px] font-medium uppercase tracking-[0.1em]" style="color: rgba(255,255,255,0.3)">{{ t('hero.trust2') }}</span>
+        </div>
+        <div class="w-px h-3" style="background: rgba(255,255,255,0.1)" />
+        <div class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5" style="color: rgba(160,196,255,0.6)" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
+          <span class="text-[11px] font-medium uppercase tracking-[0.1em]" style="color: rgba(255,255,255,0.3)">{{ t('hero.trust3') }}</span>
+        </div>
+      </div>
     </div>
 
     <!-- Scroll indicator -->

@@ -32,16 +32,18 @@ const year = new Date().getFullYear()
         <div class="md:col-span-2">
           <h4 class="text-[11px] font-semibold uppercase tracking-widest mb-5" style="color: #777">{{ t('footer.company_title') }}</h4>
           <ul class="space-y-3">
-            <li><NuxtLink to="/impressum" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.imprint') }}</NuxtLink></li>
-            <li><NuxtLink to="/datenschutz" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.privacy') }}</NuxtLink></li>
-            <li><NuxtLink to="/agb" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.terms') }}</NuxtLink></li>
+            <li><NuxtLink :to="localePath('/impressum')" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.imprint') }}</NuxtLink></li>
+            <li><NuxtLink :to="localePath('/datenschutz')" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.privacy') }}</NuxtLink></li>
+            <li><NuxtLink :to="localePath('/agb')" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.terms') }}</NuxtLink></li>
           </ul>
         </div>
 
         <!-- Social -->
         <div class="md:col-span-1 flex md:justify-end items-start">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/eric-dobler/"
+            target="_blank"
+            rel="noopener noreferrer"
             class="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300"
             style="background: rgba(255,255,255,0.04); color: #555"
             aria-label="LinkedIn"
@@ -56,9 +58,14 @@ const year = new Date().getFullYear()
       </div>
 
       <!-- Bottom -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3" style="border-top: 1px solid rgba(255,255,255,0.05)">
-        <p class="text-[11px]" style="color: #444">&copy; {{ year }} {{ t('footer.copyright') }}</p>
-        <p class="text-[11px] font-medium" style="color: #444">{{ t('footer.tagline') }}</p>
+      <div class="pt-8 space-y-3" style="border-top: 1px solid rgba(255,255,255,0.05)">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-[11px]" style="color: #444">&copy; {{ year }} {{ t('footer.copyright') }}</p>
+          <p class="text-[11px] font-medium" style="color: #444">{{ t('footer.tagline') }}</p>
+        </div>
+        <p class="text-[10px] text-center sm:text-left" style="color: #333">
+          {{ t('footer.registration') }}
+        </p>
       </div>
     </div>
   </footer>

@@ -56,33 +56,52 @@ const steps = [
         </div>
       </div>
 
-      <!-- Quote -->
+      <!-- Quote + CTA -->
       <div
         v-motion
         :initial="{ opacity: 0, y: 30 }"
         :visible-once="{ opacity: 1, y: 0, transition: { delay: 200, duration: 600 } }"
-        class="mt-28 text-center py-20 px-8 rounded-3xl relative overflow-hidden"
-        style="background: #0A1F44"
+        class="mt-28 relative overflow-hidden rounded-2xl"
+        style="background: #050D1A"
       >
-        <!-- Quote bg glow -->
-        <div class="absolute top-0 right-0 w-[400px] h-[400px] rounded-full" style="opacity: 0.15; background: radial-gradient(ellipse, #1E3A6E 0%, transparent 70%)" />
+        <!-- Ambient glows (matching hero style) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full" style="opacity: 0.2; background: radial-gradient(ellipse, #0A2A5C 0%, transparent 65%)" />
+        <div class="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full" style="opacity: 0.1; background: radial-gradient(ellipse, #1E3A6E 0%, transparent 70%)" />
 
-        <blockquote class="relative z-10 text-[clamp(1.25rem,3vw,2rem)] font-medium leading-snug tracking-tight max-w-2xl mx-auto" style="color: rgba(255,255,255,0.9)">
-          {{ t('process.quote') }}
-        </blockquote>
-        <p class="relative z-10 mt-6 text-[13px] font-medium" style="color: rgba(255,255,255,0.4)">
-          {{ t('process.quote_author') }}
-        </p>
-        <NuxtLink
-          :to="localePath('/prozess')"
-          class="relative z-10 inline-flex items-center justify-center mt-8 font-medium rounded-full px-8 py-3 text-[13px] transition-all duration-300"
-          style="background: white; color: #0A1F44"
-          @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(255,255,255,0.15)'"
-          @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
-        >
-          {{ t('hero.learn_more') }}
-          <svg class="ml-2 w-3.5 h-3.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </NuxtLink>
+        <!-- Grid overlay -->
+        <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px" />
+
+        <div class="relative z-10 py-20 px-8 md:px-16 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <!-- Quote -->
+          <div class="flex-1 text-center md:text-left">
+            <svg class="w-8 h-8 mb-6 mx-auto md:mx-0" style="color: rgba(96,165,250,0.25)" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <blockquote class="text-[clamp(1.15rem,2.5vw,1.65rem)] font-semibold leading-snug tracking-[-0.01em]" style="color: rgba(255,255,255,0.9)">
+              {{ t('process.quote') }}
+            </blockquote>
+            <div class="mt-6 flex items-center gap-3 justify-center md:justify-start">
+              <div class="w-8 h-px" style="background: rgba(255,255,255,0.15)" />
+              <p class="text-[13px] font-medium" style="color: rgba(255,255,255,0.35)">
+                {{ t('process.quote_author') }}
+              </p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex-shrink-0 text-center">
+            <NuxtLink
+              :to="localePath('/prozess')"
+              class="group inline-flex items-center justify-center font-semibold rounded-full px-8 py-3.5 text-[15px] transition-all duration-300"
+              style="background: white; color: #0A1F44"
+              @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(255,255,255,0.15)'; ($event.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'"
+              @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'; ($event.currentTarget as HTMLElement).style.transform = 'translateY(0)'"
+            >
+              {{ t('hero.learn_more') }}
+              <svg class="ml-2 w-4 h-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </NuxtLink>
+          </div>
+        </div>
       </div>
     </div>
   </section>

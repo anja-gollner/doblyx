@@ -16,14 +16,14 @@
     "trust3": "Made in Austria"
   },
   "marquee": {
-    "item1": "Revenue System Architecture",
-    "item2": "Operational Intelligence",
-    "item3": "Executive AI Advisory",
-    "item4": "Lead-to-Quote Automation",
-    "item5": "CRM-Integration",
-    "item6": "n8n Workflows",
-    "item7": "Dokumentenauswertung",
-    "item8": "KI-Roadmap"
+    "item1": "Angebotszeit von 3 Tagen auf 4 Stunden",
+    "item2": "85% weniger manuelle Dateneingabe",
+    "item3": "Lead-Qualifizierung in Sekunden statt Stunden",
+    "item4": "CRM-Workflows vollautomatisiert",
+    "item5": "Dokumentenauswertung per KI",
+    "item6": "Prozesskosten halbiert",
+    "item7": "Go-Live in unter 4 Wochen",
+    "item8": "10x ROI im ersten Jahr"
   },
   "stats": {
     "roi": "Durchschnittlicher ROI",
@@ -194,7 +194,8 @@
     "email_address": "office{'@'}doblyx.com",
     "phone_number": "+43 676 5800866",
     "success_title": "Anfrage erhalten.",
-    "success_message": "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+    "success_message": "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "error_message": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@doblyx.com."
   },
   "industries": {
     "label": "Branchen",
@@ -212,6 +213,40 @@
       "title": "Mittelständische Industrie",
       "description": "Veraltete Prozesse modernisieren, Fachkräftemangel kompensieren. Digitalisierung, die sich in Wochen amortisiert — nicht in Jahren."
     }
+  },
+  "founder": {
+    "label": "Der Gründer",
+    "title": "Systeme bauen, die Unternehmen transformieren.",
+    "text1": "Eric Dobler gründete Doblyx AI mit einer klaren Mission: Unternehmen die Infrastruktur geben, die sie brauchen, um schneller zu wachsen als ihren Headcount. Nach Jahren in der Beratung und Softwareentwicklung erkannte er, dass die meisten Unternehmen nicht an fehlender Technologie scheitern — sondern an fehlender Architektur.",
+    "text2": "Heute arbeitet er direkt mit Geschäftsführern und Entscheidern zusammen, um KI-Systemarchitekturen zu entwerfen und umzusetzen, die manuelles Chaos durch automatisierte Intelligenz ersetzen — messbar, skalierbar und DSGVO-konform.",
+    "role": "Gründer & CEO",
+    "stat1": "Automatisierte Workflows",
+    "stat2": "Branchen bedient",
+    "linkedin": "Auf LinkedIn vernetzen"
+  },
+  "socialProof": {
+    "label": "Ergebnisse aus der Praxis",
+    "case1": {
+      "metric": "3 Tage → 4h",
+      "description": "Angebotszeit reduziert",
+      "source": "Solarunternehmen, 40 Mitarbeiter"
+    },
+    "case2": {
+      "metric": "−85%",
+      "description": "Manuelle Dateneingabe eliminiert",
+      "source": "Immobilienentwickler, 25 Mitarbeiter"
+    },
+    "case3": {
+      "metric": "6 Wochen",
+      "description": "Von Audit bis laufendem System",
+      "source": "Industrieunternehmen, 120 Mitarbeiter"
+    }
+  },
+  "ctaBanner": {
+    "text": "Bereit zu erfahren, wo Ihr größter Hebel liegt?"
+  },
+  "ctaBannerAlt": {
+    "text": "30 Minuten. Kein Pitch. Nur Klarheit über Ihre nächsten Schritte."
   },
   "footer": {
     "description": "Doblyx AI GmbH — Intelligente Systemarchitekturen für Unternehmen, die schneller wachsen wollen als ihr Headcount.",

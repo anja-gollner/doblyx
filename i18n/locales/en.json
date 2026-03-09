@@ -16,14 +16,14 @@
     "trust3": "Made in Austria"
   },
   "marquee": {
-    "item1": "Revenue System Architecture",
-    "item2": "Operational Intelligence",
-    "item3": "Executive AI Advisory",
-    "item4": "Lead-to-Quote Automation",
-    "item5": "CRM Integration",
-    "item6": "n8n Workflows",
-    "item7": "Document Processing",
-    "item8": "AI Roadmap"
+    "item1": "Quote time from 3 days to 4 hours",
+    "item2": "85% less manual data entry",
+    "item3": "Lead qualification in seconds",
+    "item4": "CRM workflows fully automated",
+    "item5": "AI-powered document processing",
+    "item6": "Process costs cut in half",
+    "item7": "Go-live in under 4 weeks",
+    "item8": "10x ROI in year one"
   },
   "stats": {
     "roi": "Average ROI",
@@ -194,7 +194,8 @@
     "email_address": "office{'@'}doblyx.com",
     "phone_number": "+43 676 5800866",
     "success_title": "Request received.",
-    "success_message": "We'll get back to you within 24 hours."
+    "success_message": "We'll get back to you within 24 hours.",
+    "error_message": "Something went wrong. Please try again or email us directly at office@doblyx.com."
   },
   "industries": {
     "label": "Industries",
@@ -212,6 +213,40 @@
       "title": "Mid-Market Manufacturing",
       "description": "Modernize legacy processes, compensate for talent shortages. Digitization that pays for itself in weeks — not years."
     }
+  },
+  "founder": {
+    "label": "The Founder",
+    "title": "Building systems that transform businesses.",
+    "text1": "Eric Dobler founded Doblyx AI with a clear mission: give companies the infrastructure they need to grow faster than their headcount. After years in consulting and software development, he realized that most businesses don't fail because of missing technology — they fail because of missing architecture.",
+    "text2": "Today, he works directly with CEOs and decision-makers to design and implement AI system architectures that replace manual chaos with automated intelligence — measurable, scalable, and GDPR-compliant.",
+    "role": "Founder & CEO",
+    "stat1": "Automated Workflows",
+    "stat2": "Industries Served",
+    "linkedin": "Connect on LinkedIn"
+  },
+  "socialProof": {
+    "label": "Real Results From Real Projects",
+    "case1": {
+      "metric": "3 days → 4h",
+      "description": "Quote turnaround reduced",
+      "source": "Solar company, 40 employees"
+    },
+    "case2": {
+      "metric": "−85%",
+      "description": "Manual data entry eliminated",
+      "source": "Real estate developer, 25 employees"
+    },
+    "case3": {
+      "metric": "6 weeks",
+      "description": "From audit to running system",
+      "source": "Manufacturing company, 120 employees"
+    }
+  },
+  "ctaBanner": {
+    "text": "Ready to find out where your biggest lever is?"
+  },
+  "ctaBannerAlt": {
+    "text": "30 minutes. No pitch. Just clarity on your next steps."
   },
   "footer": {
     "description": "Doblyx AI GmbH — Intelligent system architectures for companies that want to grow faster than their headcount.",

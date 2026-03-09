@@ -195,7 +195,7 @@
     "phone_number": "+43 676 5800866",
     "success_title": "Anfrage erhalten.",
     "success_message": "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
-    "error_message": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@doblyx.com."
+    "error_message": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office{'@'}doblyx.com."
   },
   "industries": {
     "label": "Branchen",

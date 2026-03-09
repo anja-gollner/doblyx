@@ -195,7 +195,7 @@
     "phone_number": "+43 676 5800866",
     "success_title": "Request received.",
     "success_message": "We'll get back to you within 24 hours.",
-    "error_message": "Something went wrong. Please try again or email us directly at office@doblyx.com."
+    "error_message": "Something went wrong. Please try again or email us directly at office{'@'}doblyx.com."
   },
   "industries": {
     "label": "Industries",

@@ -15,8 +15,8 @@ export default defineEventHandler(async (event) => {
 
   const resend = new Resend(resendApiKey)
 
-  await resend.emails.send({
-    from: 'Doblyx Website <noreply@doblyx.com>',
+  const { data, error } = await resend.emails.send({
+    from: 'Doblyx Website <onboarding@resend.dev>',
     to: 'office@doblyx.com',
     subject: `Neue Anfrage von ${name}${company ? ` (${company})` : ''}`,
     replyTo: email,
@@ -48,5 +48,9 @@ export default defineEventHandler(async (event) => {
     `,
   })
 
-  return { success: true }
+  if (error) {
+    throw createError({ statusCode: 500, message: error.message })
+  }
+
+  return { success: true, id: data?.id }
 })

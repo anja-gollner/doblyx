@@ -1,4 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { writeFileSync } from 'node:fs'
+import { join } from 'node:path'
+
+// Test-Version (z. B. mydoblyx.com): `npm run build:staging` – für Suchmaschinen komplett gesperrt
+const isStaging = process.env.SITE_ENV === 'staging'
 const description = 'Doblyx automatisiert wiederkehrende Aufgaben mit KI – von Anfragen über Angebote bis zu Dokumenten. Maßgeschneidert, DSGVO-konform, persönlich betreut aus Österreich. Jetzt kostenlosen Potenzial-Check sichern.'
 
 export default defineNuxtConfig({
@@ -13,6 +18,15 @@ export default defineNuxtConfig({
 
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
+  },
+
+  // Test-Version: zusätzlich Sperr-Header und eine robots.txt, die alles verbietet
+  routeRules: isStaging ? { '/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } } } : {},
+
+  hooks: {
+    'nitro:build:public-assets'(nitro) {
+      if (isStaging) writeFileSync(join(nitro.options.output.publicDir, 'robots.txt'), 'User-agent: *\nDisallow: /\n')
+    },
   },
 
   site: {
@@ -54,7 +68,7 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: description },
         { name: 'theme-color', content: '#02070A' },
-        { name: 'robots', content: 'index, follow' },
+        { name: 'robots', content: isStaging ? 'noindex, nofollow' : 'index, follow' },
         { name: 'author', content: 'Doblyx AI GmbH' },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'Doblyx AI — Arbeit, die sich von selbst erledigt.' },

@@ -112,25 +112,16 @@ useHead({
             </h2>
 
             <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '4.1 Website Hosting (GoDaddy)' : '4.1 Website-Hosting (GoDaddy)' }}
+              4.1 Website-Hosting (Vercel)
             </h3>
-            <p v-if="isEn">
-              Our website is hosted by GoDaddy. The provider is GoDaddy Operating Company, LLC, 2155 E. GoDaddy Way, Tempe, AZ 85284, USA.
-            </p>
-            <p v-else>
-              Unsere Website wird bei GoDaddy gehostet. Anbieter ist die GoDaddy Operating Company, LLC, 2155 E. GoDaddy Way, Tempe, AZ 85284, USA.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              When you visit our website, the following data is automatically collected (server log files): IP address of the requesting device, date and time of the request, time zone difference to GMT, content of the request (specific page), access status/HTTP status code, data volume transferred, referrer URL, browser used, operating system and its interface, and language and version of the browser software.
-            </p>
-            <p v-else class="mt-2">
-              Bei Aufruf unserer Website werden automatisch folgende Daten (Server-Logfiles) erfasst: IP-Adresse des anfragenden Rechners, Datum und Uhrzeit der Anfrage, Zeitzonendifferenz zur Greenwich Mean Time (GMT), Inhalt der Anforderung (konkrete Seite), Zugriffsstatus/HTTP-Statuscode, jeweils übertragene Datenmenge, Referrer URL, verwendeter Browser, Betriebssystem und dessen Oberfläche sowie Sprache und Version der Browsersoftware.
+            <p>
+              Unsere Website wird bei Vercel gehostet und über deren Netzwerk ausgeliefert. Anbieter ist Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Unsere Domain ist bei GoDaddy registriert; GoDaddy verarbeitet dabei keine Daten der Website-Besucher.
             </p>
             <p class="mt-2">
-              {{ isEn ? 'Processing is based on Art. 6(1)(f) GDPR. Our legitimate interest lies in the technical provision and security of our website.' : 'Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der technischen Bereitstellung und Sicherheit unserer Website.' }}
+              Bei Aufruf unserer Website werden automatisch folgende Daten (Server-Logfiles) erfasst: IP-Adresse des anfragenden Geräts, Datum und Uhrzeit der Anfrage, aufgerufene Seite, Zugriffsstatus/HTTP-Statuscode, übertragene Datenmenge, Referrer-URL, verwendeter Browser und Betriebssystem. Diese Daten werden zur Auslieferung und Absicherung der Website benötigt und nach kurzer Zeit gelöscht.
             </p>
             <p class="mt-2">
-              {{ isEn ? 'GoDaddy is certified under the EU-US Data Privacy Framework.' : 'GoDaddy ist unter dem EU-US Data Privacy Framework zertifiziert.' }}
+              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der technischen Bereitstellung und Sicherheit unserer Website. Mit Vercel besteht ein Auftragsverarbeitungsvertrag; die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework bzw. der Standardvertragsklauseln der EU-Kommission.
             </p>
 
             <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">

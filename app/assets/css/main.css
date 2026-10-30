@@ -106,14 +106,6 @@
     transform: translateX(3px);
   }
 
-  .card {
-    @apply rounded-3xl border border-[var(--line)] bg-ink-800;
-  }
-
-  .hairline {
-    @apply h-px w-full bg-[var(--line)];
-  }
-
   .field {
     @apply w-full rounded-xl border border-[var(--line)] bg-ink-700 px-4 py-3.5 text-[15px] text-fg transition-colors duration-300 placeholder:text-muted/60;
   }

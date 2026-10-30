@@ -17,16 +17,9 @@ export default {
           900: '#02070A',
           800: '#060D12',
           700: '#0A141B',
-          600: '#111D26',
         },
-        electric: {
-          DEFAULT: '#0297DE',
-          soft: '#4FB8EC',
-        },
-        cantaloupe: {
-          DEFAULT: '#FC734D',
-          soft: '#FD9A7D',
-        },
+        electric: '#0297DE',
+        cantaloupe: '#FC734D',
         fg: 'rgb(243 245 247 / <alpha-value>)',
         muted: '#8C969F',
       },
@@ -36,7 +29,6 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        'display-xl': ['clamp(3.25rem, 9vw, 8.5rem)', { lineHeight: '0.95', letterSpacing: '-0.025em' }],
         'display-lg': ['clamp(2.6rem, 6vw, 5.25rem)', { lineHeight: '1', letterSpacing: '-0.02em' }],
         'display-md': ['clamp(2rem, 4vw, 3.25rem)', { lineHeight: '1.05', letterSpacing: '-0.015em' }],
       },

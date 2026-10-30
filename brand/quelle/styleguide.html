@@ -1,0 +1,269 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Doblyx Brand &amp; Design Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #02070A; }
+body { font-family: Inter, sans-serif; color: #F3F5F7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 297mm; height: 210mm; position: relative; overflow: hidden; padding: 16mm 18mm; page-break-after: always; background: #02070A; }
+.page:last-child { page-break-after: auto; }
+.serif { font-family: "Instrument Serif", serif; font-weight: 400; }
+.mono { font-family: "JetBrains Mono", monospace; }
+.eyebrow { font-family: "JetBrains Mono", monospace; font-size: 8.5pt; letter-spacing: .22em; text-transform: uppercase; color: #8C969F; display: flex; align-items: center; gap: 8px; }
+.eyebrow::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #FC734D; }
+h2 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 34pt; line-height: 1.02; margin-top: 4mm; letter-spacing: -.01em; }
+h2 em, h1 em { font-style: italic; }
+h3 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 16pt; margin-bottom: 2mm; }
+p { font-size: 9.5pt; line-height: 1.6; color: rgba(243,245,247,.72); }
+.muted { color: #8C969F; }
+.foot { position: absolute; left: 18mm; right: 18mm; bottom: 9mm; display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 7pt; letter-spacing: .15em; text-transform: uppercase; color: #5d666e; }
+.grid { display: grid; gap: 6mm; }
+.card { border-radius: 5mm; padding: 6mm; background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.1); }
+.rule { height: 1px; background: rgba(255,255,255,.1); margin: 5mm 0; }
+.num { font-family: "JetBrains Mono", monospace; font-size: 8pt; color: #FC734D; }
+.glow { position: absolute; inset: auto -10% -45% -10%; height: 90%; background: radial-gradient(45% 60% at 50% 100%, rgba(252,115,77,.55), transparent 70%), radial-gradient(70% 80% at 50% 100%, rgba(2,151,222,.35), transparent 75%); pointer-events: none; }
+.swatch { border-radius: 4mm; overflow: hidden; border: 1px solid rgba(255,255,255,.1); }
+.swatch .c { height: 30mm; }
+.swatch .t { padding: 4mm; background: #060D12; }
+.swatch .n { font-family: "Instrument Serif", serif; font-size: 14pt; }
+.swatch .v { font-family: "JetBrains Mono", monospace; font-size: 7.5pt; color: #8C969F; line-height: 1.7; margin-top: 1mm; }
+.btn { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 9px 18px; font-size: 9.5pt; font-weight: 500; }
+.do, .dont { font-size: 9pt; line-height: 1.55; padding: 3mm 0; border-top: 1px solid rgba(255,255,255,.08); display: flex; gap: 3mm; }
+.do b { color: #4FB8EC; font-weight: 500; } .dont b { color: #FC734D; font-weight: 500; }
+img { display: block; }
+</style></head><body>
+
+<!-- 1 Cover -->
+<section class="page" style="padding:0">
+  <div style="position:absolute;inset:0;background:
+    radial-gradient(38% 55% at 78% 108%, #fdb59d 0%, #FC734D 28%, rgba(217,58,34,.85) 45%, transparent 70%),
+    radial-gradient(60% 85% at 78% 100%, rgba(2,151,222,.85), rgba(2,90,170,.35) 45%, transparent 75%),
+    radial-gradient(30% 40% at 78% 55%, rgba(207,234,255,.35), transparent 70%),
+    #02070A"></div>
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(2,7,10,.35) 0 3px,transparent 3px 9px);mask-image:radial-gradient(60% 90% at 78% 100%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(60% 90% at 78% 100%,#000 30%,transparent 80%)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,#02070A 0%,rgba(2,7,10,.7) 38%,transparent 70%)"></div>
+  <div style="position:relative;padding:20mm 22mm;height:100%;display:flex;flex-direction:column">
+    <svg viewBox="28 48 530 104" fill="#fff" style="height:9mm;width:auto;display:block;align-self:flex-start"><path d="M65.2637 50C95.4937 50 120 74.5063 120 104.736C120 128.759 101.323 148.415 77.6973 149.984V137.367C84.9699 135.444 91.685 131.53 97.0703 126.409C104.844 119.018 109.211 108.992 109.211 98.5391C109.211 88.0858 104.844 78.0605 97.0703 70.6689C89.2969 63.2776 78.754 59.1251 67.7607 59.125L67.7598 98.5391V138.684L67.7607 138.683V149.726C46.4564 146.964 30 128.753 30 106.696V50H65.2637Z"/><path d="M162.312 122V77.2H182.664C187.528 77.2 191.816 78.1387 195.528 80.016C199.24 81.8507 202.141 84.432 204.232 87.76C206.323 91.088 207.368 95.0347 207.368 99.6C207.368 104.123 206.323 108.069 204.232 111.44C202.141 114.768 199.24 117.371 195.528 119.248C191.816 121.083 187.528 122 182.664 122H162.312ZM172.68 113.488H182.152C185.139 113.488 187.72 112.933 189.896 111.824C192.115 110.672 193.821 109.051 195.016 106.96C196.253 104.869 196.872 102.416 196.872 99.6C196.872 96.7413 196.253 94.288 195.016 92.24C193.821 90.1493 192.115 88.5493 189.896 87.44C187.72 86.288 185.139 85.712 182.152 85.712H172.68V113.488ZM242.707 122.768C239.166 122.768 235.88 122.192 232.851 121.04C229.864 119.888 227.262 118.267 225.043 116.176C222.867 114.085 221.16 111.632 219.923 108.816C218.728 106 218.131 102.928 218.131 99.6C218.131 96.272 218.728 93.2 219.923 90.384C221.16 87.568 222.888 85.1147 225.107 83.024C227.326 80.9333 229.928 79.312 232.915 78.16C235.902 77.008 239.144 76.432 242.643 76.432C246.184 76.432 249.427 77.008 252.371 78.16C255.358 79.312 257.939 80.9333 260.115 83.024C262.334 85.1147 264.062 87.568 265.299 90.384C266.536 93.1573 267.155 96.2293 267.155 99.6C267.155 102.928 266.536 106.021 265.299 108.88C264.062 111.696 262.334 114.149 260.115 116.24C257.939 118.288 255.358 119.888 252.371 121.04C249.427 122.192 246.206 122.768 242.707 122.768ZM242.643 113.936C244.648 113.936 246.483 113.595 248.147 112.912C249.854 112.229 251.347 111.248 252.627 109.968C253.907 108.688 254.888 107.173 255.571 105.424C256.296 103.675 256.659 101.733 256.659 99.6C256.659 97.4667 256.296 95.5253 255.571 93.776C254.888 92.0267 253.907 90.512 252.627 89.232C251.39 87.952 249.918 86.9707 248.211 86.288C246.504 85.6053 244.648 85.264 242.643 85.264C240.638 85.264 238.782 85.6053 237.075 86.288C235.411 86.9707 233.939 87.952 232.659 89.232C231.379 90.512 230.376 92.0267 229.651 93.776C228.968 95.5253 228.627 97.4667 228.627 99.6C228.627 101.691 228.968 103.632 229.651 105.424C230.376 107.173 231.358 108.688 232.595 109.968C233.875 111.248 235.368 112.229 237.075 112.912C238.782 113.595 240.638 113.936 242.643 113.936ZM280.707 122V77.2H302.595C308.227 77.2 312.451 78.2667 315.267 80.4C318.126 82.5333 319.555 85.3493 319.555 88.848C319.555 91.1947 318.979 93.2427 317.827 94.992C316.675 96.6987 315.096 98.0213 313.091 98.96C311.086 99.8987 308.782 100.368 306.179 100.368L307.395 97.744C310.211 97.744 312.707 98.2133 314.883 99.152C317.059 100.048 318.744 101.392 319.939 103.184C321.176 104.976 321.795 107.173 321.795 109.776C321.795 113.616 320.28 116.624 317.251 118.8C314.222 120.933 309.763 122 303.875 122H280.707ZM291.011 114.192H303.107C305.795 114.192 307.822 113.765 309.187 112.912C310.595 112.016 311.299 110.608 311.299 108.688C311.299 106.811 310.595 105.424 309.187 104.528C307.822 103.589 305.795 103.12 303.107 103.12H290.243V95.568H301.315C303.832 95.568 305.752 95.1413 307.075 94.288C308.44 93.392 309.123 92.048 309.123 90.256C309.123 88.5067 308.44 87.2053 307.075 86.352C305.752 85.456 303.832 85.008 301.315 85.008H291.011V114.192ZM335.404 122V77.2H345.772V113.552H368.236V122H335.404ZM386.301 122V103.696L388.669 109.968L368.957 77.2H379.965L395.069 102.352H388.733L403.901 77.2H414.077L394.365 109.968L396.669 103.696V122H386.301ZM417.117 122L436.381 95.44V102.992L417.949 77.2H429.725L442.461 95.184L437.533 95.248L450.077 77.2H461.341L443.037 102.544V95.12L462.429 122H450.461L437.277 102.992H442.013L429.021 122H417.117ZM492.578 122L513.186 77.2H516.45L537.058 122H533.538L514.082 79.248H515.49L496.098 122H492.578ZM500.13 109.392L501.218 106.64H528.034L529.122 109.392H500.13ZM550.951 122V77.2H554.215V122H550.951Z"/></svg>
+    <div style="margin-top:auto">
+      <div class="eyebrow">Brand &amp; Design Guide</div>
+      <h1 class="serif" style="font-size:64pt;line-height:.95;margin-top:6mm;font-weight:400">Arbeit, die sich<br><em>von selbst erledigt.</em></h1>
+      <p style="max-width:120mm;margin-top:8mm">Farben, Typografie, Logo, Gestaltungselemente und Tonalität der Marke Doblyx – damit Website, LinkedIn, Angebote und Präsentationen aus einem Guss wirken.</p>
+    </div>
+    <div class="mono" style="margin-top:12mm;font-size:7.5pt;letter-spacing:.18em;text-transform:uppercase;color:#8C969F">Version 1.0 · Oktober 2026 · Doblyx AI GmbH</div>
+  </div>
+</section>
+
+<!-- 2 Markenkern -->
+<section class="page">
+  <div class="eyebrow">01 · Markenkern</div>
+  <h2>Wofür Doblyx <em>steht.</em></h2>
+  <div class="grid" style="grid-template-columns:1.1fr 1fr;margin-top:10mm;gap:14mm">
+    <div>
+      <h3>Positionierung</h3>
+      <p>Doblyx automatisiert die Aufgaben, die Teams jeden Tag Zeit kosten – Anfragen, Angebote, Dokumente, Datenpflege. Maßgeschneidert, DSGVO-konform und persönlich betreut aus Hartberg, Steiermark.</p>
+      <div class="rule"></div>
+      <h3>Claim</h3>
+      <p class="serif" style="font-size:20pt;color:#F3F5F7;line-height:1.15">Arbeit, die sich <em>von selbst erledigt.</em></p>
+      <div class="rule"></div>
+      <h3>Für wen</h3>
+      <p>Geschäftsführer und Entscheider in kleinen und mittleren Unternehmen im DACH-Raum, die mehr schaffen wollen, ohne mehr Personal aufzubauen. Keine Technik-Vorkenntnisse nötig.</p>
+      <div class="rule"></div>
+      <h3>Einstieg</h3>
+      <p>Kostenloser 30-minütiger <b style="color:#F3F5F7;font-weight:500">Potenzial-Check</b> mit schriftlicher Kurzanalyse – kurz „Gratis Check“.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;align-content:start">
+      <div class="card"><div class="num">01</div><h3 style="margin-top:3mm">Ehrlich statt Hype</h3><p>Wir sagen auch, wenn sich etwas (noch) nicht lohnt. Keine erfundenen Zahlen.</p></div>
+      <div class="card"><div class="num">02</div><h3 style="margin-top:3mm">Klarheit</h3><p>Umfang und Kosten sind bekannt, bevor gebaut wird.</p></div>
+      <div class="card"><div class="num">03</div><h3 style="margin-top:3mm">Persönlich</h3><p>Ein Ansprechpartner, direkter Draht zum Gründer.</p></div>
+      <div class="card"><div class="num">04</div><h3 style="margin-top:3mm">Präzision</h3><p>Aus dem Leistungssport: Disziplin, Detail, Wiederholung.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>02</span></div>
+</section>
+
+<!-- 3 Logo -->
+<section class="page">
+  <div class="eyebrow">02 · Logo</div>
+  <h2>Das Logo <em>und seine Regeln.</em></h2>
+  <div class="grid" style="grid-template-columns:1.3fr 1fr 1fr;margin-top:10mm">
+    <div class="card" style="height:60mm;display:flex;align-items:center;justify-content:center"><svg viewBox="28 48 530 104" fill="#fff" style="height:13mm;width:auto;display:block"><path d="M65.2637 50C95.4937 50 120 74.5063 120 104.736C120 128.759 101.323 148.415 77.6973 149.984V137.367C84.9699 135.444 91.685 131.53 97.0703 126.409C104.844 119.018 109.211 108.992 109.211 98.5391C109.211 88.0858 104.844 78.0605 97.0703 70.6689C89.2969 63.2776 78.754 59.1251 67.7607 59.125L67.7598 98.5391V138.684L67.7607 138.683V149.726C46.4564 146.964 30 128.753 30 106.696V50H65.2637Z"/><path d="M162.312 122V77.2H182.664C187.528 77.2 191.816 78.1387 195.528 80.016C199.24 81.8507 202.141 84.432 204.232 87.76C206.323 91.088 207.368 95.0347 207.368 99.6C207.368 104.123 206.323 108.069 204.232 111.44C202.141 114.768 199.24 117.371 195.528 119.248C191.816 121.083 187.528 122 182.664 122H162.312ZM172.68 113.488H182.152C185.139 113.488 187.72 112.933 189.896 111.824C192.115 110.672 193.821 109.051 195.016 106.96C196.253 104.869 196.872 102.416 196.872 99.6C196.872 96.7413 196.253 94.288 195.016 92.24C193.821 90.1493 192.115 88.5493 189.896 87.44C187.72 86.288 185.139 85.712 182.152 85.712H172.68V113.488ZM242.707 122.768C239.166 122.768 235.88 122.192 232.851 121.04C229.864 119.888 227.262 118.267 225.043 116.176C222.867 114.085 221.16 111.632 219.923 108.816C218.728 106 218.131 102.928 218.131 99.6C218.131 96.272 218.728 93.2 219.923 90.384C221.16 87.568 222.888 85.1147 225.107 83.024C227.326 80.9333 229.928 79.312 232.915 78.16C235.902 77.008 239.144 76.432 242.643 76.432C246.184 76.432 249.427 77.008 252.371 78.16C255.358 79.312 257.939 80.9333 260.115 83.024C262.334 85.1147 264.062 87.568 265.299 90.384C266.536 93.1573 267.155 96.2293 267.155 99.6C267.155 102.928 266.536 106.021 265.299 108.88C264.062 111.696 262.334 114.149 260.115 116.24C257.939 118.288 255.358 119.888 252.371 121.04C249.427 122.192 246.206 122.768 242.707 122.768ZM242.643 113.936C244.648 113.936 246.483 113.595 248.147 112.912C249.854 112.229 251.347 111.248 252.627 109.968C253.907 108.688 254.888 107.173 255.571 105.424C256.296 103.675 256.659 101.733 256.659 99.6C256.659 97.4667 256.296 95.5253 255.571 93.776C254.888 92.0267 253.907 90.512 252.627 89.232C251.39 87.952 249.918 86.9707 248.211 86.288C246.504 85.6053 244.648 85.264 242.643 85.264C240.638 85.264 238.782 85.6053 237.075 86.288C235.411 86.9707 233.939 87.952 232.659 89.232C231.379 90.512 230.376 92.0267 229.651 93.776C228.968 95.5253 228.627 97.4667 228.627 99.6C228.627 101.691 228.968 103.632 229.651 105.424C230.376 107.173 231.358 108.688 232.595 109.968C233.875 111.248 235.368 112.229 237.075 112.912C238.782 113.595 240.638 113.936 242.643 113.936ZM280.707 122V77.2H302.595C308.227 77.2 312.451 78.2667 315.267 80.4C318.126 82.5333 319.555 85.3493 319.555 88.848C319.555 91.1947 318.979 93.2427 317.827 94.992C316.675 96.6987 315.096 98.0213 313.091 98.96C311.086 99.8987 308.782 100.368 306.179 100.368L307.395 97.744C310.211 97.744 312.707 98.2133 314.883 99.152C317.059 100.048 318.744 101.392 319.939 103.184C321.176 104.976 321.795 107.173 321.795 109.776C321.795 113.616 320.28 116.624 317.251 118.8C314.222 120.933 309.763 122 303.875 122H280.707ZM291.011 114.192H303.107C305.795 114.192 307.822 113.765 309.187 112.912C310.595 112.016 311.299 110.608 311.299 108.688C311.299 106.811 310.595 105.424 309.187 104.528C307.822 103.589 305.795 103.12 303.107 103.12H290.243V95.568H301.315C303.832 95.568 305.752 95.1413 307.075 94.288C308.44 93.392 309.123 92.048 309.123 90.256C309.123 88.5067 308.44 87.2053 307.075 86.352C305.752 85.456 303.832 85.008 301.315 85.008H291.011V114.192ZM335.404 122V77.2H345.772V113.552H368.236V122H335.404ZM386.301 122V103.696L388.669 109.968L368.957 77.2H379.965L395.069 102.352H388.733L403.901 77.2H414.077L394.365 109.968L396.669 103.696V122H386.301ZM417.117 122L436.381 95.44V102.992L417.949 77.2H429.725L442.461 95.184L437.533 95.248L450.077 77.2H461.341L443.037 102.544V95.12L462.429 122H450.461L437.277 102.992H442.013L429.021 122H417.117ZM492.578 122L513.186 77.2H516.45L537.058 122H533.538L514.082 79.248H515.49L496.098 122H492.578ZM500.13 109.392L501.218 106.64H528.034L529.122 109.392H500.13ZM550.951 122V77.2H554.215V122H550.951Z"/></svg></div>
+    <div style="height:60mm;border-radius:5mm;background:#F3F5F7;display:flex;align-items:center;justify-content:center"><svg viewBox="28 48 530 104" fill="#02070A" style="height:10mm;width:auto;display:block"><path d="M65.2637 50C95.4937 50 120 74.5063 120 104.736C120 128.759 101.323 148.415 77.6973 149.984V137.367C84.9699 135.444 91.685 131.53 97.0703 126.409C104.844 119.018 109.211 108.992 109.211 98.5391C109.211 88.0858 104.844 78.0605 97.0703 70.6689C89.2969 63.2776 78.754 59.1251 67.7607 59.125L67.7598 98.5391V138.684L67.7607 138.683V149.726C46.4564 146.964 30 128.753 30 106.696V50H65.2637Z"/><path d="M162.312 122V77.2H182.664C187.528 77.2 191.816 78.1387 195.528 80.016C199.24 81.8507 202.141 84.432 204.232 87.76C206.323 91.088 207.368 95.0347 207.368 99.6C207.368 104.123 206.323 108.069 204.232 111.44C202.141 114.768 199.24 117.371 195.528 119.248C191.816 121.083 187.528 122 182.664 122H162.312ZM172.68 113.488H182.152C185.139 113.488 187.72 112.933 189.896 111.824C192.115 110.672 193.821 109.051 195.016 106.96C196.253 104.869 196.872 102.416 196.872 99.6C196.872 96.7413 196.253 94.288 195.016 92.24C193.821 90.1493 192.115 88.5493 189.896 87.44C187.72 86.288 185.139 85.712 182.152 85.712H172.68V113.488ZM242.707 122.768C239.166 122.768 235.88 122.192 232.851 121.04C229.864 119.888 227.262 118.267 225.043 116.176C222.867 114.085 221.16 111.632 219.923 108.816C218.728 106 218.131 102.928 218.131 99.6C218.131 96.272 218.728 93.2 219.923 90.384C221.16 87.568 222.888 85.1147 225.107 83.024C227.326 80.9333 229.928 79.312 232.915 78.16C235.902 77.008 239.144 76.432 242.643 76.432C246.184 76.432 249.427 77.008 252.371 78.16C255.358 79.312 257.939 80.9333 260.115 83.024C262.334 85.1147 264.062 87.568 265.299 90.384C266.536 93.1573 267.155 96.2293 267.155 99.6C267.155 102.928 266.536 106.021 265.299 108.88C264.062 111.696 262.334 114.149 260.115 116.24C257.939 118.288 255.358 119.888 252.371 121.04C249.427 122.192 246.206 122.768 242.707 122.768ZM242.643 113.936C244.648 113.936 246.483 113.595 248.147 112.912C249.854 112.229 251.347 111.248 252.627 109.968C253.907 108.688 254.888 107.173 255.571 105.424C256.296 103.675 256.659 101.733 256.659 99.6C256.659 97.4667 256.296 95.5253 255.571 93.776C254.888 92.0267 253.907 90.512 252.627 89.232C251.39 87.952 249.918 86.9707 248.211 86.288C246.504 85.6053 244.648 85.264 242.643 85.264C240.638 85.264 238.782 85.6053 237.075 86.288C235.411 86.9707 233.939 87.952 232.659 89.232C231.379 90.512 230.376 92.0267 229.651 93.776C228.968 95.5253 228.627 97.4667 228.627 99.6C228.627 101.691 228.968 103.632 229.651 105.424C230.376 107.173 231.358 108.688 232.595 109.968C233.875 111.248 235.368 112.229 237.075 112.912C238.782 113.595 240.638 113.936 242.643 113.936ZM280.707 122V77.2H302.595C308.227 77.2 312.451 78.2667 315.267 80.4C318.126 82.5333 319.555 85.3493 319.555 88.848C319.555 91.1947 318.979 93.2427 317.827 94.992C316.675 96.6987 315.096 98.0213 313.091 98.96C311.086 99.8987 308.782 100.368 306.179 100.368L307.395 97.744C310.211 97.744 312.707 98.2133 314.883 99.152C317.059 100.048 318.744 101.392 319.939 103.184C321.176 104.976 321.795 107.173 321.795 109.776C321.795 113.616 320.28 116.624 317.251 118.8C314.222 120.933 309.763 122 303.875 122H280.707ZM291.011 114.192H303.107C305.795 114.192 307.822 113.765 309.187 112.912C310.595 112.016 311.299 110.608 311.299 108.688C311.299 106.811 310.595 105.424 309.187 104.528C307.822 103.589 305.795 103.12 303.107 103.12H290.243V95.568H301.315C303.832 95.568 305.752 95.1413 307.075 94.288C308.44 93.392 309.123 92.048 309.123 90.256C309.123 88.5067 308.44 87.2053 307.075 86.352C305.752 85.456 303.832 85.008 301.315 85.008H291.011V114.192ZM335.404 122V77.2H345.772V113.552H368.236V122H335.404ZM386.301 122V103.696L388.669 109.968L368.957 77.2H379.965L395.069 102.352H388.733L403.901 77.2H414.077L394.365 109.968L396.669 103.696V122H386.301ZM417.117 122L436.381 95.44V102.992L417.949 77.2H429.725L442.461 95.184L437.533 95.248L450.077 77.2H461.341L443.037 102.544V95.12L462.429 122H450.461L437.277 102.992H442.013L429.021 122H417.117ZM492.578 122L513.186 77.2H516.45L537.058 122H533.538L514.082 79.248H515.49L496.098 122H492.578ZM500.13 109.392L501.218 106.64H528.034L529.122 109.392H500.13ZM550.951 122V77.2H554.215V122H550.951Z"/></svg></div>
+    <div style="height:60mm;border-radius:5mm;background:linear-gradient(135deg,#0297DE,#FC734D);display:flex;align-items:center;justify-content:center"><svg viewBox="28 48 94 104" fill="#fff" style="height:22mm;width:auto;display:block"><path d="M65.2637 50C95.4937 50 120 74.5063 120 104.736C120 128.759 101.323 148.415 77.6973 149.984V137.367C84.9699 135.444 91.685 131.53 97.0703 126.409C104.844 119.018 109.211 108.992 109.211 98.5391C109.211 88.0858 104.844 78.0605 97.0703 70.6689C89.2969 63.2776 78.754 59.1251 67.7607 59.125L67.7598 98.5391V138.684L67.7607 138.683V149.726C46.4564 146.964 30 128.753 30 106.696V50H65.2637Z"/></svg></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1.3fr 1fr 1fr;margin-top:3mm">
+    <p class="mono" style="font-size:7.5pt">Wortmarke · Weiß auf Midnight Black (Standard)</p>
+    <p class="mono" style="font-size:7.5pt">Wortmarke · Midnight Black auf Hell</p>
+    <p class="mono" style="font-size:7.5pt">Bildmarke · Favicon, Profilbild, App-Icon</p>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:9mm;gap:14mm">
+    <div>
+      <h3>Anwendung</h3>
+      <div class="do"><b>Ja</b><span>Immer einfarbig: Weiß auf dunklem Grund, Midnight Black auf hellem Grund.</span></div>
+      <div class="do"><b>Ja</b><span>Schutzzone rundum mindestens so groß wie die Höhe des „D“-Symbols.</span></div>
+      <div class="do"><b>Ja</b><span>Mindestgröße: 24 px Höhe digital, 8 mm im Druck.</span></div>
+    </div>
+    <div>
+      <h3>Bitte nicht</h3>
+      <div class="dont"><b>Nein</b><span>Kein Farbverlauf, Schatten oder Glow im Logo selbst.</span></div>
+      <div class="dont"><b>Nein</b><span>Nicht verzerren, drehen, umfärben oder Teile austauschen.</span></div>
+      <div class="dont"><b>Nein</b><span>Nicht auf unruhige Fotos ohne dunkle Abdeckung setzen.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>03</span></div>
+</section>
+
+<!-- 4 Farben -->
+<section class="page">
+  <div class="eyebrow">03 · Farben</div>
+  <h2>Dunkel, mit <em>Licht als Akzent.</em></h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:9mm">
+    <div class="swatch"><div class="c" style="background:#02070A;border-bottom:1px solid rgba(255,255,255,.08)"></div><div class="t"><div class="n">Midnight Black</div><div class="v">#02070A · RGB 2 7 10<br>Grundfläche · ca. 70 %</div></div></div>
+    <div class="swatch"><div class="c" style="background:#0297DE"></div><div class="t"><div class="n">Electric Blue</div><div class="v">#0297DE · RGB 2 151 222<br>Licht, Linien, Details · ca. 20 %</div></div></div>
+    <div class="swatch"><div class="c" style="background:#FC734D"></div><div class="t"><div class="n">Cantaloupe</div><div class="v">#FC734D · RGB 252 115 77<br>Akzent, Punkte, Hover · ca. 10 %</div></div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:5mm">
+    <div class="swatch"><div class="c" style="height:14mm;background:#060D12"></div><div class="t"><div class="n" style="font-size:11pt">Ink 800</div><div class="v">#060D12 · Abschnitte</div></div></div>
+    <div class="swatch"><div class="c" style="height:14mm;background:#0A141B"></div><div class="t"><div class="n" style="font-size:11pt">Ink 700</div><div class="v">#0A141B · Felder</div></div></div>
+    <div class="swatch"><div class="c" style="height:14mm;background:#F3F5F7"></div><div class="t"><div class="n" style="font-size:11pt">Off-White</div><div class="v">#F3F5F7 · Text, Buttons</div></div></div>
+    <div class="swatch"><div class="c" style="height:14mm;background:#8C969F"></div><div class="t"><div class="n" style="font-size:11pt">Muted</div><div class="v">#8C969F · Fließtext, Labels</div></div></div>
+  </div>
+  <div style="margin-top:6mm;height:16mm;border-radius:4mm;background:linear-gradient(0deg,#5c0c0c 0%,#d93a22 20%,#FC734D 42%,#fdb59d 55%,#cfeaff 64%,#0297DE 78%,#04234a 92%,#02070A 100%)"></div>
+  <p class="mono" style="font-size:7.5pt;margin-top:2mm">Lichtverlauf „Polarlicht“ – nur für große Flächen (Hero, Finale, Vorschaubilder), nie für Text oder Logo.</p>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>04</span></div>
+</section>
+
+<!-- 5 Typografie -->
+<section class="page">
+  <div class="eyebrow">04 · Typografie</div>
+  <h2>Drei Schriften, <em>klare Rollen.</em></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:9mm">
+    <div class="card"><p class="mono" style="font-size:7.5pt">Headlines</p><div class="serif" style="font-size:44pt;line-height:1;margin:4mm 0">Aa <em>Aa</em></div><h3>Instrument Serif</h3><p>Überschriften und Kennzahlen. Ein Wort pro Headline kursiv als Akzent.</p></div>
+    <div class="card"><p class="mono" style="font-size:7.5pt">Fließtext</p><div style="font-size:40pt;line-height:1;margin:4mm 0;font-weight:400">Aa</div><h3>Inter</h3><p>Texte, Buttons, Formulare. Regular 400, Medium 500 für Betonung.</p></div>
+    <div class="card"><p class="mono" style="font-size:7.5pt">Labels</p><div class="mono" style="font-size:36pt;line-height:1;margin:5mm 0">Aa</div><h3>JetBrains Mono</h3><p>Kleine Labels in Versalien, Nummern, Status, technische Details.</p></div>
+  </div>
+  <div class="card" style="margin-top:6mm">
+    <div class="eyebrow">Leistungen</div>
+    <div class="serif" style="font-size:30pt;line-height:1.05;margin-top:3mm">Was wir <em>für Sie bauen.</em></div>
+    <p style="margin-top:3mm;max-width:150mm">Keine Software von der Stange. Wir bauen auf Ihren bestehenden Programmen auf und automatisieren genau die Schritte, die Sie heute ausbremsen.</p>
+    <p class="mono" style="font-size:7pt;margin-top:4mm;color:#5d666e">Label · Mono 11 px, Versalien, Sperrung 0,22 em  ·  Headline · Serif 52 px, Zeilenhöhe 1,05  ·  Text · Inter 15 px, Zeilenhöhe 1,7</p>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>05</span></div>
+</section>
+
+<!-- 6 UI-Elemente -->
+<section class="page">
+  <div class="eyebrow">05 · Gestaltungselemente</div>
+  <h2>Glas, Licht <em>und Ruhe.</em></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:9mm">
+    <div class="card">
+      <h3>Buttons</h3>
+      <div style="display:flex;flex-direction:column;gap:4mm;margin-top:4mm;align-items:flex-start">
+        <span class="btn" style="background:#F3F5F7;color:#02070A">Gratis Check sichern →</span>
+        <span class="btn" style="background:#FC734D;color:#02070A">Hover-Zustand →</span>
+        <span class="btn" style="border:1px solid rgba(255,255,255,.18);color:#F3F5F7">Sekundär</span>
+      </div>
+      <p style="margin-top:5mm">Pillenform. Weiß ist der Hauptbutton, Orange nur beim Hover.</p>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column;align-items:center;text-align:center;background:radial-gradient(70% 80% at 50% 100%,rgba(252,115,77,.55),rgba(2,151,222,.25) 60%,rgba(255,255,255,.02))">
+      <h3 style="align-self:flex-start">Orb-Button</h3>
+      <div style="margin:7mm 0;width:30mm;height:30mm;border-radius:50%;border:1.5px solid rgba(255,255,255,.75);padding:2.4mm">
+        <div style="width:100%;height:100%;border-radius:50%;border:2px solid rgba(255,255,255,.92);background:radial-gradient(circle at 50% 45%,rgba(255,246,240,.3),rgba(255,246,240,.42) 55%,rgba(255,255,255,.75));box-shadow:inset 0 0 12px 2px rgba(255,255,255,.5),0 0 14px rgba(255,255,255,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm">
+          <svg viewBox="28 48 94 104" fill="#fff" style="height:6mm;width:auto;display:block"><path d="M65.2637 50C95.4937 50 120 74.5063 120 104.736C120 128.759 101.323 148.415 77.6973 149.984V137.367C84.9699 135.444 91.685 131.53 97.0703 126.409C104.844 119.018 109.211 108.992 109.211 98.5391C109.211 88.0858 104.844 78.0605 97.0703 70.6689C89.2969 63.2776 78.754 59.1251 67.7607 59.125L67.7598 98.5391V138.684L67.7607 138.683V149.726C46.4564 146.964 30 128.753 30 106.696V50H65.2637Z"/></svg><span class="mono" style="font-size:7pt">Gratis Check</span>
+        </div>
+      </div>
+      <p style="text-align:left">Milchiges Glas mit Ring – nur einmal pro Seite, im Hero.</p>
+    </div>
+    <div class="card">
+      <h3>Glas-Karte</h3>
+      <div class="card" style="margin-top:4mm;padding:5mm">
+        <div class="num">01</div>
+        <div class="serif" style="font-size:15pt;margin-top:2mm">Vertrieb &amp; Anfragen</div>
+        <p style="font-size:8.5pt;margin-top:1mm">Jede Anfrage sofort erfasst und beantwortet.</p>
+        <div style="display:flex;gap:2mm;margin-top:3mm"><span class="mono" style="font-size:6.5pt;border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:1.5mm 3mm;color:#cdd3d8">LEAD-ERFASSUNG</span><span class="mono" style="font-size:6.5pt;border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:1.5mm 3mm;color:#cdd3d8">CRM</span></div>
+      </div>
+      <p style="margin-top:4mm">Leicht transparente Fläche, feiner Verlaufsrand, große Rundung (24 px).</p>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:6mm">
+    <div><h3>Eyebrow</h3><div class="eyebrow" style="margin-top:2mm">Ablauf</div><p style="margin-top:2mm">Orange Punkt + Mono-Label über jeder Headline.</p></div>
+    <div><h3>Lichthorizont</h3><div style="margin-top:4mm;height:1px;background:linear-gradient(90deg,transparent,#0297DE,#e8f4ff,#FC734D,transparent)"></div><p style="margin-top:3mm">Leuchtende Linie als Übergang zwischen Abschnitten.</p></div>
+    <div><h3>Status-Punkt</h3><div style="margin-top:3mm;display:flex;gap:2mm;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:#FC734D;box-shadow:0 0 0 4px rgba(252,115,77,.2)"></span><span class="mono" style="font-size:7.5pt">3 FREI</span></div><p style="margin-top:2mm">Pulsierender Punkt für Live-Infos.</p></div>
+    <div><h3>Bewegung</h3><p style="margin-top:2mm">Weich und langsam (expo-out, 1–1,3 s). Headlines von unscharf zu scharf. Nie hektisch.</p></div>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>06</span></div>
+</section>
+
+<!-- 7 Licht & Bild -->
+<section class="page">
+  <div class="eyebrow">06 · Licht &amp; Bildsprache</div>
+  <h2>Polarlicht <em>statt Stockfoto.</em></h2>
+  <div class="grid" style="grid-template-columns:1.6fr 1fr;margin-top:8mm;gap:10mm">
+    <div>
+      <img src="hero.jpg" style="width:100%;border-radius:4mm;border:1px solid rgba(255,255,255,.1)">
+      <p class="mono" style="font-size:7.5pt;margin-top:2mm">Hero der Website · Polarlicht in Blau, orange Welle von unten</p>
+    </div>
+    <div>
+      <img src="eric.jpg" style="width:100%;height:55mm;object-fit:cover;object-position:50% 30%;border-radius:4mm">
+      <p class="mono" style="font-size:7.5pt;margin-top:2mm">Echte Menschen, echte Situationen</p>
+      <div class="rule"></div>
+      <div class="do"><b>Ja</b><span>Echte Fotos von Eric, dem Team und Kundenprojekten.</span></div>
+      <div class="do"><b>Ja</b><span>Screenshots echter Workflows (Kundendaten unkenntlich).</span></div>
+      <div class="dont"><b>Nein</b><span>Generische Stockfotos mit leuchtenden KI-Gehirnen oder Robotern.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>07</span></div>
+</section>
+
+<!-- 8 Tonalität -->
+<section class="page">
+  <div class="eyebrow">07 · Tonalität</div>
+  <h2>So sprechen wir: <em>klar, ruhig, ehrlich.</em></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:9mm;gap:14mm">
+    <div>
+      <h3>Grundsätze</h3>
+      <div class="do"><b>01</b><span><b style="color:#F3F5F7">Sie-Form</b> in Website, Angeboten und Mails an Neukunden.</span></div>
+      <div class="do"><b>02</b><span><b style="color:#F3F5F7">Nutzen vor Technik:</b> „mehr Zeit für Ihre Kunden“ statt „n8n-Workflow mit Webhook“.</span></div>
+      <div class="do"><b>03</b><span><b style="color:#F3F5F7">Kurze Sätze,</b> konkrete Beispiele aus dem Alltag des Kunden.</span></div>
+      <div class="do"><b>04</b><span><b style="color:#F3F5F7">Keine erfundenen Zahlen,</b> keine Superlative ohne Beleg.</span></div>
+      <div class="do"><b>05</b><span><b style="color:#F3F5F7">Ruhige Souveränität</b> statt Verkaufsdruck – wir laden ein, wir drängen nicht.</span></div>
+    </div>
+    <div>
+      <h3>Beispiele</h3>
+      <div class="do"><b>Ja</b><span>„Ihr Team verliert Stunden mit Anfragen? Wir automatisieren genau das.“</span></div>
+      <div class="dont"><b>Nein</b><span>„Revolutionäre KI-Power für 10x ROI!“</span></div>
+      <div class="do"><b>Ja</b><span>„Wir sind neu. Das ist Ihr Vorteil.“</span></div>
+      <div class="dont"><b>Nein</b><span>„Führender Anbieter für Enterprise-AI.“</span></div>
+      <div class="rule"></div>
+      <h3>Feste Begriffe</h3>
+      <p><b style="color:#F3F5F7">Potenzial-Check</b> (kurz: Gratis Check) · <b style="color:#F3F5F7">Kurzanalyse</b> · <b style="color:#F3F5F7">Gründungskunden-Programm</b> · <b style="color:#F3F5F7">Automatisierung</b> statt „Bot“ · <b style="color:#F3F5F7">KI</b> statt „AI“ (deutsch)</p>
+    </div>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>08</span></div>
+</section>
+
+<!-- 9 Anwendung -->
+<section class="page">
+  <div class="glow"></div>
+  <div style="position:relative">
+    <div class="eyebrow">08 · Anwendung</div>
+    <h2>Ein Look <em>überall.</em></h2>
+    <div class="grid" style="grid-template-columns:1.3fr 1fr;margin-top:8mm;gap:10mm">
+      <div>
+        <img src="og-image.png" style="width:100%;border-radius:4mm;border:1px solid rgba(255,255,255,.12)">
+        <p class="mono" style="font-size:7.5pt;margin-top:2mm">Link-Vorschau (LinkedIn, WhatsApp) · 1200 × 630 px</p>
+      </div>
+      <div>
+        <h3>Checkliste für neue Materialien</h3>
+        <div class="do"><b>1</b><span>Hintergrund Midnight Black, Licht nur als Akzent.</span></div>
+        <div class="do"><b>2</b><span>Headline in Instrument Serif, ein Wort kursiv.</span></div>
+        <div class="do"><b>3</b><span>Labels in JetBrains Mono, mit orangem Punkt.</span></div>
+        <div class="do"><b>4</b><span>Logo weiß, mit Schutzzone.</span></div>
+        <div class="do"><b>5</b><span>Ein klarer nächster Schritt: Gratis Check.</span></div>
+        <div class="rule"></div>
+        <p class="mono" style="font-size:7.5pt;line-height:1.9">doblyx.com · office@doblyx.com · +43 676 5800866<br>Doblyx AI GmbH · Schildbach 42 · 8230 Hartberg</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Doblyx · Brand Guide</span><span>09</span></div>
+</section>
+</body></html>

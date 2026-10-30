@@ -96,6 +96,8 @@ onMounted(async () => {
     <!-- CSS-Fallback (ohne WebGL), darüber der animierte Shader -->
     <div class="hero-fallback absolute inset-0 -z-10" aria-hidden="true" />
     <div ref="canvasRef" class="absolute inset-0 -z-10" aria-hidden="true" />
+    <!-- Midnight-Black-Schleier über dem Licht: dämpft die Farben für einen edleren Look -->
+    <div class="hero-veil pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
     <div class="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent to-[#02070A]" aria-hidden="true" />
 
     <div class="relative mx-auto flex min-h-[100svh] max-w-[90rem] flex-col items-center px-5 pt-32 text-center sm:px-8 sm:pt-36 lg:pt-[17vh]">
@@ -536,5 +538,9 @@ onMounted(async () => {
   .caret {
     animation: none;
   }
+}
+
+.hero-veil {
+  background: linear-gradient(180deg, rgba(2, 7, 10, 0.4) 0%, rgba(2, 7, 10, 0.28) 45%, rgba(2, 7, 10, 0.22) 100%);
 }
 </style>

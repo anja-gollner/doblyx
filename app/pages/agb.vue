@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { locale } = useI18n()
-const isEn = computed(() => locale.value === 'en')
+// Seite ist aktuell nur auf Deutsch verfügbar
+const isEn = ref(false)
 
 useHead({
   title: computed(() => isEn.value ? 'Terms & Conditions — Doblyx AI' : 'AGB — Doblyx AI'),
@@ -12,20 +12,21 @@ useHead({
   <div>
     <Navbar />
 
-    <section class="pt-40 pb-24 px-6" style="background: #FAFAFA">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold mb-4 tracking-tight" style="color: #0F1419">
+    <section class="starfield relative overflow-hidden px-6 pb-24 pt-40">
+      <HorizonGlow tone="mix" />
+      <div class="relative z-[1] mx-auto max-w-3xl">
+        <h1 class="mb-4 font-serif text-display-md font-normal" style="color: #F3F5F7">
           {{ isEn ? 'General Terms and Conditions' : 'Allgemeine Geschäftsbedingungen (AGB)' }}
         </h1>
-        <p class="mb-12 text-sm" style="color: #999">
+        <p class="mb-12 text-sm" style="color: #8C969F">
           {{ isEn ? 'Last updated: January 2026' : 'Stand: Januar 2026' }}
         </p>
 
-        <div class="space-y-10 text-[15px] leading-relaxed" style="color: #555">
+        <div class="space-y-10 text-[15px] leading-relaxed" style="color: rgba(243, 245, 247, 0.72)">
 
           <!-- § 1 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 1 Scope of Application and Contracting Party' : '§ 1 Geltungsbereich und Vertragspartner' }}
             </h2>
             <p v-if="isEn">
@@ -48,7 +49,7 @@ useHead({
 
           <!-- § 2 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 2 Subject Matter and Service Description' : '§ 2 Vertragsgegenstand und Leistungsbeschreibung' }}
             </h2>
             <p v-if="isEn">
@@ -84,7 +85,7 @@ useHead({
 
           <!-- § 3 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 3 Contract Formation' : '§ 3 Vertragsschluss' }}
             </h2>
             <p>{{ isEn ? '(1) The presentation of services on the website or in presentations does not constitute a legally binding offer, but an invitation to submit an offer.' : '(1) Die Darstellung der Leistungen auf der Website oder in Präsentationen stellt kein rechtlich bindendes Angebot dar, sondern eine Aufforderung zur Abgabe eines Angebots.' }}</p>
@@ -104,7 +105,7 @@ useHead({
 
           <!-- § 4 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 4 Compensation and Payment Terms' : '§ 4 Vergütung und Zahlungsbedingungen' }}
             </h2>
             <p>{{ isEn ? '(1) Compensation consists of:' : '(1) Die Vergütung setzt sich zusammen aus:' }}</p>
@@ -136,7 +137,7 @@ useHead({
 
           <!-- § 5 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 5 Contract Term and Termination' : '§ 5 Vertragslaufzeit und Kündigung' }}
             </h2>
             <p>{{ isEn ? '(1) Unless a minimum term is agreed in the individual contract, either party may terminate the contract with 30 days\' notice to the end of the month.' : '(1) Sofern im individuellen Vertrag keine Mindestlaufzeit vereinbart ist, kann der Vertrag von beiden Parteien mit einer Frist von 30 Tagen zum Monatsende gekündigt werden.' }}</p>
@@ -158,7 +159,7 @@ useHead({
 
           <!-- § 6 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 6 Client\'s Cooperation Obligations' : '§ 6 Mitwirkungspflichten des Kunden' }}
             </h2>
             <p>{{ isEn ? '(1) The Client is obligated to support the Provider in the performance of the agreed services to a reasonable extent. In particular, the Client shall ensure that:' : '(1) Der Kunde ist verpflichtet, den Anbieter bei der Erbringung der vereinbarten Leistungen in angemessenem Umfang zu unterstützen. Der Kunde stellt insbesondere sicher, dass:' }}</p>
@@ -191,7 +192,7 @@ useHead({
 
           <!-- § 7 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 7 Service Delivery and Acceptance' : '§ 7 Leistungserbringung und Abnahme' }}
             </h2>
             <p>{{ isEn ? '(1) The Provider shall perform the agreed services with due care and using qualified personnel.' : '(1) Der Anbieter erbringt die vereinbarten Leistungen mit der gebotenen Sorgfalt und unter Einsatz von qualifiziertem Personal.' }}</p>
@@ -212,7 +213,7 @@ useHead({
 
           <!-- § 8 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 8 Service Level and Support' : '§ 8 Service Level und Support' }}
             </h2>
             <p>{{ isEn ? '(1) The Provider provides support for the implemented systems as part of the monthly retainer.' : '(1) Der Anbieter stellt im Rahmen des monatlichen Retainers Support für die implementierten Systeme bereit.' }}</p>
@@ -244,7 +245,7 @@ useHead({
 
           <!-- § 9 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 9 Usage Rights and Intellectual Property' : '§ 9 Nutzungsrechte und geistiges Eigentum' }}
             </h2>
             <p>{{ isEn ? '(1) All workflows, automations, scripts, configurations, and other work results created by the Provider (hereinafter "Works") remain the intellectual property of the Provider.' : '(1) Alle vom Anbieter erstellten Workflows, Automatisierungen, Skripte, Konfigurationen und sonstigen Arbeitsergebnisse (nachfolgend „Werke") bleiben geistiges Eigentum des Anbieters.' }}</p>
@@ -255,7 +256,7 @@ useHead({
 
           <!-- § 10 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 10 Data Protection and Data Processing' : '§ 10 Datenschutz und Auftragsverarbeitung' }}
             </h2>
             <p>{{ isEn ? '(1) Insofar as the Provider processes personal data on behalf of the Client in the course of providing services, the Provider acts as a data processor within the meaning of Art. 28 GDPR.' : '(1) Soweit der Anbieter im Rahmen der Leistungserbringung personenbezogene Daten im Auftrag des Kunden verarbeitet, handelt er als Auftragsverarbeiter im Sinne von Art. 28 DSGVO.' }}</p>
@@ -266,7 +267,7 @@ useHead({
 
           <!-- § 11 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 11 Liability and Limitation of Liability' : '§ 11 Haftung und Haftungsbeschränkung' }}
             </h2>
             <p>{{ isEn ? '(1) The Provider shall have unlimited liability for damages arising from injury to life, body, or health, as well as for damages based on intentional or grossly negligent conduct by the Provider, its legal representatives, or vicarious agents.' : '(1) Der Anbieter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit des Anbieters, seiner gesetzlichen Vertreter oder Erfüllungsgehilfen beruhen.' }}</p>
@@ -293,7 +294,7 @@ useHead({
 
           <!-- § 12 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 12 No Guarantee of Success' : '§ 12 Keine Erfolgsgarantie' }}
             </h2>
             <p>{{ isEn ? '(1) The Provider owes the performance of the agreed services (work performance for the setup, services for ongoing operations), but not a specific economic result.' : '(1) Der Anbieter schuldet die Erbringung der vereinbarten Dienstleistungen (Werkleistung für das Setup, Dienstleistung für den laufenden Betrieb), nicht jedoch einen bestimmten wirtschaftlichen Erfolg.' }}</p>
@@ -315,7 +316,7 @@ useHead({
 
           <!-- § 13 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 13 Confidentiality' : '§ 13 Vertraulichkeit' }}
             </h2>
             <p>{{ isEn ? '(1) Both parties undertake to keep confidential all confidential information of the other party obtained in the course of the cooperation and not to disclose it to third parties.' : '(1) Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit erlangten vertraulichen Informationen der jeweils anderen Partei geheim zu halten und nicht an Dritte weiterzugeben.' }}</p>
@@ -338,7 +339,7 @@ useHead({
 
           <!-- § 14 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 14 Force Majeure' : '§ 14 Höhere Gewalt' }}
             </h2>
             <p>{{ isEn ? '(1) Neither party shall be liable for non-performance or delayed performance of its obligations if and to the extent that the non-performance or delay is attributable to force majeure.' : '(1) Keine Partei haftet für die Nichterfüllung oder verspätete Erfüllung ihrer Verpflichtungen, wenn und soweit die Nichterfüllung oder Verzögerung auf Umstände höherer Gewalt zurückzuführen ist.' }}</p>
@@ -348,7 +349,7 @@ useHead({
 
           <!-- § 15 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 15 Amendments to the GTC' : '§ 15 Änderungen der AGB' }}
             </h2>
             <p>{{ isEn ? '(1) The Provider is entitled to amend these GTC with effect for the future, insofar as this is necessary for valid reasons and the Client is not unreasonably disadvantaged thereby.' : '(1) Der Anbieter ist berechtigt, diese AGB mit Wirkung für die Zukunft zu ändern, soweit dies aus triftigen Gründen erforderlich ist und der Kunde dadurch nicht unangemessen benachteiligt wird.' }}</p>
@@ -357,7 +358,7 @@ useHead({
 
           <!-- § 16 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 16 Final Provisions' : '§ 16 Schlussbestimmungen' }}
             </h2>
             <p>{{ isEn ? '(1) The law of the Republic of Austria shall apply, excluding the UN Convention on Contracts for the International Sale of Goods (CISG) and the conflict of laws rules of private international law.' : '(1) Es gilt das Recht der Republik Österreich unter Ausschluss des UN-Kaufrechts (CISG) und der Verweisungsnormen des internationalen Privatrechts.' }}</p>
@@ -369,7 +370,7 @@ useHead({
 
           <!-- § 17 -->
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? '§ 17 Contact' : '§ 17 Kontakt' }}
             </h2>
             <p>

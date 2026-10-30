@@ -1,72 +1,79 @@
 <script setup lang="ts">
-const { t } = useI18n()
-const localePath = useLocalePath()
 const year = new Date().getFullYear()
+
+const sections = [
+  { id: 'leistungen', label: 'Leistungen' },
+  { id: 'anwendungen', label: 'Anwendungsfälle' },
+  { id: 'gruendungskunden', label: 'Gründungskunden' },
+  { id: 'faq', label: 'FAQ' },
+]
 </script>
 
 <template>
-  <footer class="pt-20 pb-12 px-6" style="background: #0F1419">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-        <!-- Brand -->
-        <div class="md:col-span-4">
-          <NuxtLink :to="localePath('/')" class="inline-block mb-5">
-            <img src="/logos/logo-final-dark.svg" alt="Doblyx AI" class="h-7" />
+  <footer class="relative overflow-hidden border-t border-[var(--line)] bg-ink">
+    <!-- Abschluss-CTA -->
+    <div class="container-site py-24 text-center sm:py-32">
+      <p class="reveal eyebrow">Bereit?</p>
+      <p class="reveal mx-auto mt-6 max-w-4xl font-serif text-display-lg text-fg">
+        Weniger Routine. <span class="accent">Mehr Wachstum.</span>
+      </p>
+      <div class="reveal mt-10 flex justify-center">
+        <a href="/#kontakt" class="btn-primary" @click.prevent="useScrollTo('kontakt')">
+          Kostenlosen Potenzial-Check sichern <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container-site">
+      <div class="grid gap-12 border-t border-[var(--line)] py-16 sm:grid-cols-2 lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <NuxtLink to="/" class="inline-block text-fg" aria-label="Doblyx AI – Startseite">
+            <Logo class="h-7 w-auto" />
           </NuxtLink>
-          <p class="text-[14px] leading-relaxed max-w-xs" style="color: #555">
-            {{ t('footer.description') }}
+          <p class="mt-6 max-w-sm text-[14px] leading-7 text-muted">
+            Doblyx AI GmbH – KI-Automatisierung für Unternehmen, die mehr schaffen wollen, ohne mehr Personal aufzubauen.
           </p>
         </div>
 
-        <!-- Services -->
-        <div class="md:col-span-3 md:col-start-6">
-          <h4 class="text-[11px] font-semibold uppercase tracking-widest mb-5" style="color: #777">{{ t('footer.services_title') }}</h4>
-          <ul class="space-y-3">
-            <li><NuxtLink :to="localePath('/') + '#services'" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('features.strategy.title') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/') + '#services'" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('features.automation.title') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/') + '#services'" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('features.development.title') }}</NuxtLink></li>
+        <nav class="lg:col-span-2" aria-label="Seiten">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Website</p>
+          <ul class="mt-5 space-y-3">
+            <li v-for="s in sections" :key="s.id">
+              <RollingLink :href="`/#${s.id}`" :label="s.label" class-name="text-[14px] text-fg/80" @click.prevent="useScrollTo(s.id)" />
+            </li>
+            <li><RollingLink to="/prozess" label="Ablauf im Detail" class-name="text-[14px] text-fg/80" /></li>
+          </ul>
+        </nav>
+
+        <div class="lg:col-span-3">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Kontakt</p>
+          <ul class="mt-5 space-y-3 text-[14px] text-fg/80">
+            <li><a :href="site.phoneHref" class="transition-colors hover:text-cantaloupe">{{ site.phone }}</a></li>
+            <li><a :href="`mailto:${site.email}`" class="transition-colors hover:text-cantaloupe">{{ site.email }}</a></li>
+            <li><a :href="site.linkedin" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-cantaloupe">LinkedIn</a></li>
+            <li class="text-muted">Schildbach 42, 8230 Hartberg</li>
           </ul>
         </div>
 
-        <!-- Company -->
-        <div class="md:col-span-2">
-          <h4 class="text-[11px] font-semibold uppercase tracking-widest mb-5" style="color: #777">{{ t('footer.company_title') }}</h4>
-          <ul class="space-y-3">
-            <li><NuxtLink :to="localePath('/impressum')" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.imprint') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/datenschutz')" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.privacy') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/agb')" class="text-[13px] transition-colors duration-300" style="color: #555" @mouseenter="($event.target as HTMLElement).style.color='#999'" @mouseleave="($event.target as HTMLElement).style.color='#555'">{{ t('footer.terms') }}</NuxtLink></li>
+        <nav class="lg:col-span-2" aria-label="Rechtliches">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Rechtliches</p>
+          <ul class="mt-5 space-y-3 text-[14px] text-fg/80">
+            <li><NuxtLink to="/impressum" class="transition-colors hover:text-cantaloupe">Impressum</NuxtLink></li>
+            <li><NuxtLink to="/datenschutz" class="transition-colors hover:text-cantaloupe">Datenschutz</NuxtLink></li>
+            <li><NuxtLink to="/agb" class="transition-colors hover:text-cantaloupe">AGB</NuxtLink></li>
           </ul>
-        </div>
-
-        <!-- Social -->
-        <div class="md:col-span-1 flex md:justify-end items-start">
-          <a
-            href="https://www.linkedin.com/in/eric-dobler/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300"
-            style="background: rgba(255,255,255,0.04); color: #555"
-            aria-label="LinkedIn"
-            @mouseenter="($event.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.08)'; ($event.currentTarget as HTMLElement).style.color='#999'"
-            @mouseleave="($event.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.04)'; ($event.currentTarget as HTMLElement).style.color='#555'"
-          >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        </div>
+        </nav>
       </div>
 
-      <!-- Bottom -->
-      <div class="pt-8 space-y-3" style="border-top: 1px solid rgba(255,255,255,0.05)">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p class="text-[11px]" style="color: #444">&copy; {{ year }} {{ t('footer.copyright') }}</p>
-          <p class="text-[11px] font-medium" style="color: #444">{{ t('footer.tagline') }}</p>
-        </div>
-        <p class="text-[10px] text-center sm:text-left" style="color: #333">
-          {{ t('footer.registration') }}
-        </p>
+      <div class="flex flex-col gap-2 border-t border-[var(--line)] py-6 font-mono text-[10px] uppercase tracking-[0.15em] text-muted sm:flex-row sm:justify-between">
+        <p>© {{ year }} Doblyx AI GmbH</p>
+        <p>FN 670873d · LG f. ZRS Graz · UID ATU82914937</p>
       </div>
+    </div>
+
+    <!-- Großer Markenschriftzug -->
+    <div class="pointer-events-none select-none overflow-hidden px-4 pb-4" aria-hidden="true">
+      <Logo class="mx-auto w-full max-w-site text-fg/[0.04]" />
     </div>
   </footer>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { locale } = useI18n()
-const isEn = computed(() => locale.value === 'en')
+// Seite ist aktuell nur auf Deutsch verfügbar
+const isEn = ref(false)
 
 useHead({
   title: computed(() => isEn.value ? 'Legal Notice — Doblyx AI' : 'Impressum — Doblyx AI'),
@@ -12,15 +12,16 @@ useHead({
   <div>
     <Navbar />
 
-    <section class="pt-40 pb-24 px-6" style="background: #FAFAFA">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold mb-12 tracking-tight" style="color: #0F1419">
+    <section class="starfield relative overflow-hidden px-6 pb-24 pt-40">
+      <HorizonGlow tone="mix" />
+      <div class="relative z-[1] mx-auto max-w-3xl">
+        <h1 class="mb-12 font-serif text-display-md font-normal" style="color: #F3F5F7">
           {{ isEn ? 'Legal Notice' : 'Impressum' }}
         </h1>
 
-        <div class="space-y-8 text-[15px] leading-relaxed" style="color: #555">
+        <div class="space-y-8 text-[15px] leading-relaxed" style="color: rgba(243, 245, 247, 0.72)">
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Information pursuant to § 5 ECG (Austrian E-Commerce Act)' : 'Angaben gemäß § 5 ECG' }}
             </h2>
             <p>
@@ -31,14 +32,14 @@ useHead({
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Represented by' : 'Vertreten durch' }}
             </h2>
             <p>Eric Dobler</p>
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Contact' : 'Kontakt' }}
             </h2>
             <p>
@@ -48,7 +49,7 @@ useHead({
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Commercial Register' : 'Registereintrag' }}
             </h2>
             <p v-if="isEn">
@@ -64,7 +65,7 @@ useHead({
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Tax Information' : 'Steuerdaten' }}
             </h2>
             <p>
@@ -74,7 +75,7 @@ useHead({
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Responsible for Content pursuant to § 25 Austrian Media Act' : 'Verantwortlich für den Inhalt nach § 25 MedienG' }}
             </h2>
             <p>
@@ -84,14 +85,14 @@ useHead({
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'EU Online Dispute Resolution' : 'EU-Streitschlichtung' }}
             </h2>
             <p>
               {{ isEn ? 'The European Commission provides a platform for online dispute resolution (ODR):' : 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:' }}
             </p>
             <p class="mt-2">
-              <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="underline transition-colors duration-300" style="color: #0A1F44">
+              <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="underline transition-colors duration-300" style="color: #FC734D">
                 https://ec.europa.eu/consumers/odr/
               </a>
             </p>
@@ -101,7 +102,7 @@ useHead({
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold mb-3" style="color: #0F1419">
+            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
               {{ isEn ? 'Consumer Dispute Resolution' : 'Verbraucherstreitbeilegung / Universalschlichtungsstelle' }}
             </h2>
             <p>

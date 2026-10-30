@@ -1,4 +1,33 @@
-User-Agent: *
-Disallow:
+# Suchmaschinen und KI-Assistenten sind ausdrücklich willkommen.
+User-agent: *
+Allow: /
+
+# KI-Crawler (Antworten in ChatGPT, Claude, Perplexity, Gemini & Co.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://doblyx.com/sitemap.xml

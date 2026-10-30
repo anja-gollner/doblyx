@@ -1,294 +1,127 @@
 <script setup lang="ts">
-const { t } = useI18n()
-const localePath = useLocalePath()
-
 useHead({
-  title: 'Doblyx AI — Unser Prozess',
+  title: 'Ablauf — Doblyx AI',
   meta: [
-    { name: 'description', content: 'Vier klar definierte Phasen: Audit, Architektur, Build & Integrate, Scale & Optimize. So bauen wir Ihre KI-Systemarchitektur.' },
-    { name: 'robots', content: 'index, follow' },
+    { name: 'description', content: 'So arbeiten wir: kostenloser Potenzial-Check, transparentes Konzept mit klaren Kosten, Umsetzung in Etappen und langfristige Betreuung.' },
   ],
 })
 
-const phases = computed(() => [
+const phases = [
   {
-    key: 'processPage.phase1',
-    image: '/architecture.png',
+    no: '01',
+    title: 'Potenzial-Check',
+    lead: 'Verstehen, bevor wir bauen.',
+    duration: '30 Minuten · kostenlos',
+    text: 'In einem kurzen Gespräch lernen wir Ihr Unternehmen und Ihre Abläufe kennen. Wo geht Zeit verloren? Wo wird doppelt gearbeitet? Wo bleiben Anfragen liegen?',
+    points: [
+      'Gespräch per Video-Call oder Telefon',
+      'Wir identifizieren Ihre drei größten Hebel',
+      'Grobe Einschätzung zu Aufwand, Kosten und Nutzen',
+    ],
+    outcome: 'Eine schriftliche Kurzanalyse, die Ihnen gehört, auch wenn wir nicht zusammenarbeiten.',
   },
   {
-    key: 'processPage.phase2',
-    image: '/process-safe.png',
+    no: '02',
+    title: 'Konzept & Angebot',
+    lead: 'Klarheit, bevor Kosten entstehen.',
+    duration: 'Wenige Tage',
+    text: 'Wir planen die Lösung im Detail: welche Programme verbunden werden, wie die Daten fließen und was am Ende automatisch passiert. Verständlich erklärt, ohne Fachchinesisch.',
+    points: [
+      'Klarer Umfang und Zeitplan',
+      'Transparente Kosten vor Projektstart',
+      'Datenschutz von Anfang an mitgedacht',
+    ],
+    outcome: 'Ein verbindliches Angebot. Sie entscheiden in Ruhe, ohne Druck.',
   },
   {
-    key: 'processPage.phase3',
-    image: '/ai_print.png',
+    no: '03',
+    title: 'Umsetzung',
+    lead: 'In Etappen statt Blackbox.',
+    duration: 'Je nach Umfang',
+    text: 'Wir bauen Schritt für Schritt und zeigen Ihnen regelmäßig, was schon funktioniert. Ihre bestehenden Programme bleiben, wir verbinden sie nur intelligenter.',
+    points: [
+      'Regelmäßige Abstimmung und sichtbare Zwischenergebnisse',
+      'Tests mit echten Daten, bevor etwas live geht',
+      'Einschulung Ihres Teams',
+    ],
+    outcome: 'Eine laufende, getestete Automatisierung, eingebettet in Ihren Alltag.',
   },
   {
-    key: 'processPage.phase4',
-    image: '/office_architecture.png',
+    no: '04',
+    title: 'Betreuung',
+    lead: 'Go-Live ist erst der Anfang.',
+    duration: 'Laufend',
+    text: 'Wir behalten Ihr System im Blick, passen es an, wenn sich Ihre Abläufe ändern, und erweitern es Schritt für Schritt, wenn Sie bereit sind.',
+    points: [
+      'Überwachung und schnelle Hilfe bei Problemen',
+      'Anpassungen an neue Anforderungen',
+      'Vollständige Dokumentation, kein Lock-in',
+    ],
+    outcome: 'Ein System, das mit Ihrem Unternehmen wächst, und ein Partner, der erreichbar bleibt.',
   },
-])
-
-const activePhase = ref(-1)
-
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          activePhase.value = Number(entry.target.getAttribute('data-phase'))
-        }
-      })
-    },
-    { rootMargin: '-30% 0px -30% 0px', threshold: 0 }
-  )
-
-  const els = document.querySelectorAll('.phase-section')
-  els.forEach((el) => observer.observe(el))
-  onUnmounted(() => observer.disconnect())
-})
+]
 </script>
 
 <template>
   <div>
     <Navbar />
 
-    <!-- Hero -->
-    <section class="relative flex items-center justify-center overflow-hidden px-6" style="min-height: 80vh; background: #0A1F44">
-      <!-- Video background -->
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="absolute inset-0 w-full h-full object-cover"
-        style="opacity: 0.2"
-      >
-        <source src="/process.mp4" type="video/mp4" />
-      </video>
-
-      <!-- Dark overlay on top of video -->
-      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(10,31,68,0.7) 0%, rgba(10,31,68,0.85) 100%)" />
-
-      <div class="relative z-10 text-center max-w-3xl mx-auto">
-        <div class="animate-in flex items-center justify-center gap-3 mb-8" style="opacity: 0">
-          <div class="w-8 h-px" style="background: rgba(255,255,255,0.2)" />
-          <p class="text-[13px] font-medium uppercase tracking-[0.2em]" style="color: rgba(255,255,255,0.5)">
-            {{ t('processPage.hero_tag') }}
+    <main>
+      <section class="grain relative overflow-hidden bg-ink pb-20 pt-44 sm:pb-28 sm:pt-52">
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[radial-gradient(55%_55%_at_50%_100%,rgba(252,115,77,0.35),rgba(2,151,222,0.18)_45%,transparent_75%)]" aria-hidden="true" />
+        <div class="container-site relative text-center">
+          <p class="reveal eyebrow">Ablauf</p>
+          <h1 class="reveal mx-auto mt-6 max-w-4xl font-serif text-display-lg text-fg">
+            Ein Prozess, der <span class="accent">Vertrauen schafft.</span>
+          </h1>
+          <p class="reveal mx-auto mt-8 max-w-xl text-[15px] leading-7 text-fg/70">
+            Kein starres Framework, keine endlosen Workshops. Vier klare Schritte, bei denen Sie jederzeit wissen, wo Sie stehen und was es kostet.
           </p>
-          <div class="w-8 h-px" style="background: rgba(255,255,255,0.2)" />
-        </div>
-
-        <h1 class="animate-in-delay-1 text-[clamp(2.25rem,5vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-0.03em]" style="opacity: 0; color: white">
-          {{ t('processPage.hero_title') }}
-        </h1>
-
-        <p class="animate-in-delay-2 mt-8 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style="color: rgba(255,255,255,0.45); opacity: 0">
-          {{ t('processPage.hero_subtitle') }}
-        </p>
-
-        <!-- Timeline mini preview -->
-        <div class="animate-in-delay-3 mt-16 flex items-center justify-center gap-3 flex-wrap" style="opacity: 0">
-          <div v-for="(phase, i) in phases" :key="i" class="flex items-center gap-3">
-            <div class="flex items-center gap-2 px-4 py-2 rounded-full" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08)">
-              <span class="text-[11px] font-bold" style="color: rgba(160,196,255,0.7)">{{ t(`${phase.key}.number`) }}</span>
-              <span class="text-[11px] font-medium" style="color: rgba(255,255,255,0.4)">{{ t(`${phase.key}.title`) }}</span>
-            </div>
-            <div v-if="i < phases.length - 1" class="w-6 h-px hidden sm:block" style="background: rgba(255,255,255,0.1)" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-in-delay-3" style="opacity: 0">
-        <div class="w-5 h-8 rounded-full flex justify-center pt-1.5" style="border: 1px solid rgba(255,255,255,0.15)">
-          <div class="w-0.5 h-2 rounded-full animate-bounce" style="background: rgba(255,255,255,0.3)" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline bar -->
-    <section class="py-16 px-6" style="background: #FAFAFA">
-      <div class="max-w-4xl mx-auto">
-        <p
-          v-motion
-          :initial="{ opacity: 0, y: 15 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-          class="text-center text-[13px] font-medium uppercase tracking-[0.15em] mb-10"
-          style="color: #0A1F44"
-        >
-          {{ t('processPage.timeline_title') }}
-        </p>
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { delay: 100, duration: 600 } }"
-          class="grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          <div class="text-center p-6 rounded-2xl" style="background: white; border: 1px solid #EBEBEB">
-            <span class="text-[11px] font-bold uppercase tracking-wider block mb-2" style="color: #0A1F44">{{ t('processPage.phase1.label') }}</span>
-            <span class="text-2xl font-extrabold tracking-tight" style="color: #0F1419">{{ t('processPage.timeline_audit') }}</span>
-          </div>
-          <div class="text-center p-6 rounded-2xl" style="background: white; border: 1px solid #EBEBEB">
-            <span class="text-[11px] font-bold uppercase tracking-wider block mb-2" style="color: #0A1F44">{{ t('processPage.phase2.label') }}</span>
-            <span class="text-2xl font-extrabold tracking-tight" style="color: #0F1419">{{ t('processPage.timeline_architecture') }}</span>
-          </div>
-          <div class="text-center p-6 rounded-2xl" style="background: white; border: 1px solid #EBEBEB">
-            <span class="text-[11px] font-bold uppercase tracking-wider block mb-2" style="color: #0A1F44">{{ t('processPage.phase3.label') }}</span>
-            <span class="text-2xl font-extrabold tracking-tight" style="color: #0F1419">{{ t('processPage.timeline_build') }}</span>
-          </div>
-          <div class="text-center p-6 rounded-2xl" style="background: white; border: 1px solid #EBEBEB">
-            <span class="text-[11px] font-bold uppercase tracking-wider block mb-2" style="color: #0A1F44">{{ t('processPage.phase4.label') }}</span>
-            <span class="text-2xl font-extrabold tracking-tight" style="color: #0F1419">{{ t('processPage.timeline_scale') }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Phases -->
-    <div
-      v-for="(phase, i) in phases"
-      :key="phase.key"
-      :data-phase="i"
-      class="phase-section"
-    >
-      <section
-        class="py-32 px-6 relative overflow-hidden"
-        :style="i % 2 === 0 ? 'background: white' : 'background: #FAFAFA'"
-      >
-        <!-- Phase number watermark -->
-        <div class="absolute -right-8 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block">
-          <span class="text-[280px] font-extrabold leading-none" style="color: rgba(10,31,68,0.02)">
-            {{ t(`${phase.key}.number`) }}
-          </span>
-        </div>
-
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center" :class="i % 2 !== 0 ? 'lg:direction-rtl' : ''">
-            <!-- Text content -->
-            <div :class="i % 2 !== 0 ? 'lg:order-2' : ''">
-              <div
-                v-motion
-                :initial="{ opacity: 0, y: 25 }"
-                :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-              >
-                <div class="flex items-center gap-4 mb-6">
-                  <span class="text-[13px] font-bold tracking-wide" style="color: #0A1F44">{{ t(`${phase.key}.number`) }}</span>
-                  <span class="text-[11px] font-medium uppercase tracking-[0.15em]" style="color: #999">{{ t(`${phase.key}.label`) }}</span>
-                </div>
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] mb-3" style="color: #0F1419">
-                  {{ t(`${phase.key}.title`) }}
-                </h2>
-                <p class="text-lg font-medium mb-6" style="color: #0A1F44">
-                  {{ t(`${phase.key}.subtitle`) }}
-                </p>
-                <p class="text-base leading-relaxed mb-10" style="color: #777">
-                  {{ t(`${phase.key}.description`) }}
-                </p>
-              </div>
-
-              <!-- Points -->
-              <div class="space-y-6">
-                <div
-                  v-for="p in 3"
-                  :key="p"
-                  v-motion
-                  :initial="{ opacity: 0, x: -20 }"
-                  :visible-once="{ opacity: 1, x: 0, transition: { delay: p * 100, duration: 500 } }"
-                  class="flex gap-4"
-                >
-                  <div class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center mt-0.5" style="background: rgba(10,31,68,0.06)">
-                    <svg class="w-4 h-4" style="color: #0A1F44" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="text-sm font-semibold mb-1" style="color: #0F1419">{{ t(`${phase.key}.point${p}_title`) }}</h4>
-                    <p class="text-[13px] leading-relaxed" style="color: #888">{{ t(`${phase.key}.point${p}_desc`) }}</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Outcome -->
-              <div
-                v-motion
-                :initial="{ opacity: 0, y: 15 }"
-                :visible-once="{ opacity: 1, y: 0, transition: { delay: 400, duration: 500 } }"
-                class="mt-10 p-6 rounded-xl"
-                style="background: rgba(10,31,68,0.03); border-left: 3px solid #0A1F44"
-              >
-                <p class="text-[13px] leading-relaxed font-medium" style="color: #555">
-                  {{ t(`${phase.key}.outcome`) }}
-                </p>
-              </div>
-            </div>
-
-            <!-- Image -->
-            <div :class="i % 2 !== 0 ? 'lg:order-1' : ''">
-              <div
-                v-motion
-                :initial="{ opacity: 0, scale: 0.95 }"
-                :visible-once="{ opacity: 1, scale: 1, transition: { delay: 200, duration: 700 } }"
-                class="relative rounded-2xl overflow-hidden"
-                style="aspect-ratio: 4/3; box-shadow: 0 30px 80px rgba(10,31,68,0.12)"
-              >
-                <img
-                  :src="phase.image"
-                  :alt="t(`${phase.key}.title`)"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-                <!-- Overlay -->
-                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,31,68,0.4) 0%, transparent 50%)" />
-
-                <!-- Phase badge -->
-                <div class="absolute bottom-5 left-5">
-                  <div class="px-3 py-1.5 rounded-full" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(12px)">
-                    <span class="text-[11px] font-bold uppercase tracking-[0.1em]" style="color: white">
-                      {{ t(`${phase.key}.label`) }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ol class="reveal mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-2">
+            <li v-for="phase in phases" :key="phase.no">
+              <a :href="`#phase-${phase.no}`" class="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-ink/50 px-4 py-2 backdrop-blur transition-colors hover:border-fg" @click.prevent="useScrollTo(`phase-${phase.no}`)">
+                <span class="font-mono text-[10px] text-cantaloupe">{{ phase.no }}</span>
+                <span class="text-[13px] text-fg">{{ phase.title }}</span>
+              </a>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <!-- Connector between phases -->
-      <div v-if="i < phases.length - 1" class="flex justify-center" :style="i % 2 === 0 ? 'background: #FAFAFA' : 'background: white'">
-        <div class="w-px h-20" style="background: linear-gradient(to bottom, #E0E0E0, transparent)" />
-      </div>
-    </div>
+      <section class="bg-ink pb-28 sm:pb-36">
+        <div class="container-site">
+          <article
+            v-for="phase in phases"
+            :id="`phase-${phase.no}`"
+            :key="phase.no"
+            class="grid scroll-mt-28 gap-10 border-t border-[var(--line)] py-16 sm:py-20 lg:grid-cols-12"
+          >
+            <div class="reveal lg:col-span-5">
+              <span class="font-serif text-[clamp(4rem,9vw,7.5rem)] leading-none text-transparent [-webkit-text-stroke:1px_rgba(243,245,247,0.25)]">{{ phase.no }}</span>
+              <h2 class="mt-4 font-serif text-display-md text-fg">{{ phase.title }}</h2>
+              <p class="mt-3 font-serif text-2xl italic text-fg/60">{{ phase.lead }}</p>
+              <p class="mt-6 inline-flex rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{{ phase.duration }}</p>
+            </div>
 
-    <!-- CTA Section -->
-    <section class="py-32 px-6 relative overflow-hidden" style="background: #0A1F44">
-      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 80px 80px" />
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full" style="opacity: 0.2; background: radial-gradient(ellipse, #1E3A6E 0%, transparent 60%)" />
+            <div class="lg:col-span-7">
+              <p class="reveal text-[16px] leading-8 text-fg/80">{{ phase.text }}</p>
+              <ul class="mt-8 space-y-4">
+                <li v-for="point in phase.points" :key="point" class="reveal flex gap-4 text-[15px] leading-7 text-fg/75">
+                  <svg class="mt-1.5 h-4 w-4 flex-shrink-0 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  {{ point }}
+                </li>
+              </ul>
+              <div class="reveal mt-10 rounded-2xl border border-[var(--line)] bg-ink-800 p-6">
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-cantaloupe">Ergebnis</p>
+                <p class="mt-2 text-[15px] leading-7 text-fg">{{ phase.outcome }}</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-        class="relative z-10 text-center max-w-2xl mx-auto"
-      >
-        <h2 class="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.025em] mb-6" style="color: white">
-          {{ t('processPage.cta_title') }}
-        </h2>
-        <p class="text-lg mb-10 leading-relaxed" style="color: rgba(255,255,255,0.45)">
-          {{ t('processPage.cta_subtitle') }}
-        </p>
-        <NuxtLink
-          :to="localePath('/') + '#contact'"
-          class="group inline-flex items-center justify-center font-medium rounded-full px-10 py-4 text-[15px] transition-all duration-300"
-          style="background: white; color: #0A1F44"
-          @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = '0 8px 30px rgba(255,255,255,0.15)'"
-          @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
-        >
-          {{ t('nav.cta') }}
-          <svg class="ml-2 w-4 h-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </NuxtLink>
-      </div>
-    </section>
+      <FaqSection />
+    </main>
 
     <FooterSection />
   </div>

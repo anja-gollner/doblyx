@@ -1,159 +1,189 @@
 <script setup lang="ts">
-const { locale, locales, setLocale, t } = useI18n()
-const localePath = useLocalePath()
 const route = useRoute()
-
 const scrolled = ref(false)
 const mobileOpen = ref(false)
 
-const linkColor = computed(() => scrolled.value ? 'rgba(0,0,0,0.45)' : 'rgba(255,255,255,0.5)')
-const linkHoverColor = computed(() => scrolled.value ? '#0F1419' : 'rgba(255,255,255,1)')
+const links = [
+  { id: 'leistungen', label: 'Leistungen' },
+  { id: 'anwendungen', label: 'Anwendungsfälle' },
+  { id: 'ablauf', label: 'Ablauf' },
+  { id: 'ueber', label: 'Über uns' },
+  { id: 'faq', label: 'FAQ' },
+]
 
-const isHome = computed(() => {
-  const path = route.path
-  return path === '/' || path === '/en' || path === '/en/'
-})
-
-function scrollToSection(id: string) {
-  if (isHome.value) {
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' })
-      mobileOpen.value = false
-      return
-    }
-  }
-  navigateTo(localePath('/') + '#' + id)
+function go(id: string) {
+  // Sperre sofort lösen, sonst ignoriert die Scroll-Engine das Ziel
   mobileOpen.value = false
+  useScrollLock(false)
+  useScrollTo(id)
 }
 
-async function switchLocale(code: 'de' | 'en') {
-  const scrollY = window.scrollY
-  await setLocale(code)
-  await nextTick()
-  window.scrollTo({ top: scrollY, behavior: 'instant' })
+// Logo: auf der Startseite sanft zum Hero zurück, sonst zur Startseite
+function onLogoClick(event: MouseEvent) {
+  mobileOpen.value = false
+  useScrollLock(false)
+  if (route.path === '/') {
+    event.preventDefault()
+    useScrollToTop()
+  }
 }
+
+function onScroll() {
+  scrolled.value = window.scrollY > 24
+}
+
+function onKey(event: KeyboardEvent) {
+  if (event.key === 'Escape') mobileOpen.value = false
+}
+
+watch(mobileOpen, (open) => useScrollLock(open))
+watch(() => route.fullPath, () => { mobileOpen.value = false })
 
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    scrolled.value = window.scrollY > 10
-  })
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('keydown', onKey)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('keydown', onKey)
+  useScrollLock(false)
 })
 </script>
 
 <template>
-  <nav
-    class="fixed top-0 inset-x-0 z-50 transition-all duration-700"
-    :style="scrolled
-      ? 'padding: 0.65rem 0; background: rgba(250,250,250,0.9); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid rgba(0,0,0,0.06)'
-      : 'padding: 1.5rem 0; background: transparent'"
-  >
-    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
-      <!-- Logo: swap between white and dark versions -->
-      <a
-        href="/"
-        class="flex items-center"
-        @click.prevent="isHome ? window.scrollTo({ top: 0, behavior: 'smooth' }) : navigateTo(localePath('/'))"
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-500" :class="scrolled ? 'py-3' : 'py-5'">
+    <div class="container-site !z-[2]">
+      <nav
+        class="relative z-[2] flex items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5"
+        :class="mobileOpen ? 'border-transparent bg-transparent' : scrolled ? 'border-[var(--line)] bg-ink/75 backdrop-blur-xl' : 'border-transparent bg-transparent'"
+        aria-label="Hauptnavigation"
       >
-        <img
-          :src="scrolled ? '/logos/logo-final-dark.svg' : '/logos/logo-final-white.svg'"
-          alt="Doblyx AI"
-          class="h-7 transition-opacity duration-300"
-        />
-      </a>
+        <NuxtLink to="/" class="flex items-center text-fg" aria-label="Doblyx AI – zum Seitenanfang" @click="onLogoClick">
+          <Logo class="h-6 w-auto sm:h-7" />
+        </NuxtLink>
 
-      <!-- Desktop Links -->
-      <div class="hidden md:flex items-center gap-10">
-        <a
-          href="#services"
-          class="text-[13px] font-medium transition-colors duration-300 cursor-pointer"
-          :style="{ color: linkColor }"
-          @mouseenter="($event.target as HTMLElement).style.color = linkHoverColor"
-          @mouseleave="($event.target as HTMLElement).style.color = linkColor"
-          @click.prevent="scrollToSection('services')"
-        >{{ t('nav.services') }}</a>
-        <NuxtLink
-          :to="localePath('/prozess')"
-          class="text-[13px] font-medium transition-colors duration-300"
-          :style="{ color: linkColor }"
-          @mouseenter="($event.target as HTMLElement).style.color = linkHoverColor"
-          @mouseleave="($event.target as HTMLElement).style.color = linkColor"
-        >{{ t('nav.process') }}</NuxtLink>
-        <a
-          href="#contact"
-          class="text-[13px] font-medium transition-colors duration-300 cursor-pointer"
-          :style="{ color: linkColor }"
-          @mouseenter="($event.target as HTMLElement).style.color = linkHoverColor"
-          @mouseleave="($event.target as HTMLElement).style.color = linkColor"
-          @click.prevent="scrollToSection('contact')"
-        >{{ t('nav.contact') }}</a>
-      </div>
+        <ul class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 font-mono lg:flex">
+          <li v-for="(link, i) in links" :key="link.id" class="flex items-center gap-2">
+            <span v-if="i === 0" class="h-1 w-1 rounded-full bg-cantaloupe" aria-hidden="true" />
+            <RollingLink :href="`/#${link.id}`" :label="link.label" class-name="text-[12px] text-fg/85" @click.prevent="go(link.id)" />
+          </li>
+        </ul>
 
-      <!-- Right -->
-      <div class="flex items-center gap-4">
-        <!-- CTA Button -->
-        <a
-          href="#contact"
-          class="hidden sm:inline-flex items-center justify-center font-medium rounded-full text-[13px] transition-all duration-300"
-          :style="scrolled
-            ? 'background: #0A1F44; color: white; padding: 0.625rem 1.5rem; min-width: 160px; text-align: center'
-            : 'background: white; color: #0A1F44; padding: 0.625rem 1.5rem; min-width: 160px; text-align: center'"
-          @mouseenter="($event.currentTarget as HTMLElement).style.boxShadow = scrolled ? '0 8px 30px rgba(10,31,68,0.3)' : '0 8px 30px rgba(255,255,255,0.15)'"
-          @mouseleave="($event.currentTarget as HTMLElement).style.boxShadow = 'none'"
-          @click.prevent="scrollToSection('contact')"
-        >
-          {{ t('nav.cta') }}
-        </a>
+        <div class="flex items-center gap-2">
+          <div class="hidden items-center gap-1 rounded-full border border-white/20 p-1 pl-4 font-mono sm:flex" :class="{ 'sm:!hidden': mobileOpen }">
+            <a :href="site.phoneHref" class="pr-2 text-[12px] text-fg/85 transition-colors hover:text-white">Anrufen</a>
+            <a href="/#kontakt" class="rounded-full bg-white px-4 py-1.5 text-[12px] text-ink transition-colors hover:bg-cantaloupe hover:text-white" @click.prevent="go('kontakt')">
+              Gratis Check
+            </a>
+          </div>
 
-        <!-- Language switcher -->
-        <div
-          class="flex items-center rounded-full p-0.5 transition-colors duration-300"
-          :style="scrolled
-            ? 'background: rgba(0,0,0,0.04); width: 88px'
-            : 'background: rgba(255,255,255,0.1); width: 88px'"
-        >
+          <!-- Menü-Button: zwei Linien, die sich zum X drehen -->
           <button
-            v-for="loc in locales"
-            :key="loc.code"
-            class="flex-1 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 text-center"
-            :style="locale === loc.code
-              ? 'background: #0A1F44; color: white; box-shadow: 0 2px 8px rgba(10,31,68,0.25)'
-              : scrolled ? 'color: #888' : 'color: rgba(255,255,255,0.5)'"
-            @click="switchLocale(loc.code)"
+            class="burger relative flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] backdrop-blur-md lg:hidden"
+            :class="{ 'is-open': mobileOpen }"
+            :aria-expanded="mobileOpen"
+            aria-controls="mobile-menu"
+            :aria-label="mobileOpen ? 'Menü schließen' : 'Menü öffnen'"
+            @click="mobileOpen = !mobileOpen"
           >
-            {{ loc.code }}
+            <span class="burger-line" />
+            <span class="burger-line" />
           </button>
         </div>
-
-        <!-- Mobile hamburger -->
-        <button
-          class="md:hidden transition-colors duration-300"
-          :style="scrolled ? 'color: #555' : 'color: rgba(255,255,255,0.7)'"
-          @click="mobileOpen = !mobileOpen"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-            <path v-if="!mobileOpen" stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-            <path v-else stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
+      </nav>
     </div>
 
-    <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="opacity-0 -translate-y-1"
-      enter-to-class="opacity-100 translate-y-0"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-    >
-      <div v-if="mobileOpen" class="md:hidden mx-4 mt-3 rounded-2xl p-6 space-y-4" style="background: white; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 12px 40px rgba(0,0,0,0.08)">
-        <a href="#services" class="block text-sm font-medium" style="color: #555" @click.prevent="scrollToSection('services')">{{ t('nav.services') }}</a>
-        <NuxtLink :to="localePath('/prozess')" class="block text-sm font-medium" style="color: #555" @click="mobileOpen = false">{{ t('nav.process') }}</NuxtLink>
-        <a href="#contact" class="block text-sm font-medium" style="color: #555" @click.prevent="scrollToSection('contact')">{{ t('nav.contact') }}</a>
-        <div style="height: 1px; background: #F0F0F0" />
-        <a href="#contact" class="block btn-primary text-center py-3 text-sm rounded-xl" @click.prevent="scrollToSection('contact')">{{ t('nav.cta') }}</a>
+    <!-- Vollbild-Menü fürs Handy -->
+    <Transition name="menu">
+      <div v-if="mobileOpen" id="mobile-menu" class="menu fixed inset-0 z-[1] flex flex-col overflow-y-auto bg-ink/95 backdrop-blur-2xl lg:hidden">
+        <div class="menu-aurora" aria-hidden="true" />
+
+        <nav class="container-site flex flex-1 flex-col pb-8 pt-28" aria-label="Menü">
+          <p class="menu-item eyebrow" style="--i: 0">Menü</p>
+          <ul class="mt-6">
+            <li v-for="(link, i) in links" :key="link.id" class="menu-item border-b border-white/[0.08]" :style="{ '--i': i + 1 }">
+              <a :href="`/#${link.id}`" class="group flex items-baseline justify-between py-4" @click.prevent="go(link.id)">
+                <span class="font-serif text-[2.4rem] leading-none text-fg transition-colors group-active:text-cantaloupe">{{ link.label }}</span>
+                <span class="font-mono text-[11px] text-muted">0{{ i + 1 }}</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="mt-auto pt-10">
+            <a href="/#kontakt" class="menu-item btn-primary w-full" style="--i: 7" @click.prevent="go('kontakt')">
+              Kostenlosen Potenzial-Check sichern <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="menu-item mt-6 grid grid-cols-2 gap-3 font-mono text-[11px]" style="--i: 8">
+              <a :href="site.phoneHref" class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <span class="block uppercase tracking-[0.18em] text-muted">Anrufen</span>
+                <span class="mt-1.5 block text-fg">{{ site.phone }}</span>
+              </a>
+              <a :href="`mailto:${site.email}`" class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                <span class="block uppercase tracking-[0.18em] text-muted">E-Mail</span>
+                <span class="mt-1.5 block truncate text-fg">{{ site.email }}</span>
+              </a>
+            </div>
+            <p class="menu-item mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted" style="--i: 9">
+              <span class="live-dot" /> Noch {{ site.foundingSlots - site.foundingTaken }} Gründungskunden-Plätze frei
+            </p>
+          </div>
+        </nav>
       </div>
     </Transition>
-  </nav>
+  </header>
 </template>
+
+<style scoped>
+.burger-line {
+  position: absolute;
+  height: 1.5px;
+  width: 16px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.5s var(--ease);
+}
+
+.burger-line:first-child { transform: translateY(-3.5px); }
+.burger-line:last-child { transform: translateY(3.5px); }
+.burger.is-open .burger-line:first-child { transform: rotate(45deg); }
+.burger.is-open .burger-line:last-child { transform: rotate(-45deg); }
+
+/* Hero-Licht als Echo am unteren Rand des Menüs */
+.menu-aurora {
+  pointer-events: none;
+  position: absolute;
+  inset: auto 0 0;
+  height: 55%;
+  background:
+    radial-gradient(60% 55% at 50% 100%, rgba(252, 115, 77, 0.45), transparent 70%),
+    radial-gradient(90% 80% at 50% 100%, rgba(2, 151, 222, 0.35), transparent 75%);
+  -webkit-mask-image: repeating-linear-gradient(90deg, #000 0 2px, rgba(0, 0, 0, 0.55) 2px 9px);
+  mask-image: repeating-linear-gradient(90deg, #000 0 2px, rgba(0, 0, 0, 0.55) 2px 9px);
+}
+
+/* Einblenden: Hintergrund blendet, Einträge kommen gestaffelt von unten */
+.menu-enter-active,
+.menu-leave-active {
+  transition: opacity 0.45s ease;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+}
+
+.menu-enter-active .menu-item {
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition-delay: calc(var(--i, 0) * 50ms + 80ms);
+}
+
+.menu-enter-from .menu-item {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-enter-active .menu-item { transition: none; }
+}
+</style>

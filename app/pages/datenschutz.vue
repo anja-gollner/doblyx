@@ -19,7 +19,7 @@ useHead({
           {{ isEn ? 'Privacy Policy' : 'Datenschutzerklärung' }}
         </h1>
         <p class="mb-12 text-sm" style="color: #8C969F">
-          {{ isEn ? 'Last updated: January 2025' : 'Stand: Januar 2025' }}
+          {{ isEn ? 'Last updated: January 2025' : 'Stand: Oktober 2026' }}
         </p>
 
         <div class="space-y-10 text-[15px] leading-relaxed" style="color: rgba(243, 245, 247, 0.72)">
@@ -190,6 +190,22 @@ useHead({
             <p class="mt-2">
               {{ isEn ? 'The data will be deleted once it is no longer necessary for the purpose of its collection and no statutory retention obligations apply.' : 'Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.' }}
             </p>
+
+            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
+              6.1 Kontaktformular auf dieser Website
+            </h3>
+            <p>
+              Wenn Sie uns über das Kontaktformular eine Anfrage senden, verarbeiten wir Ihre Angaben aus dem Formular (Name, E-Mail-Adresse, optional Unternehmen und Telefonnummer, Ihre Nachricht sowie die Angabe, ob Sie sich für das Gründungskunden-Programm interessieren), um Ihre Anfrage zu bearbeiten und Ihnen einen Termin für den Potenzial-Check vorzuschlagen.
+            </p>
+            <p class="mt-2">
+              Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen auf Ihre Anfrage hin) sowie Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Beantwortung von Anfragen). Die Angabe von Name, E-Mail-Adresse und Nachricht ist erforderlich, damit wir Ihre Anfrage bearbeiten können; alle weiteren Angaben sind freiwillig.
+            </p>
+            <p class="mt-2">
+              Für den technischen Versand der Formularinhalte an unser Postfach nutzen wir den E-Mail-Dienst Resend (Anbieter: Resend, Inc., USA). Dabei werden die Formularinhalte an Server von Resend übermittelt und von dort an uns zugestellt. Resend verarbeitet die Daten ausschließlich in unserem Auftrag. Die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework, sofern der Anbieter zertifiziert ist, andernfalls auf Grundlage der Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).
+            </p>
+            <p class="mt-2">
+              Ihre Anfrage speichern wir so lange, wie es für die Bearbeitung und eine mögliche Zusammenarbeit erforderlich ist. Kommt keine Zusammenarbeit zustande, löschen wir Ihre Daten spätestens nach 12 Monaten, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+            </p>
           </div>
 
           <!-- 7 -->
@@ -228,6 +244,19 @@ useHead({
             </p>
             <p class="mt-2">
               {{ isEn ? 'The legal basis is Art. 6(1)(c) GDPR (legal obligation to document consent).' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung zur Nachweisführung von Einwilligungen).' }}
+            </p>
+
+            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
+              7.3 Webanalyse mit Umami (ohne Cookies)
+            </h3>
+            <p>
+              Um zu verstehen, wie unsere Website genutzt wird, und sie zu verbessern, verwenden wir den Analysedienst Umami (Anbieter: Umami Software, Inc., USA). Umami setzt keine Cookies und speichert keine Informationen auf Ihrem Endgerät. Es werden keine Nutzerprofile erstellt und Sie werden nicht über verschiedene Websites hinweg verfolgt.
+            </p>
+            <p class="mt-2">
+              Erfasst werden ausschließlich zusammengefasste, nicht personenbezogene Nutzungsdaten: aufgerufene Seiten, verweisende Website (z. B. LinkedIn oder eine Suchmaschine), Land, Gerätetyp, Browser und Betriebssystem sowie Klicks auf zentrale Elemente (z. B. „Gratis Check“, Telefonnummer, E-Mail-Adresse, abgeschickte Anfrage). Ihre IP-Adresse wird nicht gespeichert; sie wird nur kurzzeitig und in nicht rückverfolgbarer Form verarbeitet, um Besuche zu zählen.
+            </p>
+            <p class="mt-2">
+              Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der statistischen Auswertung und Verbesserung unseres Webangebots. Da keine Cookies oder vergleichbare Technologien auf Ihrem Endgerät eingesetzt werden, ist keine Einwilligung erforderlich. Soweit Daten in die USA übermittelt werden, erfolgt dies auf Grundlage des EU-US Data Privacy Framework, sofern der Anbieter zertifiziert ist, andernfalls auf Grundlage der Standardvertragsklauseln der EU-Kommission.
             </p>
           </div>
 

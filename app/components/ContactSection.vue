@@ -130,10 +130,18 @@ const nextSteps = [
             <input v-model="form.website" type="text" tabindex="-1" autocomplete="off" />
           </label>
 
-          <label class="mt-5 flex cursor-pointer items-start gap-3 rounded-xl border border-[var(--line)] bg-ink-700/60 p-4 transition-colors hover:border-[var(--line-strong)]">
-            <input v-model="form.founding" type="checkbox" class="mt-0.5 h-4 w-4 flex-shrink-0 accent-[#FC734D]" />
-            <span class="text-[14px] leading-6 text-fg/80">
-              Ich interessiere mich für das <span class="text-fg">Gründungskunden-Programm</span>.
+          <!-- Auswahlkarte Gründungskunden-Programm -->
+          <label class="founding-option group mt-5 flex cursor-pointer items-center gap-4 rounded-2xl border p-4 transition-all duration-500 sm:p-5" :class="form.founding ? 'is-on' : ''">
+            <input v-model="form.founding" type="checkbox" class="peer sr-only" />
+            <span class="check-box flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-lg border transition-all duration-300 peer-focus-visible:ring-2 peer-focus-visible:ring-cantaloupe" aria-hidden="true">
+              <svg class="h-3.5 w-3.5 transition-transform duration-300" :class="form.founding ? 'scale-100' : 'scale-0'" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            </span>
+            <span class="flex-1">
+              <span class="block text-[14.5px] text-fg">Ich möchte Gründungskunde werden</span>
+              <span class="mt-0.5 block text-[12.5px] leading-5 text-muted">Sonderkonditionen und direkter Draht zum Gründer</span>
+            </span>
+            <span class="hidden items-center gap-2 rounded-full border border-cantaloupe/30 bg-cantaloupe/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-cantaloupe sm:flex">
+              <span class="live-dot" />{{ site.foundingSlots - site.foundingTaken }} frei
             </span>
           </label>
 
@@ -148,8 +156,8 @@ const nextSteps = [
           </button>
 
           <p class="mt-5 text-center text-[12px] leading-5 text-muted">
-            Ihre Angaben nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage.
-            <NuxtLink to="/datenschutz" class="underline underline-offset-2 hover:text-fg">Datenschutzerklärung</NuxtLink>
+            Mit dem Absenden verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage, gemäß unserer
+            <NuxtLink to="/datenschutz" class="underline underline-offset-2 hover:text-fg">Datenschutzerklärung</NuxtLink>.
           </p>
         </form>
 
@@ -175,5 +183,30 @@ const nextSteps = [
   height: 640px;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
+}
+
+.founding-option {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.founding-option:hover {
+  border-color: var(--line-strong);
+}
+
+.founding-option.is-on {
+  border-color: rgba(252, 115, 77, 0.55);
+  background: linear-gradient(100deg, rgba(252, 115, 77, 0.12), rgba(2, 151, 222, 0.06));
+  box-shadow: 0 0 0 4px rgba(252, 115, 77, 0.08), 0 14px 40px -20px rgba(252, 115, 77, 0.7);
+}
+
+.check-box {
+  border-color: var(--line-strong);
+  color: #02070A;
+}
+
+.founding-option.is-on .check-box {
+  border-color: #FC734D;
+  background: #FC734D;
 }
 </style>

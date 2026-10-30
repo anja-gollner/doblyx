@@ -9,5 +9,5 @@ export const site = {
   foundingSlots: 3,
   foundingTaken: 0,
   // Umami Analytics (cloud.umami.is): Website-ID hier eintragen, leer = Analytics aus
-  umamiWebsiteId: '',
+  umamiWebsiteId: '282301e0-29f2-4412-be7f-fcac876412a9',
 }

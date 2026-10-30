@@ -145,19 +145,6 @@ useHead({
             <p class="mt-2">
               {{ isEn ? 'Processing is based on Art. 6(1)(b) GDPR (contract performance) and Art. 6(1)(f) GDPR (legitimate interest in the secure and efficient provision of our services).' : 'Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und effizienten Bereitstellung unserer Dienste).' }}
             </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '4.3 Website Creation (Framer)' : '4.3 Website-Erstellung (Framer)' }}
-            </h3>
-            <p v-if="isEn">
-              Our website was created with Framer and is partially delivered via their infrastructure. The provider is Framer B.V., Rozengracht 207B, 1016 LZ Amsterdam, Netherlands.
-            </p>
-            <p v-else>
-              Unsere Website wurde mit Framer erstellt und wird teilweise über deren Infrastruktur ausgeliefert. Anbieter ist Framer B.V., Rozengracht 207B, 1016 LZ Amsterdam, Niederlande.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'When using Framer, technical data such as IP address and browser information may be processed. Processing is based on Art. 6(1)(f) GDPR.' : 'Bei der Nutzung von Framer können technische Daten wie IP-Adresse und Browserinformationen verarbeitet werden. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.' }}
-            </p>
           </div>
 
           <!-- 5 -->
@@ -211,43 +198,18 @@ useHead({
           <!-- 7 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '7. Cookies and Consent Management' : '7. Cookies und Consent-Management' }}
+              7. Cookies und Webanalyse
             </h2>
 
             <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '7.1 General Information on Cookies' : '7.1 Allgemeines zu Cookies' }}
+              7.1 Keine Cookies auf dieser Website
             </h3>
-            <p v-if="isEn">
-              Our website uses cookies. Cookies are small text files stored on your device by your browser. They help make our website more user-friendly and effective.
-            </p>
-            <p v-else>
-              Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden und die Ihr Browser speichert. Sie dienen dazu, unser Angebot nutzerfreundlicher und effektiver zu machen.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Some cookies are "technically necessary" and are set automatically as they are required for the website to function. Other cookies (e.g., for analytics or marketing) are only set with your consent.' : 'Einige Cookies sind „technisch notwendig" und werden automatisch gesetzt, da sie für den Betrieb der Website erforderlich sind. Andere Cookies (z.B. für Analyse oder Marketing) werden nur mit Ihrer Einwilligung gesetzt.' }}
+            <p>
+              Diese Website setzt keine Cookies und speichert keine Informationen auf Ihrem Endgerät, die nicht für die Darstellung der Seite technisch erforderlich sind. Es gibt daher auch kein Cookie-Banner. Schriftarten werden lokal von unserem Server geladen (siehe Abschnitt „Lokale Schriftarten“).
             </p>
 
             <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '7.2 Cookiebot (Consent Management)' : '7.2 Cookiebot (Consent-Management)' }}
-            </h3>
-            <p v-if="isEn">
-              We use Cookiebot to manage your cookie preferences. The provider is Cybot A/S, Havnegade 39, 1058 Copenhagen, Denmark.
-            </p>
-            <p v-else>
-              Für die Verwaltung Ihrer Cookie-Einwilligungen nutzen wir Cookiebot. Anbieter ist Cybot A/S, Havnegade 39, 1058 Kopenhagen, Dänemark.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              Cookiebot stores your consent so that it does not need to be requested again on each page visit. The following data is processed: your IP address (anonymized), date and time of consent, browser information, the page URL, and an anonymous random key.
-            </p>
-            <p v-else class="mt-2">
-              Cookiebot speichert Ihre Einwilligungserklärung (Consent), damit diese nicht bei jedem Seitenaufruf erneut abgefragt werden muss. Dabei werden folgende Daten verarbeitet: Ihre IP-Adresse (anonymisiert), Datum und Uhrzeit der Einwilligung, Browser-Informationen, die URL der Seite sowie ein anonymer, zufälliger Schlüssel.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'The legal basis is Art. 6(1)(c) GDPR (legal obligation to document consent).' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung zur Nachweisführung von Einwilligungen).' }}
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              7.3 Webanalyse mit Umami (ohne Cookies)
+              7.2 Webanalyse mit Umami (ohne Cookies)
             </h3>
             <p>
               Um zu verstehen, wie unsere Website genutzt wird, und sie zu verbessern, verwenden wir den Analysedienst Umami (Anbieter: Umami Software, Inc., USA). Umami setzt keine Cookies und speichert keine Informationen auf Ihrem Endgerät. Es werden keine Nutzerprofile erstellt und Sie werden nicht über verschiedene Websites hinweg verfolgt.
@@ -388,67 +350,7 @@ useHead({
           <!-- 10 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '10. Advertising and Conversion Tracking' : '10. Werbung und Conversion-Tracking' }}
-            </h2>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '10.1 Google Ads and Conversion Tracking' : '10.1 Google Ads und Conversion-Tracking' }}
-            </h3>
-            <p v-if="isEn">
-              We use Google Ads to draw attention to our services through advertisements on external websites. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland.
-            </p>
-            <p v-else>
-              Wir nutzen Google Ads, um mit Werbeanzeigen auf externen Websites auf unsere Angebote aufmerksam zu machen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              Google Ads also uses conversion tracking. When you click on an ad served by Google, a conversion tracking cookie is set. Additionally, conversion data (e.g., qualified leads) may be reported back to Google Ads to optimize advertising algorithms. This is done in pseudonymized form.
-            </p>
-            <p v-else class="mt-2">
-              Im Rahmen von Google Ads wird auch das Conversion-Tracking eingesetzt. Wenn Sie auf eine von Google geschaltete Anzeige klicken, wird ein Cookie für das Conversion-Tracking gesetzt. Darüber hinaus können Conversion-Daten (z.B. qualifizierte Leads) an Google Ads zurückgemeldet werden, um die Werbealgorithmen zu optimieren. Dies erfolgt in pseudonymisierter Form.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Legal basis is Art. 6(1)(a) GDPR (consent via the cookie banner). Google is certified under the EU-US Data Privacy Framework.' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über das Cookie-Banner). Google ist unter dem EU-US Data Privacy Framework zertifiziert.' }}
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">10.2 Meta Pixel (Facebook/Instagram)</h3>
-            <p v-if="isEn">
-              We use the Meta Pixel (formerly Facebook Pixel). The provider is Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland.
-            </p>
-            <p v-else>
-              Wir setzen das Meta Pixel (ehemals Facebook Pixel) ein. Anbieter ist Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              The Meta Pixel enables tracking user behavior after they were redirected to our website by clicking on a Facebook or Instagram ad. We also use the Meta Conversions API to transmit conversion events server-side to Meta. Transmission is done in hashed form.
-            </p>
-            <p v-else class="mt-2">
-              Das Meta Pixel ermöglicht es, das Verhalten von Nutzern nachzuverfolgen, nachdem diese durch Klick auf eine Facebook- oder Instagram-Werbeanzeige auf unsere Website weitergeleitet wurden. Zusätzlich nutzen wir die Meta Conversions API, um Conversion-Events serverseitig an Meta zu übermitteln. Die Übermittlung erfolgt in gehashter Form.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Legal basis is Art. 6(1)(a) GDPR (consent via the cookie banner) and Art. 6(1)(f) GDPR (legitimate interest in optimizing advertising campaigns). Meta is certified under the EU-US Data Privacy Framework.' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über das Cookie-Banner) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Optimierung von Werbekampagnen). Meta ist unter dem EU-US Data Privacy Framework zertifiziert.' }}
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">10.3 LinkedIn Insight Tag</h3>
-            <p v-if="isEn">
-              We use the LinkedIn Insight Tag on our website. The provider is LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Ireland.
-            </p>
-            <p v-else>
-              Wir verwenden auf unserer Website den LinkedIn Insight Tag. Anbieter ist LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Irland.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              The LinkedIn Insight Tag enables the collection of data about visits to our website, including URL, referrer URL, IP address, device and browser properties, and timestamps. This data is used for conversion tracking and retargeting.
-            </p>
-            <p v-else class="mt-2">
-              Der LinkedIn Insight Tag ermöglicht das Sammeln von Daten zu den Besuchen auf unserer Website, einschließlich URL, Referrer-URL, IP-Adresse, Geräte- und Browsereigenschaften sowie Zeitstempel. Diese Daten werden für Conversion-Tracking und Retargeting genutzt.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Legal basis is Art. 6(1)(a) GDPR (consent via the cookie banner). LinkedIn is certified under the EU-US Data Privacy Framework.' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über das Cookie-Banner). LinkedIn ist unter dem EU-US Data Privacy Framework zertifiziert.' }}
-            </p>
-          </div>
-
-          <!-- 11 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '11. Social Media Presence' : '11. Social Media Präsenzen' }}
+              {{ isEn ? '10. Social Media Presence' : '10. Social Media Präsenzen' }}
             </h2>
             <p>
               {{ isEn ? 'We maintain online presences on the following social networks:' : 'Wir unterhalten Onlinepräsenzen auf den folgenden sozialen Netzwerken:' }}
@@ -466,12 +368,12 @@ useHead({
             </p>
           </div>
 
-          <!-- 12 -->
+          <!-- 11 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '12. Payment Processing' : '12. Zahlungsabwicklung' }}
+              {{ isEn ? '11. Payment Processing' : '11. Zahlungsabwicklung' }}
             </h2>
-            <h3 class="font-semibold mt-4 mb-2" style="color: #F3F5F7">12.1 Stripe</h3>
+            <h3 class="font-semibold mt-4 mb-2" style="color: #F3F5F7">11.1 Stripe</h3>
             <p v-if="isEn">
               We use Stripe for payment processing. The provider is Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Ireland.
             </p>
@@ -489,10 +391,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 13 -->
+          <!-- 12 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '13. Local Fonts' : '13. Lokale Schriftarten' }}
+              {{ isEn ? '12. Local Fonts' : '12. Lokale Schriftarten' }}
             </h2>
             <p v-if="isEn">
               This website uses locally hosted fonts. No connection to external servers (such as Google Fonts) is made. The fonts are loaded directly from our server, which means your IP address is not transmitted to third parties.
@@ -502,26 +404,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 14 -->
+          <!-- 13 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '14. Affiliate Programs' : '14. Affiliate-Programme' }}
-            </h2>
-            <p v-if="isEn">
-              Our website may contain affiliate links to third-party products or services, particularly to Voicery and related services. When you click on an affiliate link, a cookie is set to enable the attribution of sales.
-            </p>
-            <p v-else>
-              Auf unserer Website können Affiliate-Links zu Produkten oder Diensten Dritter enthalten sein, insbesondere zu Voicery und verwandten Diensten. Wenn Sie auf einen Affiliate-Link klicken, wird ein Cookie gesetzt, um die Zuordnung von Verkäufen zu ermöglichen.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Legal basis is Art. 6(1)(a) GDPR (consent via the cookie banner) and Art. 6(1)(f) GDPR (legitimate interest in monetizing our content).' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über das Cookie-Banner) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Monetarisierung unserer Inhalte).' }}
-            </p>
-          </div>
-
-          <!-- 15 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '15. Data Security' : '15. Datensicherheit' }}
+              {{ isEn ? '13. Data Security' : '13. Datensicherheit' }}
             </h2>
             <p v-if="isEn">
               We implement technical and organizational security measures to protect your data against manipulation, loss, destruction, or unauthorized access. Our security measures are continuously improved in line with technological developments.
@@ -537,10 +423,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 16 -->
+          <!-- 14 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '16. Data Transfer to Third Countries' : '16. Datenübermittlung in Drittländer' }}
+              {{ isEn ? '14. Data Transfer to Third Countries' : '14. Datenübermittlung in Drittländer' }}
             </h2>
             <p v-if="isEn">
               Some of the services we use are based in the USA or other third countries. The transfer of personal data to these countries is based on:
@@ -558,10 +444,10 @@ useHead({
             </ul>
           </div>
 
-          <!-- 17 -->
+          <!-- 15 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '17. Retention Period' : '17. Speicherdauer' }}
+              {{ isEn ? '15. Retention Period' : '15. Speicherdauer' }}
             </h2>
             <p>
               {{ isEn ? 'We store personal data only for as long as necessary to fulfill the purposes for which it was collected or as required by statutory retention periods.' : 'Wir speichern personenbezogene Daten nur so lange, wie es für die Erfüllung der Zwecke, für die sie erhoben wurden, erforderlich ist oder wie es die gesetzlich vorgesehenen Speicher- und Aufbewahrungsfristen vorsehen.' }}
@@ -580,10 +466,10 @@ useHead({
             </ul>
           </div>
 
-          <!-- 18 -->
+          <!-- 16 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '18. Data Processing on Behalf' : '18. Auftragsverarbeitung' }}
+              {{ isEn ? '16. Data Processing on Behalf' : '16. Auftragsverarbeitung' }}
             </h2>
             <p v-if="isEn">
               Insofar as we process personal data on behalf of our business clients, we act as a data processor within the meaning of Art. 28 GDPR. In these cases, we conclude data processing agreements with our business clients that govern the data protection obligations.
@@ -596,10 +482,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 19 -->
+          <!-- 17 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '19. Automated Decision-Making' : '19. Automatisierte Entscheidungsfindung' }}
+              {{ isEn ? '17. Automated Decision-Making' : '17. Automatisierte Entscheidungsfindung' }}
             </h2>
             <p v-if="isEn">
               As part of our lead qualification process, data is processed by AI systems and qualification results are generated. This automated processing serves the pre-qualification of inquiries and has no direct legal effects on the data subjects.
@@ -612,10 +498,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 20 -->
+          <!-- 18 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '20. Changes to This Privacy Policy' : '20. Änderungen dieser Datenschutzerklärung' }}
+              {{ isEn ? '18. Changes to This Privacy Policy' : '18. Änderungen dieser Datenschutzerklärung' }}
             </h2>
             <p v-if="isEn">
               We reserve the right to update this privacy policy to reflect changes in the legal situation or changes to our services. The current version is always available on our website.
@@ -625,10 +511,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 21 -->
+          <!-- 19 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '21. Contact for Data Protection Inquiries' : '21. Kontakt für Datenschutzanfragen' }}
+              {{ isEn ? '19. Contact for Data Protection Inquiries' : '19. Kontakt für Datenschutzanfragen' }}
             </h2>
             <p>
               {{ isEn ? 'For questions about data protection or to exercise your rights, please contact:' : 'Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte wenden Sie sich bitte an:' }}

@@ -44,7 +44,8 @@ export default defineEventHandler(async (event) => {
   const subjectCompany = company ? ` (${String(company).replace(/[\r\n]/g, ' ').slice(0, 100)})` : ''
 
   const { data, error } = await resend.emails.send({
-    from: 'Doblyx Website <onboarding@resend.dev>',
+    // Absender über RESEND_FROM (z. B. 'Doblyx Website <website@doblyx.com>'), sobald die Domain in Resend bestätigt ist
+    from: process.env.RESEND_FROM || 'Doblyx Website <onboarding@resend.dev>',
     to: 'office@doblyx.com',
     subject: `${founding ? '⭐ Gründungskunde – ' : ''}Potenzial-Check: ${subjectName}${subjectCompany}`,
     replyTo: String(email),

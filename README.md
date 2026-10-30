@@ -35,7 +35,7 @@ Für das Kontaktformular wird eine `.env` mit `RESEND_API_KEY=…` benötigt.
 app/
   components/   Abschnitte der Startseite (Hero, PainSection, ServicesSection …) und Bausteine (Navbar, Logo, HorizonGlow …)
   composables/  Smooth-Scroll, Scroll-Animationen, Hero-Shader, Maus-Lichtschein
-  pages/        Startseite, /prozess, Impressum, Datenschutz, AGB
+  pages/        Startseite, /prozess, Impressum, Datenschutz
   plugins/      Umami Analytics (cookiefrei)
   utils/        Firmendaten, FAQ, Analytics-Helfer
 server/api/     Kontaktformular → E-Mail über Resend
@@ -52,3 +52,8 @@ brand/          Styleguide (PDF); brand/referenz/ ist nicht im Git
 | `SITE_ENV` | `staging` für Testversionen (sperrt Suchmaschinen) |
 
 Analytics: Umami Cloud, Website-ID in `app/utils/site.ts`. Zählt nur auf doblyx.com.
+
+## Rechtliches
+
+- AGB: Entwurf für das neue Modell (Analyse + Projekt + optionale Wartung) unter `docs/agb-entwurf.md`. Erst nach rechtlicher Prüfung als Seite veröffentlichen.
+- Impressum: Gewerbe, WKO-Fachgruppe und Gesellschafter in `app/utils/site.ts` unter `legal` eintragen.

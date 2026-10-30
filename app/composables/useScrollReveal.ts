@@ -17,14 +17,14 @@ export function useScrollReveal(selector = '.reveal') {
     gsap.registerPlugin(ScrollTrigger)
 
     ScrollTrigger.batch(elements, {
-      start: 'top 90%',
+      start: 'top 97%',
       once: true,
       onEnter: (batch) => {
         gsap.to(batch, {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.3,
+          duration: 0.9,
           ease: 'expo.out',
           stagger: 0.08,
           // Endzustand inline lassen, sonst greift wieder die Start-Unschärfe aus dem CSS

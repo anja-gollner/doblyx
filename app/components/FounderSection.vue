@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const chapters = [
   { from: 'Leistungssport', to: 'Disziplin', text: 'Skirennlauf und Matura an der Skisportschule: jeden Tag trainieren, jedes Detail zählt.' },
-  { from: 'Trading', to: 'Systemdenken', text: 'An den Kryptomärkten gelernt, in Daten, Systemen und Risiken zu denken.' },
-  { from: 'Technik', to: 'Umsetzung', text: 'Heute: KI-Automatisierung, Softwareentwicklung und n8n-Workflows für Unternehmen.' },
+  { from: 'Technik', to: 'Umsetzung', text: 'Heute: KI-Automatisierung, Softwareentwicklung und automatisierte Abläufe für Unternehmen.' },
 ]
 </script>
 

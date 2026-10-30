@@ -19,7 +19,7 @@ const sections = [
       </p>
       <div class="reveal mt-10 flex justify-center">
         <a href="/#kontakt" class="btn-primary" @click.prevent="useScrollTo('kontakt')">
-          Kostenlosen Potenzial-Check sichern <span class="arrow" aria-hidden="true">→</span>
+          Kostenloses Erstgespräch vereinbaren <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -27,11 +27,11 @@ const sections = [
     <div class="container-site">
       <div class="grid gap-12 border-t border-[var(--line)] py-16 sm:grid-cols-2 lg:grid-cols-12">
         <div class="lg:col-span-5">
-          <NuxtLink to="/" class="inline-block text-fg" aria-label="Doblyx AI – Startseite">
+          <NuxtLink to="/" class="inline-block text-fg" aria-label="Doblyx AI, Startseite">
             <Logo class="h-7 w-auto" />
           </NuxtLink>
           <p class="mt-6 max-w-sm text-[14px] leading-7 text-muted">
-            Doblyx AI GmbH – KI-Automatisierung für Unternehmen, die mehr schaffen wollen, ohne mehr Personal aufzubauen.
+            Doblyx AI GmbH: KI-Automatisierung für Unternehmen, die mehr schaffen wollen, ohne mehr Personal aufzubauen.
           </p>
         </div>
 
@@ -60,7 +60,6 @@ const sections = [
           <ul class="mt-5 space-y-3 text-[14px] text-fg/80">
             <li><NuxtLink to="/impressum" class="transition-colors hover:text-cantaloupe">Impressum</NuxtLink></li>
             <li><NuxtLink to="/datenschutz" class="transition-colors hover:text-cantaloupe">Datenschutz</NuxtLink></li>
-            <li><NuxtLink to="/agb" class="transition-colors hover:text-cantaloupe">AGB</NuxtLink></li>
           </ul>
         </nav>
       </div>

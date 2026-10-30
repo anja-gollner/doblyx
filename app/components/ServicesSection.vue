@@ -3,7 +3,7 @@ const services = [
   {
     no: '01',
     title: 'Vertrieb & Anfragen',
-    text: 'Jede Anfrage wird sofort erfasst, vorqualifiziert und beantwortet – auch am Wochenende. Kontakte landen automatisch im CRM, Termine direkt im Kalender.',
+    text: 'Jede Anfrage wird sofort erfasst, vorqualifiziert und beantwortet, auch am Wochenende. Kontakte landen automatisch im CRM, Termine direkt im Kalender.',
     tags: ['Lead-Erfassung', 'Sofort-Antworten', 'CRM-Pflege', 'Terminbuchung'],
   },
   {
@@ -15,8 +15,8 @@ const services = [
   {
     no: '03',
     title: 'KI-Assistenten & Schnittstellen',
-    text: 'Interne Assistenten, die Ihr Firmenwissen kennen – und Schnittstellen, die Ihre bestehenden Programme endlich miteinander sprechen lassen.',
-    tags: ['Wissens-Assistent', 'E-Mail-KI', 'Integrationen', 'n8n'],
+    text: 'Interne Assistenten, die Ihr Firmenwissen kennen, und Schnittstellen, die Ihre bestehenden Programme endlich miteinander sprechen lassen.',
+    tags: ['Wissens-Assistent', 'E-Mail-KI', 'Integrationen', 'Workflows'],
   },
 ]
 </script>

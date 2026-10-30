@@ -6,8 +6,8 @@ const orbRef = ref<HTMLElement | null>(null)
 useMagnetic(orbRef)
 
 const factsLeft = [
-  { value: '30 Min.', label: 'Potenzial-Check' },
-  { value: '0 €', label: 'Analyse gehört Ihnen' },
+  { value: '30 Min.', label: 'Kostenloses Erstgespräch' },
+  { value: 'Fixpreis', label: 'Umsetzungsanalyse' },
 ]
 const factsRight = [
   { value: `${site.foundingSlots - site.foundingTaken} Plätze`, label: 'noch frei für Gründungskunden' },
@@ -108,16 +108,16 @@ onMounted(async () => {
       <p class="hero-late mt-7 max-w-[46rem] font-mono text-[13px] leading-6 text-white/85 sm:text-[15px] sm:leading-[1.65]">
         Ihr Team verliert Stunden mit Anfragen, Angeboten und Papierkram?
         <br class="hidden sm:block" />
-        Wir automatisieren genau das mit KI – für mehr Zeit für Ihre Kunden.
+        Wir automatisieren genau das, damit Ihr Team wieder Zeit für Kunden hat.
       </p>
 
       <!-- Orb-Button: mattiertes Glas mit äußerem Ring -->
       <div class="hero-late mt-8">
-        <a ref="orbRef" href="#kontakt" class="orb" aria-label="Kostenlosen Potenzial-Check sichern" @click.prevent="useScrollTo('kontakt')">
+        <a ref="orbRef" href="#kontakt" class="orb" aria-label="Kostenloses Erstgespräch vereinbaren" @click.prevent="useScrollTo('kontakt')">
           <span class="orb-inner">
             <span class="orb-sheen" aria-hidden="true" />
             <Logo icon-only class="orb-icon h-6 w-auto" aria-hidden="true" />
-            <span class="mt-1.5 font-mono text-[11.5px] text-white/90">Gratis Check</span>
+            <span class="mt-1.5 font-mono text-[11.5px] text-white/90">Erstgespräch</span>
           </span>
         </a>
       </div>
@@ -189,7 +189,7 @@ onMounted(async () => {
                     Auto-Entwurf
                   </span>
                 </div>
-                <p class="mt-4 font-serif text-[1.45rem] leading-none text-ink">Angebot <span class="italic text-ink/50">— Entwurf</span></p>
+                <p class="mt-4 font-serif text-[1.45rem] leading-none text-ink">Angebot <span class="italic text-ink/50">Entwurf</span></p>
                 <ul class="mt-3">
                   <li v-for="(line, i) in offerLines" :key="line" class="flex min-h-[2.1rem] items-center justify-between border-b border-ink/[0.07] py-2 text-[11.5px] text-ink/75">
                     <span>{{ typed[i] }}<span v-if="typingLine === i" class="caret" /></span>

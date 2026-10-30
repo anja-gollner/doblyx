@@ -2,10 +2,10 @@
 const pains = [
   'Anfragen bleiben liegen, weil im Tagesgeschäft niemand Zeit hat, sofort zu antworten.',
   'Daten werden händisch von E-Mails ins CRM, in Excel und in die Buchhaltung kopiert.',
-  'Ein Angebot zu erstellen dauert Tage – obwohl es jedes Mal ähnlich aussieht.',
+  'Ein Angebot zu erstellen dauert Tage, obwohl es jedes Mal ähnlich aussieht.',
   'Ihre besten Leute verbringen ihre Zeit mit Routine statt mit Kunden.',
   'Wichtiges Wissen steckt in Köpfen und Postfächern statt in Systemen.',
-  'Sie wissen, dass KI helfen könnte – aber nicht, wo Sie anfangen sollen.',
+  'Sie wissen, dass KI helfen könnte, aber nicht, wo Sie anfangen sollen.',
 ]
 </script>
 
@@ -38,7 +38,7 @@ const pains = [
         </li>
         <li class="reveal pt-10">
           <p class="text-[15px] text-fg">
-            Genau hier setzen wir an. <span class="text-muted">Mit Automatisierungen, die im Hintergrund laufen – zuverlässig, rund um die Uhr.</span>
+            Genau hier setzen wir an. <span class="text-muted">Mit Automatisierungen, die im Hintergrund laufen: zuverlässig, rund um die Uhr.</span>
           </p>
         </li>
       </ol>

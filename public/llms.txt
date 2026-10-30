@@ -1,6 +1,6 @@
 # Doblyx AI
 
-> Doblyx AI GmbH ist eine KI-Automatisierungsagentur aus Hartberg (Steiermark, Österreich). Wir automatisieren wiederkehrende Aufgaben in Unternehmen – Anfragen, Angebote, Dokumente, Datenpflege – maßgeschneidert, DSGVO-konform und persönlich betreut. Einstieg ist ein kostenloser 30-minütiger Potenzial-Check mit schriftlicher Kurzanalyse.
+> Doblyx AI GmbH ist eine KI-Automatisierungsagentur aus Hartberg (Steiermark, Österreich). Wir automatisieren wiederkehrende Aufgaben in Unternehmen: Anfragen, Angebote, Dokumente, Datenpflege. Maßgeschneidert, DSGVO-konform und persönlich betreut. Einstieg ist ein kostenloses 30-minütiges Erstgespräch, danach eine KI-Umsetzungsanalyse zum Fixpreis von 1.490 €.
 
 ## Auf einen Blick
 - Firma: Doblyx AI GmbH, Schildbach 42, 8230 Hartberg, Österreich
@@ -11,46 +11,46 @@
 - Website: https://doblyx.com
 
 ## Leistungen
-- **Vertrieb & Anfragen:** Anfragen werden sofort erfasst, vorqualifiziert und beantwortet – auch am Wochenende. Kontakte landen automatisch im CRM, Termine im Kalender.
+- **Vertrieb & Anfragen:** Anfragen werden sofort erfasst, vorqualifiziert und beantwortet, auch am Wochenende. Kontakte landen automatisch im CRM, Termine im Kalender.
 - **Backoffice & Dokumente:** KI liest Rechnungen, Verträge und Formulare aus und überträgt die Daten in die richtigen Systeme.
-- **KI-Assistenten & Schnittstellen:** Interne Assistenten mit Firmenwissen und Schnittstellen, die bestehende Programme verbinden (u. a. mit n8n).
+- **KI-Assistenten & Schnittstellen:** Interne Assistenten mit Firmenwissen und Schnittstellen, die bestehende Programme verbinden.
 
 ## Typische Anwendungsfälle
-Interessenten-Anfragen (Immobilien), Angebotserstellung (Handwerk & Bau), Kunden-Onboarding (Dienstleistung), Kundenservice (Handel & E-Commerce), Eingangsrechnungen, automatisches Reporting.
+Interessenten-Anfragen (Immobilien), Angebote nachfassen (Solar & Energie), Angebotserstellung (Handwerk & Bau), Kunden-Onboarding (Dienstleistung), Kundenservice (Handel & E-Commerce), Eingangsrechnungen.
 
-## Ablauf
-1. Kostenloser Potenzial-Check (30 Min., unverbindlich, schriftliche Kurzanalyse)
-2. Konzept & verbindliches Angebot mit klaren Kosten
-3. Umsetzung in Etappen mit sichtbaren Zwischenergebnissen
-4. Betreuung, Anpassung und Einschulung – vollständige Dokumentation, kein Lock-in
+## Ablauf und Preise
+1. Kostenloses Erstgespräch (30 Min., unverbindlich)
+2. KI-Umsetzungsanalyse zum Fixpreis von 1.490 €: detaillierte Aufnahme der Abläufe und fertiger Umsetzungsplan mit Aufwand, Kosten und erwarteter Ersparnis. Der Plan kann mit Doblyx oder mit jemand anderem umgesetzt werden.
+3. Umsetzung als festes Projekt, ab 10.000 €
+4. Ausbau: Projekt für Projekt, Wartung optional, kein Lock-in
 
 ## Gründungskunden-Programm
-Doblyx ist ein junges Unternehmen. Die ersten 3 Kunden erhalten Sonderkonditionen, direkten Kontakt zum Gründer und volle Priorität – im Gegenzug für ehrliches Feedback und, bei Zufriedenheit, eine kurze Fallstudie.
+Doblyx ist ein junges Unternehmen. Die ersten 3 Kunden erhalten Sonderkonditionen, direkten Kontakt zum Gründer und volle Priorität, im Gegenzug für ehrliches Feedback und, bei Zufriedenheit, eine kurze Fallstudie.
 
 ## Über den Gründer
-Eric Dobler kommt aus dem Leistungssport (Skirennlauf, Matura an einer Skisportschule), hat Erfahrung im Krypto-Trading und ist heute auf KI-Automatisierung, Softwareentwicklung und n8n-Workflows spezialisiert. LinkedIn: https://www.linkedin.com/in/eric-dobler/
+Eric Dobler kommt aus dem Leistungssport (Skirennlauf, Matura an einer Skisportschule) und ist heute auf KI-Automatisierung und Softwareentwicklung für Unternehmen spezialisiert. LinkedIn: https://www.linkedin.com/in/eric-dobler/
 
 ## Häufige Fragen
 ### Was kostet eine Automatisierung?
-Das hängt vom Umfang ab. Eine einzelne Automatisierung ist deutlich günstiger als ein umfassendes System. Nach dem Potenzial-Check bekommen Sie eine realistische Einschätzung, vor Projektstart ein verbindliches Angebot. Ohne Ihre Zustimmung entstehen keine Kosten.
+Unsere Umsetzungsprojekte starten bei 10.000 €. Davor steht immer die KI-Umsetzungsanalyse zum Fixpreis von 1.490 €, damit Sie vor dem Projekt wissen, was es kostet und was es bringt. Ohne Ihre Zustimmung entstehen keine Kosten.
 
-### Ist der Potenzial-Check wirklich kostenlos?
-Ja. Keine versteckten Kosten, keine Verpflichtung. Die schriftliche Kurzanalyse erhalten Sie auch dann, wenn wir danach nicht zusammenarbeiten.
+### Was ist kostenlos, was kostet etwas?
+Das 30-minütige Erstgespräch ist kostenlos und unverbindlich. Wenn sich Automatisierung für Sie lohnt, folgt die KI-Umsetzungsanalyse zum Fixpreis von 1.490 €. Sie erhalten einen fertigen Umsetzungsplan, den Sie mit uns oder mit jemand anderem umsetzen können.
 
 ### Brauchen wir technisches Know-how?
 Nein. Wir übernehmen Konzeption, Umsetzung und Einschulung. Von Ihnen brauchen wir nur jemanden, der Ihre Abläufe kennt.
 
 ### Funktioniert das mit unseren bestehenden Programmen?
-In den allermeisten Fällen ja. Wir binden die Tools an, die Sie bereits nutzen, etwa Microsoft 365, Google Workspace, gängige CRM-, Buchhaltungs- und Projekttools. Als Basis setzen wir unter anderem auf n8n und führende KI-Modelle.
+In den allermeisten Fällen ja. Wir binden die Tools an, die Sie bereits nutzen, etwa Microsoft 365, Google Workspace sowie gängige CRM-, Buchhaltungs- und Projekttools. Technisch setzen wir unter anderem auf n8n und führende KI-Modelle.
 
 ### Was passiert mit unseren Daten?
-Datenschutz ist bei uns Teil der Planung, kein Nachgedanke. Wir setzen DSGVO-konform um, schließen bei Bedarf einen Auftragsverarbeitungsvertrag ab und wählen nach Möglichkeit Anbieter mit Servern in der EU.
+Datenschutz ist bei uns Teil der Planung, kein Nachgedanke. Wir setzen DSGVO-konform um, schließen einen Auftragsverarbeitungsvertrag ab und betreiben die Lösungen nach Möglichkeit auf Servern in der EU.
 
 ### Ihr seid ein junges Unternehmen. Warum sollten wir euch vertrauen?
-Eine berechtigte Frage. Deshalb starten wir mit einem kostenlosen Check, legen Kosten vorab offen und arbeiten in kleinen Etappen, in denen Sie früh Ergebnisse sehen. Ihr Risiko bleibt klein, und als Gründungskunde profitieren Sie von besonderen Konditionen.
+Eine berechtigte Frage. Deshalb starten wir mit einem kostenlosen Erstgespräch, legen Kosten vorab offen und arbeiten mit klarem Umfang, in dem Sie früh Ergebnisse sehen. Als Gründungskunde profitieren Sie zusätzlich von besonderen Konditionen.
 
 ### Wie schnell läuft die erste Automatisierung?
-Kleinere Automatisierungen lassen sich meist innerhalb weniger Wochen umsetzen. Den konkreten Zeitplan legen wir nach dem Potenzial-Check gemeinsam fest.
+Das hängt vom Umfang ab. Den konkreten Zeitplan erhalten Sie mit dem Umsetzungsplan, also bevor das Projekt startet.
 
 ## Seiten
 - [Startseite](https://doblyx.com/): Leistungen, Anwendungsfälle, Ablauf, FAQ, Kontakt

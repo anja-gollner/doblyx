@@ -1,12 +1,13 @@
 // FAQ-Inhalte: genutzt für die Sektion und für strukturierte Daten (Google)
+import { site } from './site'
 export const faq = [
   {
     q: 'Was kostet eine Automatisierung?',
-    a: 'Das hängt vom Umfang ab. Eine einzelne Automatisierung ist deutlich günstiger als ein umfassendes System. Nach dem Potenzial-Check bekommen Sie eine realistische Einschätzung, vor Projektstart ein verbindliches Angebot. Ohne Ihre Zustimmung entstehen keine Kosten.',
+    a: `Unsere Umsetzungsprojekte starten bei ${site.projectFrom}. Davor steht immer die KI-Umsetzungsanalyse zum Fixpreis von ${site.analysisPrice}, damit Sie vor dem Projekt wissen, was es kostet und was es bringt. Ohne Ihre Zustimmung entstehen keine Kosten.`,
   },
   {
-    q: 'Ist der Potenzial-Check wirklich kostenlos?',
-    a: 'Ja. Keine versteckten Kosten, keine Verpflichtung. Die schriftliche Kurzanalyse erhalten Sie auch dann, wenn wir danach nicht zusammenarbeiten.',
+    q: 'Was ist kostenlos, was kostet etwas?',
+    a: `Das 30-minütige Erstgespräch ist kostenlos und unverbindlich. Wenn sich Automatisierung für Sie lohnt, folgt die KI-Umsetzungsanalyse zum Fixpreis von ${site.analysisPrice}. Sie erhalten einen fertigen Umsetzungsplan, den Sie mit uns oder mit jemand anderem umsetzen können.`,
   },
   {
     q: 'Brauchen wir technisches Know-how?',
@@ -14,18 +15,18 @@ export const faq = [
   },
   {
     q: 'Funktioniert das mit unseren bestehenden Programmen?',
-    a: 'In den allermeisten Fällen ja. Wir binden die Tools an, die Sie bereits nutzen, etwa Microsoft 365, Google Workspace, gängige CRM-, Buchhaltungs- und Projekttools. Als Basis setzen wir unter anderem auf n8n und führende KI-Modelle.',
+    a: 'In den allermeisten Fällen ja. Wir binden die Tools an, die Sie bereits nutzen, etwa Microsoft 365, Google Workspace sowie gängige CRM-, Buchhaltungs- und Projekttools. Technisch setzen wir unter anderem auf n8n und führende KI-Modelle.',
   },
   {
     q: 'Was passiert mit unseren Daten?',
-    a: 'Datenschutz ist bei uns Teil der Planung, kein Nachgedanke. Wir setzen DSGVO-konform um, schließen bei Bedarf einen Auftragsverarbeitungsvertrag ab und wählen nach Möglichkeit Anbieter mit Servern in der EU.',
+    a: 'Datenschutz ist bei uns Teil der Planung, kein Nachgedanke. Wir setzen DSGVO-konform um, schließen einen Auftragsverarbeitungsvertrag ab und betreiben die Lösungen nach Möglichkeit auf Servern in der EU.',
   },
   {
     q: 'Ihr seid ein junges Unternehmen. Warum sollten wir euch vertrauen?',
-    a: 'Eine berechtigte Frage. Deshalb starten wir mit einem kostenlosen Check, legen Kosten vorab offen und arbeiten in kleinen Etappen, in denen Sie früh Ergebnisse sehen. Ihr Risiko bleibt klein, und als Gründungskunde profitieren Sie von besonderen Konditionen.',
+    a: 'Eine berechtigte Frage. Deshalb starten wir mit einem kostenlosen Erstgespräch, legen Kosten vorab offen und arbeiten mit klarem Umfang, in dem Sie früh Ergebnisse sehen. Als Gründungskunde profitieren Sie zusätzlich von besonderen Konditionen.',
   },
   {
     q: 'Wie schnell läuft die erste Automatisierung?',
-    a: 'Kleinere Automatisierungen lassen sich meist innerhalb weniger Wochen umsetzen. Den konkreten Zeitplan legen wir nach dem Potenzial-Check gemeinsam fest.',
+    a: 'Das hängt vom Umfang ab. Den konkreten Zeitplan erhalten Sie mit dem Umsetzungsplan, also bevor das Projekt startet.',
   },
 ]

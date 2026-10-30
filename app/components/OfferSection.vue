@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const included = [
-  { title: '30-Minuten-Gespräch', text: 'Per Video-Call oder Telefon. Sie erzählen, wo es hakt – wir stellen die richtigen Fragen.' },
-  { title: 'Schriftliche Kurzanalyse', text: 'Ihre drei größten Automatisierungs-Hebel, verständlich aufbereitet. Zum Behalten.' },
-  { title: 'Ehrliche Einschätzung', text: 'Grober Aufwand, Kosten und Nutzen. Und wenn sich etwas nicht lohnt, sagen wir Ihnen das.' },
+  { title: 'Kostenloses Erstgespräch · 30 Min.', text: 'Per Video-Call oder Telefon. Wir klären, wo Sie Zeit verlieren und ob sich Automatisierung für Sie lohnt. Wenn nicht, sagen wir Ihnen das.' },
+  { title: `KI-Umsetzungsanalyse · ${site.analysisPrice} Fixpreis`, text: 'Wir nehmen Ihre Abläufe im Detail auf und rechnen durch, welche Automatisierung sich wirklich lohnt.' },
+  { title: 'Ihr fertiger Umsetzungsplan', text: 'Mit Aufwand, Kosten und erwarteter Ersparnis. Umsetzen können Sie ihn mit uns oder mit jemand anderem.' },
 ]
 
 const levers = [
@@ -18,10 +18,10 @@ const levers = [
       <div>
         <p class="reveal eyebrow">Der erste Schritt</p>
         <h2 class="reveal heading mt-6">
-          Starten Sie mit einem <span class="accent">kostenlosen Potenzial-Check.</span>
+          Starten Sie mit einem <span class="accent">kostenlosen Erstgespräch.</span>
         </h2>
         <p class="reveal mt-6 max-w-lg text-[15px] leading-7 text-muted">
-          Sie müssen nicht wissen, was KI kann. Sie müssen nur wissen, was Sie Zeit kostet. Den Rest finden wir gemeinsam heraus, ohne Verkaufsdruck und ohne Kleingedrucktes.
+          In 30 Minuten klären wir, wo Sie Zeit verlieren und ob sich Automatisierung für Sie lohnt. Wenn ja, folgt die KI-Umsetzungsanalyse: Sie wissen danach genau, was ein Projekt kostet und was es bringt, bevor Sie sich entscheiden.
         </p>
 
         <ul class="mt-10 space-y-6">
@@ -38,17 +38,17 @@ const levers = [
           <a href="#kontakt" class="btn-primary" @click.prevent="useScrollTo('kontakt')">
             Termin anfragen <span class="arrow" aria-hidden="true">→</span>
           </a>
-          <p class="font-mono text-[11px] uppercase tracking-[0.15em] text-muted">Die Analyse gehört Ihnen – auch ohne Auftrag.</p>
+          <p class="font-mono text-[11px] uppercase tracking-[0.15em] text-muted">Der Plan gehört Ihnen, auch ohne Folgeauftrag.</p>
         </div>
       </div>
 
-      <!-- Muster der Kurzanalyse -->
+      <!-- Muster eines Umsetzungsplans -->
       <div class="reveal relative">
         <div class="pointer-events-none absolute -inset-10 rounded-full bg-gradient-to-tr from-electric/25 via-transparent to-cantaloupe/25 blur-3xl" aria-hidden="true" />
         <figure class="glass-card p-7 sm:p-9">
           <div class="flex items-center justify-between border-b border-[var(--line)] pb-5">
             <div>
-              <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Kurzanalyse</p>
+              <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Umsetzungsplan</p>
               <p class="mt-1 font-serif text-2xl text-fg">Musterfirma GmbH</p>
             </div>
             <span class="rounded-full border border-cantaloupe/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-cantaloupe">Muster</span>
@@ -70,10 +70,10 @@ const levers = [
           <div class="mt-8 rounded-2xl border border-[var(--line)] bg-ink p-5">
             <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Empfehlung</p>
             <p class="mt-2 text-[14px] leading-6 text-fg/85">
-              Mit Hebel 01 starten: geringer Aufwand, schnell spürbare Entlastung im Vertrieb.
+              Mit Hebel 01 starten: überschaubarer Aufwand, schnell spürbare Entlastung im Vertrieb.
             </p>
           </div>
-          <figcaption class="sr-only">Beispielhafte Darstellung einer Kurzanalyse</figcaption>
+          <figcaption class="sr-only">Beispielhafte Darstellung eines Umsetzungsplans</figcaption>
         </figure>
       </div>
     </div>

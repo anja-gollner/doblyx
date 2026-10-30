@@ -3,7 +3,7 @@
 const isEn = ref(false)
 
 useHead({
-  title: computed(() => isEn.value ? 'Privacy Policy — Doblyx AI' : 'Datenschutzerklärung — Doblyx AI'),
+  title: computed(() => isEn.value ? 'Privacy Policy | Doblyx AI' : 'Datenschutzerklärung | Doblyx AI'),
   meta: [{ name: 'robots', content: 'noindex, nofollow' }],
 })
 </script>
@@ -108,7 +108,7 @@ useHead({
           <!-- 4 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '4. Hosting and Content Delivery' : '4. Hosting und Content Delivery' }}
+              4. Hosting
             </h2>
 
             <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
@@ -122,19 +122,6 @@ useHead({
             </p>
             <p class="mt-2">
               Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der technischen Bereitstellung und Sicherheit unserer Website. Mit Vercel besteht ein Auftragsverarbeitungsvertrag; die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework bzw. der Standardvertragsklauseln der EU-Kommission.
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '4.2 Application Hosting (Hostinger)' : '4.2 Anwendungs-Hosting (Hostinger)' }}
-            </h3>
-            <p v-if="isEn">
-              For our automation solutions and services, we use the hosting services of Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Cyprus.
-            </p>
-            <p v-else>
-              Für unsere Automatisierungslösungen und Dienste nutzen wir die Hosting-Dienste von Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Zypern.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Processing is based on Art. 6(1)(b) GDPR (contract performance) and Art. 6(1)(f) GDPR (legitimate interest in the secure and efficient provision of our services).' : 'Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und effizienten Bereitstellung unserer Dienste).' }}
             </p>
           </div>
 
@@ -216,132 +203,7 @@ useHead({
           <!-- 8 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '8. Our Services — AI-Powered Lead Qualification and Automation' : '8. Unsere Dienstleistungen — KI-gestützte Lead-Qualifizierung und Automatisierung' }}
-            </h2>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '8.1 Overview of Our Services' : '8.1 Übersicht unserer Dienstleistungen' }}
-            </h3>
-            <p v-if="isEn">
-              We offer AI-powered automation solutions for businesses, particularly in the area of lead generation and qualification. Our services include automated processing of inquiries from various sources, qualification through AI-powered phone calls, and feedback of qualification data to advertising platforms for campaign optimization.
-            </p>
-            <p v-else>
-              Wir bieten KI-gestützte Automatisierungslösungen für Unternehmen an, insbesondere im Bereich der Lead-Generierung und -Qualifizierung. Unsere Dienstleistungen umfassen die automatisierte Verarbeitung von Anfragen aus verschiedenen Quellen, deren Qualifizierung durch KI-gestützte Telefongespräche sowie die Rückführung von Qualifizierungsdaten an Werbeplattformen zur Optimierung von Werbekampagnen.
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '8.2 n8n Workflow Automation' : '8.2 n8n Workflow-Automatisierung' }}
-            </h3>
-            <p v-if="isEn">
-              We use n8n, a workflow automation platform, for automating business processes. It is operated on servers at Hostinger.
-            </p>
-            <p v-else>
-              Für die Automatisierung von Geschäftsprozessen setzen wir n8n ein, eine Workflow-Automatisierungsplattform. Diese wird auf Servern bei Hostinger betrieben.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              The following personal data may be processed as part of workflow automation: contact data (name, email, phone number), inquiry data from forms, conversation logs and qualification results, and processing metadata.
-            </p>
-            <p v-else class="mt-2">
-              Im Rahmen der Workflow-Automatisierung können folgende personenbezogene Daten verarbeitet werden: Kontaktdaten (Name, E-Mail, Telefonnummer), Anfragedaten aus Formularen, Gesprächsprotokolle und Qualifizierungsergebnisse sowie Metadaten zur Verarbeitung.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'The legal basis is Art. 6(1)(b) GDPR (contract performance with our business clients) and Art. 6(1)(f) GDPR (legitimate interest of our clients in efficient processing of inquiries).' : 'Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung mit unseren Geschäftskunden) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse unserer Kunden an der effizienten Bearbeitung von Anfragen).' }}
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '8.3 Voicery — AI-Powered Phone Assistant' : '8.3 Voicery — KI-gestützter Telefon-Assistent' }}
-            </h3>
-            <p v-if="isEn">
-              We offer Voicery, an AI-powered phone assistant that conducts automated phone calls for lead qualification. When using Voicery, the following data is processed:
-            </p>
-            <p v-else>
-              Wir bieten mit Voicery einen KI-gestützten Telefon-Assistenten an, der automatisierte Telefongespräche zur Lead-Qualifizierung durchführt. Bei der Nutzung von Voicery werden folgende Daten verarbeitet:
-            </p>
-            <p v-if="isEn" class="mt-2">
-              Phone number of the called party, voice recordings of conversations, transcriptions of conversations, qualification results and extracted information, and metadata such as timestamps, conversation duration, and call status.
-            </p>
-            <p v-else class="mt-2">
-              Telefonnummer des Angerufenen, Sprachaufnahmen der Gespräche, Transkriptionen der Gespräche, Qualifizierungsergebnisse und extrahierte Informationen sowie Metadaten wie Zeitstempel, Dauer der Konversation und Anrufstatus.
-            </p>
-            <div class="mt-3 p-5 rounded-xl" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08)">
-              <p v-if="isEn">
-                <strong style="color: #F3F5F7">Important Notice:</strong> When you are called by our system, you will be informed at the beginning of the call that it is an AI-powered conversation and that the call is being recorded. You have the option to end the call at any time.
-              </p>
-              <p v-else>
-                <strong style="color: #F3F5F7">Wichtiger Hinweis:</strong> Wenn Sie von unserem System angerufen werden, wird zu Beginn des Gesprächs darauf hingewiesen, dass es sich um ein KI-gestütztes Gespräch handelt und das Gespräch aufgezeichnet wird. Sie haben jederzeit die Möglichkeit, das Gespräch zu beenden.
-              </p>
-            </div>
-            <p class="mt-3">
-              {{ isEn ? 'The legal basis is Art. 6(1)(f) GDPR (legitimate interest of our business clients in efficient qualification of inquiries).' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse unserer Geschäftskunden an der effizienten Qualifizierung von Anfragen).' }}
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '8.4 Data Storage and CRM Integration' : '8.4 Datenspeicherung und CRM-Integration' }}
-            </h3>
-            <p>
-              {{ isEn ? 'We use the following services for storing and managing processed data:' : 'Zur Speicherung und Verwaltung der verarbeiteten Daten nutzen wir folgende Dienste:' }}
-            </p>
-            <ul class="mt-3 space-y-3 list-none">
-              <li v-if="isEn"><strong style="color: #F3F5F7">HubSpot:</strong> Contact and qualification data is stored in HubSpot for customer relationship management. The provider is HubSpot, Inc., 25 First Street, Cambridge, MA 02141, USA. HubSpot is certified under the EU-US Data Privacy Framework.</li>
-              <li v-else><strong style="color: #F3F5F7">HubSpot:</strong> Für Customer-Relationship-Management werden Kontakt- und Qualifizierungsdaten in HubSpot gespeichert. Anbieter ist HubSpot, Inc., 25 First Street, Cambridge, MA 02141, USA. HubSpot ist unter dem EU-US Data Privacy Framework zertifiziert.</li>
-              <li v-if="isEn"><strong style="color: #F3F5F7">Google Sheets:</strong> Google Sheets may be used for structured data storage and processing. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Google is certified under the EU-US Data Privacy Framework.</li>
-              <li v-else><strong style="color: #F3F5F7">Google Sheets:</strong> Für die strukturierte Datenspeicherung und -verarbeitung können Google Tabellen genutzt werden. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Google ist unter dem EU-US Data Privacy Framework zertifiziert.</li>
-            </ul>
-            <p class="mt-3">
-              {{ isEn ? 'The legal basis is Art. 6(1)(b) GDPR (contract performance). We conclude data processing agreements pursuant to Art. 28 GDPR with our business clients.' : 'Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Mit unseren Geschäftskunden schließen wir entsprechende Auftragsverarbeitungsverträge gemäß Art. 28 DSGVO ab.' }}
-            </p>
-          </div>
-
-          <!-- 9 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '9. Lead Sources and Webhook Integrations' : '9. Lead-Quellen und Webhook-Integrationen' }}
-            </h2>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '9.1 Real Estate Portals' : '9.1 Immobilienportale' }}
-            </h3>
-            <p>
-              {{ isEn ? 'We process inquiries received through real estate portals on behalf of our business clients.' : 'Wir verarbeiten im Auftrag unserer Geschäftskunden Anfragen, die über Immobilienportale eingehen.' }}
-            </p>
-            <ul v-if="isEn" class="mt-3 space-y-3 list-none">
-              <li><strong style="color: #F3F5F7">ImmobilienScout24:</strong> Provider is Immobilien Scout GmbH, Invalidenstraße 65, 10557 Berlin, Germany. Processing is based on the consent given by the interested party when submitting the inquiry on the portal.</li>
-              <li><strong style="color: #F3F5F7">willhaben:</strong> Provider is willhaben internet service GmbH &amp; Co KG, Landstraßer Hauptstraße 97-101, 1030 Vienna, Austria. Processing is based on the consent given by the interested party when submitting the inquiry on the portal.</li>
-            </ul>
-            <ul v-else class="mt-3 space-y-3 list-none">
-              <li><strong style="color: #F3F5F7">ImmobilienScout24:</strong> Anbieter ist Immobilien Scout GmbH, Invalidenstraße 65, 10557 Berlin, Deutschland. Die Verarbeitung erfolgt auf Grundlage der Einwilligung, die der Interessent bei der Anfrage auf dem Portal erteilt hat.</li>
-              <li><strong style="color: #F3F5F7">willhaben:</strong> Anbieter ist willhaben internet service GmbH &amp; Co KG, Landstraßer Hauptstraße 97-101, 1030 Wien, Österreich. Die Verarbeitung erfolgt auf Grundlage der Einwilligung, die der Interessent bei der Anfrage auf dem Portal erteilt hat.</li>
-            </ul>
-            <p class="mt-3">
-              {{ isEn ? 'Data transmitted through these portals typically includes: name, email address, phone number, message content, and information about the requested property.' : 'Die über diese Portale übermittelten Daten umfassen typischerweise: Name, E-Mail-Adresse, Telefonnummer, Nachrichteninhalt sowie Informationen zum angefragten Objekt.' }}
-            </p>
-
-            <h3 class="font-semibold mt-6 mb-2" style="color: #F3F5F7">
-              {{ isEn ? '9.2 Social Media Advertising Platforms' : '9.2 Social-Media-Werbeplattformen' }}
-            </h3>
-            <p>
-              {{ isEn ? 'We also process inquiries generated through lead forms on social media platforms on behalf of our business clients:' : 'Wir verarbeiten im Auftrag unserer Geschäftskunden auch Anfragen, die über Lead-Formulare auf Social-Media-Plattformen generiert werden:' }}
-            </p>
-            <ul class="mt-3 space-y-3 list-none">
-              <li v-if="isEn">
-                <strong style="color: #F3F5F7">Meta (Facebook/Instagram) Lead Ads:</strong> Provider is Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Ireland. Data processed: name, email address, phone number, and any additional information requested in the form. Legal basis is Art. 6(1)(a) GDPR (consent of the user when filling out the lead form).
-              </li>
-              <li v-else>
-                <strong style="color: #F3F5F7">Meta (Facebook/Instagram) Lead Ads:</strong> Anbieter ist Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland. Verarbeitete Daten: Name, E-Mail-Adresse, Telefonnummer sowie ggf. weitere im Formular abgefragte Informationen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung des Nutzers beim Ausfüllen des Lead-Formulars).
-              </li>
-              <li v-if="isEn">
-                <strong style="color: #F3F5F7">LinkedIn Lead Gen Forms:</strong> Provider is LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Ireland. Data processed: name, email address, phone number, company, position, and any additional profile information. Legal basis is Art. 6(1)(a) GDPR (user consent).
-              </li>
-              <li v-else>
-                <strong style="color: #F3F5F7">LinkedIn Lead Gen Forms:</strong> Anbieter ist LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Irland. Verarbeitete Daten: Name, E-Mail-Adresse, Telefonnummer, Unternehmen, Position sowie ggf. weitere Profilinformationen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung des Nutzers).
-              </li>
-            </ul>
-          </div>
-
-          <!-- 10 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '10. Social Media Presence' : '10. Social Media Präsenzen' }}
+              {{ isEn ? '8. Social Media Presence' : '8. Social Media Präsenzen' }}
             </h2>
             <p>
               {{ isEn ? 'We maintain online presences on the following social networks:' : 'Wir unterhalten Onlinepräsenzen auf den folgenden sozialen Netzwerken:' }}
@@ -359,33 +221,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 11 -->
+          <!-- 9 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '11. Payment Processing' : '11. Zahlungsabwicklung' }}
-            </h2>
-            <h3 class="font-semibold mt-4 mb-2" style="color: #F3F5F7">11.1 Stripe</h3>
-            <p v-if="isEn">
-              We use Stripe for payment processing. The provider is Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Ireland.
-            </p>
-            <p v-else>
-              Für die Zahlungsabwicklung nutzen wir den Dienst Stripe. Anbieter ist Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Irland.
-            </p>
-            <p v-if="isEn" class="mt-2">
-              During payment transactions, the following data is transmitted to Stripe: payment amount, payment method information, name and email address, and billing address if applicable.
-            </p>
-            <p v-else class="mt-2">
-              Bei Zahlungsvorgängen werden folgende Daten an Stripe übermittelt: Zahlungsbetrag, Zahlungsmittelinformationen, Name und E-Mail-Adresse sowie ggf. Rechnungsadresse.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'Legal basis is Art. 6(1)(b) GDPR (contract performance). Stripe is certified under the EU-US Data Privacy Framework.' : 'Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Stripe ist unter dem EU-US Data Privacy Framework zertifiziert.' }}
-            </p>
-          </div>
-
-          <!-- 12 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '12. Local Fonts' : '12. Lokale Schriftarten' }}
+              {{ isEn ? '9. Local Fonts' : '9. Lokale Schriftarten' }}
             </h2>
             <p v-if="isEn">
               This website uses locally hosted fonts. No connection to external servers (such as Google Fonts) is made. The fonts are loaded directly from our server, which means your IP address is not transmitted to third parties.
@@ -395,10 +234,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 13 -->
+          <!-- 10 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '13. Data Security' : '13. Datensicherheit' }}
+              {{ isEn ? '10. Data Security' : '10. Datensicherheit' }}
             </h2>
             <p v-if="isEn">
               We implement technical and organizational security measures to protect your data against manipulation, loss, destruction, or unauthorized access. Our security measures are continuously improved in line with technological developments.
@@ -414,10 +253,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 14 -->
+          <!-- 11 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '14. Data Transfer to Third Countries' : '14. Datenübermittlung in Drittländer' }}
+              {{ isEn ? '11. Data Transfer to Third Countries' : '11. Datenübermittlung in Drittländer' }}
             </h2>
             <p v-if="isEn">
               Some of the services we use are based in the USA or other third countries. The transfer of personal data to these countries is based on:
@@ -426,73 +265,38 @@ useHead({
               Einige der von uns genutzten Dienste haben ihren Sitz in den USA oder anderen Drittländern. Die Übermittlung personenbezogener Daten in diese Länder erfolgt auf Grundlage von:
             </p>
             <ul v-if="isEn" class="mt-3 space-y-2 list-none">
-              <li><strong style="color: #F3F5F7">EU Commission Adequacy Decisions (Art. 45 GDPR):</strong> In particular, the EU-US Data Privacy Framework for US companies. This applies to: Google, Meta, LinkedIn, HubSpot, Stripe, and GoDaddy.</li>
+              <li><strong style="color: #F3F5F7">EU Commission Adequacy Decisions (Art. 45 GDPR):</strong> In particular, the EU-US Data Privacy Framework for US companies. This applies to: Vercel, Resend and Umami.</li>
               <li><strong style="color: #F3F5F7">EU Commission Standard Contractual Clauses (Art. 46(2)(c) GDPR):</strong> Where no adequacy decision exists.</li>
             </ul>
             <ul v-else class="mt-3 space-y-2 list-none">
-              <li><strong style="color: #F3F5F7">Angemessenheitsbeschlüssen der EU-Kommission (Art. 45 DSGVO):</strong> Insbesondere dem EU-US Data Privacy Framework für US-Unternehmen. Dies betrifft: Google, Meta, LinkedIn, HubSpot, Stripe und GoDaddy.</li>
+              <li><strong style="color: #F3F5F7">Angemessenheitsbeschlüssen der EU-Kommission (Art. 45 DSGVO):</strong> Insbesondere dem EU-US Data Privacy Framework für US-Unternehmen. Dies betrifft: Vercel (Hosting), Resend (Versand des Kontaktformulars) und Umami (Webanalyse).</li>
               <li><strong style="color: #F3F5F7">Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO):</strong> Soweit kein Angemessenheitsbeschluss vorliegt.</li>
             </ul>
           </div>
 
-          <!-- 15 -->
+          <!-- 12 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '15. Retention Period' : '15. Speicherdauer' }}
+              {{ isEn ? '12. Retention Period' : '12. Speicherdauer' }}
             </h2>
             <p>
               {{ isEn ? 'We store personal data only for as long as necessary to fulfill the purposes for which it was collected or as required by statutory retention periods.' : 'Wir speichern personenbezogene Daten nur so lange, wie es für die Erfüllung der Zwecke, für die sie erhoben wurden, erforderlich ist oder wie es die gesetzlich vorgesehenen Speicher- und Aufbewahrungsfristen vorsehen.' }}
             </p>
             <ul v-if="isEn" class="mt-3 space-y-2 list-none">
               <li><strong style="color: #F3F5F7">Contract data:</strong> For the duration of the business relationship and beyond in accordance with statutory retention periods.</li>
-              <li><strong style="color: #F3F5F7">Lead data:</strong> In accordance with the agreement with our business clients, typically until the processing purpose is achieved or until withdrawal.</li>
-              <li><strong style="color: #F3F5F7">Voice recordings:</strong> After completion of processing and qualification, unless longer retention is required.</li>
               <li><strong style="color: #F3F5F7">Statutory retention periods:</strong> 7 years for business documents pursuant to § 212 UGB (Austrian Commercial Code) and 7 years for tax-relevant documents pursuant to § 132 BAO (Austrian Federal Fiscal Code).</li>
             </ul>
             <ul v-else class="mt-3 space-y-2 list-none">
+              <li><strong style="color: #F3F5F7">Anfragen über das Kontaktformular:</strong> Bis zu 12 Monate, sofern keine Zusammenarbeit zustande kommt (siehe Abschnitt 6.1).</li>
               <li><strong style="color: #F3F5F7">Vertragsdaten:</strong> Für die Dauer der Geschäftsbeziehung und darüber hinaus gemäß den gesetzlichen Aufbewahrungsfristen.</li>
-              <li><strong style="color: #F3F5F7">Lead-Daten:</strong> Entsprechend der Vereinbarung mit unseren Geschäftskunden, in der Regel bis zur Erreichung des Verarbeitungszwecks oder bis zum Widerruf.</li>
-              <li><strong style="color: #F3F5F7">Sprachaufnahmen:</strong> Nach Abschluss der Verarbeitung und Qualifizierung, sofern keine längere Speicherung erforderlich ist.</li>
               <li><strong style="color: #F3F5F7">Gesetzliche Aufbewahrungsfristen:</strong> 7 Jahre für Geschäftsunterlagen gemäß § 212 UGB sowie 7 Jahre für steuerrechtlich relevante Unterlagen gemäß § 132 BAO.</li>
             </ul>
           </div>
 
-          <!-- 16 -->
+          <!-- 13 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '16. Data Processing on Behalf' : '16. Auftragsverarbeitung' }}
-            </h2>
-            <p v-if="isEn">
-              Insofar as we process personal data on behalf of our business clients, we act as a data processor within the meaning of Art. 28 GDPR. In these cases, we conclude data processing agreements with our business clients that govern the data protection obligations.
-            </p>
-            <p v-else>
-              Soweit wir im Auftrag unserer Geschäftskunden personenbezogene Daten verarbeiten, handeln wir als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. In diesen Fällen schließen wir mit unseren Geschäftskunden entsprechende Auftragsverarbeitungsverträge ab, die die datenschutzrechtlichen Pflichten regeln.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'In these cases, the business clients remain the data controllers within the meaning of the GDPR for the data of their end customers and prospects.' : 'Die Geschäftskunden bleiben in diesen Fällen Verantwortliche im Sinne der DSGVO für die Daten ihrer Endkunden und Interessenten.' }}
-            </p>
-          </div>
-
-          <!-- 17 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '17. Automated Decision-Making' : '17. Automatisierte Entscheidungsfindung' }}
-            </h2>
-            <p v-if="isEn">
-              As part of our lead qualification process, data is processed by AI systems and qualification results are generated. This automated processing serves the pre-qualification of inquiries and has no direct legal effects on the data subjects.
-            </p>
-            <p v-else>
-              Im Rahmen unserer Lead-Qualifizierung werden Daten durch KI-Systeme verarbeitet und Qualifizierungsergebnisse erstellt. Diese automatisierte Verarbeitung dient der Vorqualifizierung von Anfragen und hat keine unmittelbaren rechtlichen Auswirkungen auf die betroffenen Personen.
-            </p>
-            <p class="mt-2">
-              {{ isEn ? 'The final decision on further processing of an inquiry lies with our business clients and their employees.' : 'Die endgültige Entscheidung über die weitere Bearbeitung einer Anfrage liegt bei unseren Geschäftskunden und deren Mitarbeitern.' }}
-            </p>
-          </div>
-
-          <!-- 18 -->
-          <div>
-            <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '18. Changes to This Privacy Policy' : '18. Änderungen dieser Datenschutzerklärung' }}
+              {{ isEn ? '13. Changes to This Privacy Policy' : '13. Änderungen dieser Datenschutzerklärung' }}
             </h2>
             <p v-if="isEn">
               We reserve the right to update this privacy policy to reflect changes in the legal situation or changes to our services. The current version is always available on our website.
@@ -502,10 +306,10 @@ useHead({
             </p>
           </div>
 
-          <!-- 19 -->
+          <!-- 14 -->
           <div>
             <h2 class="mb-3 font-serif text-[1.6rem] font-normal leading-tight" style="color: #F3F5F7">
-              {{ isEn ? '19. Contact for Data Protection Inquiries' : '19. Kontakt für Datenschutzanfragen' }}
+              {{ isEn ? '14. Contact for Data Protection Inquiries' : '14. Kontakt für Datenschutzanfragen' }}
             </h2>
             <p>
               {{ isEn ? 'For questions about data protection or to exercise your rights, please contact:' : 'Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte wenden Sie sich bitte an:' }}

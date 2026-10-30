@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const steps = [
-  { no: '01', title: 'Potenzial-Check', meta: 'Kostenlos · 30 Min.', text: 'Wir lernen Ihre Abläufe kennen und zeigen Ihnen, wo Automatisierung am meisten bringt.' },
-  { no: '02', title: 'Konzept & Angebot', meta: 'Transparent', text: 'Klarer Umfang, klarer Zeitplan, klare Kosten. Sie entscheiden, bevor eine Zeile gebaut wird.' },
-  { no: '03', title: 'Umsetzung', meta: 'In Etappen', text: 'Wir bauen in kurzen Schritten und binden Ihr Team ein. Sie sehen früh erste Ergebnisse.' },
-  { no: '04', title: 'Betreuung', meta: 'Langfristig', text: 'Überwachung, Anpassungen und Einschulung. Ihr System läuft weiter, auch wenn sich Ihr Geschäft verändert.' },
+  { no: '01', title: 'Erstgespräch', meta: 'Kostenlos · 30 Min.', text: 'Wir klären, wo Sie Zeit verlieren und ob sich Automatisierung für Sie lohnt.' },
+  { no: '02', title: 'Umsetzungsanalyse', meta: `Fixpreis · ${site.analysisPrice}`, text: 'Wir nehmen Ihre Abläufe im Detail auf. Sie erhalten einen Plan mit Aufwand, Kosten und erwarteter Ersparnis.' },
+  { no: '03', title: 'Umsetzung', meta: `ab ${site.projectFrom}`, text: 'Festes Projekt mit klarem Umfang. Wir bauen in Etappen und binden Ihr Team ein.' },
+  { no: '04', title: 'Ausbau', meta: 'Sie entscheiden', text: 'Nach dem ersten Projekt zeigen wir Ihnen, welcher Ablauf als nächstes den größten Hebel hat. Sie entscheiden Projekt für Projekt.' },
 ]
 </script>
 

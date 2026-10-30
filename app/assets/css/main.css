@@ -77,7 +77,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[14px] font-medium transition-all duration-500;
+    @apply inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-6 py-3.5 text-[14px] font-medium transition-all duration-500;
     transition-timing-function: var(--ease);
   }
 
@@ -124,7 +124,7 @@
 /* Große Serifen-Überschriften erscheinen wie im Hero: von unscharf zu scharf */
 .js .reveal.heading,
 .js .reveal.font-serif {
-  filter: blur(14px);
+  filter: blur(8px);
   transform: translateY(18px);
 }
 

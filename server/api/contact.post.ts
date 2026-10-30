@@ -47,10 +47,10 @@ export default defineEventHandler(async (event) => {
     // Absender über RESEND_FROM (z. B. 'Doblyx Website <website@doblyx.com>'), sobald die Domain in Resend bestätigt ist
     from: process.env.RESEND_FROM || 'Doblyx Website <onboarding@resend.dev>',
     to: 'office@doblyx.com',
-    subject: `${founding ? '⭐ Gründungskunde – ' : ''}Potenzial-Check: ${subjectName}${subjectCompany}`,
+    subject: `${founding ? '⭐ Gründungskunde – ' : ''}Erstgespräch: ${subjectName}${subjectCompany}`,
     replyTo: String(email),
     html: `
-      <h2>Neue Anfrage für einen Potenzial-Check</h2>
+      <h2>Neue Anfrage für ein Erstgespräch</h2>
       <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
         ${rows.map(([label, value]) => `
         <tr>

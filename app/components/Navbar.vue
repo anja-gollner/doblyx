@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
         :class="mobileOpen ? 'border-transparent bg-transparent' : scrolled ? 'border-[var(--line)] bg-ink/75 backdrop-blur-xl' : 'border-transparent bg-transparent'"
         aria-label="Hauptnavigation"
       >
-        <NuxtLink to="/" class="flex items-center text-fg" aria-label="Doblyx AI – zum Seitenanfang" @click="onLogoClick">
+        <NuxtLink to="/" class="flex items-center text-fg" aria-label="Doblyx AI, zum Seitenanfang" @click="onLogoClick">
           <Logo class="h-6 w-auto sm:h-7" />
         </NuxtLink>
 
@@ -74,7 +74,7 @@ onBeforeUnmount(() => {
           <div class="hidden items-center gap-1 rounded-full border border-white/20 p-1 pl-4 font-mono sm:flex" :class="{ 'sm:!hidden': mobileOpen }">
             <a :href="site.phoneHref" class="pr-2 text-[12px] text-fg/85 transition-colors hover:text-white">Anrufen</a>
             <a href="/#kontakt" class="rounded-full bg-white px-4 py-1.5 text-[12px] text-ink transition-colors hover:bg-cantaloupe hover:text-white" @click.prevent="go('kontakt')">
-              Gratis Check
+              Erstgespräch
             </a>
           </div>
 
@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
 
           <div class="mt-auto pt-10">
             <a href="/#kontakt" class="menu-item btn-primary w-full" style="--i: 7" @click.prevent="go('kontakt')">
-              Kostenlosen Potenzial-Check sichern <span class="arrow" aria-hidden="true">→</span>
+              Kostenloses Erstgespräch vereinbaren <span class="arrow" aria-hidden="true">→</span>
             </a>
             <div class="menu-item mt-6 grid grid-cols-2 gap-3 font-mono text-[11px]" style="--i: 8">
               <a :href="site.phoneHref" class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">

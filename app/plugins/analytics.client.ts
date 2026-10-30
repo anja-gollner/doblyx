@@ -20,7 +20,7 @@ export default defineNuxtPlugin(() => {
     const href = link.getAttribute('href') || ''
     const quelle = link.closest('header') ? 'navigation' : link.closest('footer') ? 'footer' : link.closest('section')?.id || 'hero'
 
-    if (href.endsWith('#kontakt')) trackEvent('gratis-check-klick', { quelle })
+    if (href.endsWith('#kontakt')) trackEvent('erstgespraech-klick', { quelle })
     else if (href.startsWith('tel:')) trackEvent('anruf-klick', { quelle })
     else if (href.startsWith('mailto:')) trackEvent('email-klick', { quelle })
     else if (href.includes('linkedin.com')) trackEvent('linkedin-klick', { quelle })

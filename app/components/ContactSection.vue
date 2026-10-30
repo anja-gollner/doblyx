@@ -32,8 +32,8 @@ async function handleSubmit() {
 const nextSteps = [
   'Sie senden uns Ihre Anfrage.',
   'Wir melden uns innerhalb von 24 Stunden (werktags) mit Terminvorschlägen.',
-  '30 Minuten Gespräch per Video-Call oder Telefon.',
-  'Ihre Kurzanalyse kommt per E-Mail.',
+  '30 Minuten Erstgespräch per Video-Call oder Telefon, kostenlos.',
+  'Wenn es passt: Angebot für die KI-Umsetzungsanalyse zum Fixpreis.',
 ]
 </script>
 
@@ -50,7 +50,7 @@ const nextSteps = [
           Lassen Sie uns <span class="accent">sprechen.</span>
         </h2>
         <p class="reveal mt-6 max-w-md text-[15px] leading-7 text-muted">
-          Sichern Sie sich Ihren kostenlosen Potenzial-Check. Kein Verkaufsgespräch, keine Verpflichtung, nur ein ehrlicher Blick auf Ihre Abläufe.
+          Vereinbaren Sie ein kostenloses Erstgespräch. Ohne Verkaufsdruck und ohne Verpflichtung, nur ein ehrlicher Blick auf Ihre Abläufe.
         </p>
 
         <div class="reveal mt-10 flex items-center gap-4 rounded-2xl border border-[var(--line)] bg-ink-800 p-4">
@@ -151,7 +151,7 @@ const nextSteps = [
           </p>
 
           <button type="submit" :disabled="sending" class="btn-primary mt-7 w-full disabled:opacity-60">
-            <template v-if="!sending">Kostenlosen Potenzial-Check anfragen <span class="arrow" aria-hidden="true">→</span></template>
+            <template v-if="!sending">Kostenloses Erstgespräch anfragen <span class="arrow" aria-hidden="true">→</span></template>
             <template v-else>Wird gesendet …</template>
           </button>
 

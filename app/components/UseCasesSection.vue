@@ -6,6 +6,11 @@ const cases = [
     steps: ['Anfrage über Portal', 'KI beantwortet & sendet Exposé', 'Besichtigung gebucht', 'Kontakt im CRM'],
   },
   {
+    area: 'Solar & Energie',
+    title: 'Angebote nachfassen',
+    steps: ['PV-Angebot verschickt', 'Automatische Erinnerung', 'Rückfragen beantwortet', 'Termin für Abschluss'],
+  },
+  {
     area: 'Handwerk & Bau',
     title: 'Angebotserstellung',
     steps: ['Anfrage mit Fotos & Maßen', 'KI erstellt Angebotsentwurf', 'Freigabe per Klick', 'Versand & Nachfassen'],
@@ -25,11 +30,6 @@ const cases = [
     title: 'Eingangsrechnungen',
     steps: ['Rechnung per E-Mail', 'KI liest Betrag & Lieferant', 'Prüfung & Ablage', 'Übergabe an Buchhaltung'],
   },
-  {
-    area: 'Alle Branchen',
-    title: 'Reporting',
-    steps: ['Daten aus CRM, Shop & Co.', 'Automatisch zusammengeführt', 'Kennzahlen aufbereitet', 'Wöchentlich im Postfach'],
-  },
 ]
 </script>
 
@@ -43,7 +43,7 @@ const cases = [
           Was <span class="accent">möglich ist.</span>
         </h2>
         <p class="reveal mx-auto mt-6 max-w-xl text-[15px] leading-7 text-muted">
-          Typische Abläufe, die wir automatisieren. Ihr Prozess sieht anders aus? Umso besser – jede Lösung wird individuell auf Ihr Unternehmen geplant.
+          Typische Abläufe, die wir automatisieren. Ihr Prozess sieht anders aus? Umso besser: Jede Lösung wird individuell auf Ihr Unternehmen geplant.
         </p>
       </div>
 

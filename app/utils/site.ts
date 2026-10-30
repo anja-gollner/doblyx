@@ -8,4 +8,6 @@ export const site = {
   // Gründungskunden-Programm: Anzahl vergebener Plätze hier hochzählen
   foundingSlots: 3,
   foundingTaken: 0,
+  // Umami Analytics (cloud.umami.is): Website-ID hier eintragen, leer = Analytics aus
+  umamiWebsiteId: '',
 }

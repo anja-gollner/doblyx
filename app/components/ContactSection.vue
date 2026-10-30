@@ -21,6 +21,7 @@ async function handleSubmit() {
   try {
     await $fetch('/api/contact', { method: 'POST', body: form })
     submitted.value = true
+    trackEvent('anfrage-gesendet', { gruendungskunde: form.founding })
   } catch {
     error.value = true
   } finally {

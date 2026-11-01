@@ -21,7 +21,30 @@ export default defineNuxtConfig({
   },
 
   // Test-Version: zusätzlich Sperr-Header und eine robots.txt, die alles verbietet
-  routeRules: isStaging ? { '/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } } } : {},
+  routeRules: {
+    '/**': {
+      headers: {
+        // Sicherheits-Header für alle Seiten
+        'X-Frame-Options': 'DENY',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+        'Content-Security-Policy': [
+          "default-src 'self'",
+          "script-src 'self' 'unsafe-inline' https://cloud.umami.is",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self' data: blob:",
+          "font-src 'self' data:",
+          "connect-src 'self' https://cloud.umami.is https://api-gateway.umami.dev",
+          "frame-ancestors 'none'",
+          "base-uri 'self'",
+          "form-action 'self'",
+          "object-src 'none'",
+        ].join('; '),
+        ...(isStaging ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}),
+      },
+    },
+  },
 
   hooks: {
     'nitro:build:public-assets'(nitro) {

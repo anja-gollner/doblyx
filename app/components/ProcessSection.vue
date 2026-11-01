@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const steps = [
   { no: '01', title: 'Erstgespräch', meta: 'Kostenlos · 30 Min.', text: 'Wir klären, wo Sie Zeit verlieren und ob sich Automatisierung für Sie lohnt.' },
-  { no: '02', title: 'Umsetzungsanalyse', meta: `Fixpreis · ${site.analysisPrice}`, text: 'Wir nehmen Ihre Abläufe im Detail auf. Sie erhalten einen Plan mit Aufwand, Kosten und erwarteter Ersparnis.' },
-  { no: '03', title: 'Umsetzung', meta: `ab ${site.projectFrom}`, text: 'Festes Projekt mit klarem Umfang. Wir bauen in Etappen und binden Ihr Team ein.' },
+  { no: '02', title: 'Umsetzungsanalyse', meta: 'Fixpreis', text: 'Wir nehmen Ihre Abläufe im Detail auf. Sie erhalten einen Plan mit Aufwand, Kosten und erwarteter Ersparnis.' },
+  { no: '03', title: 'Umsetzung', meta: 'In Etappen', text: 'Festes Projekt mit klarem Umfang. Wir bauen in Etappen und binden Ihr Team ein.' },
   { no: '04', title: 'Ausbau', meta: 'Sie entscheiden', text: 'Nach dem ersten Projekt zeigen wir Ihnen, welcher Ablauf als nächstes den größten Hebel hat. Sie entscheiden Projekt für Projekt.' },
 ]
 </script>

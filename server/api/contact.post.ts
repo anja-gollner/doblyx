@@ -1,9 +1,26 @@
 import { Resend } from 'resend'
 
+// Maximale Länge je Feld (Zeichen); größere Anfragen werden abgelehnt
+const LIMITS = { name: 120, company: 160, email: 200, phone: 40, message: 4000 }
+const MAX_BODY_BYTES = 20_000
+
+// Einfache Mengenbegrenzung pro IP gegen Spam-Fluten (pro Server-Instanz)
+const WINDOW_MS = 10 * 60 * 1000
+const MAX_PER_WINDOW = 5
+const hits = new Map<string, number[]>()
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS)
+  recent.push(now)
+  hits.set(ip, recent)
+  if (hits.size > 5000) hits.clear()
+  return recent.length > MAX_PER_WINDOW
+}
+
 // Nutzereingaben vor dem Einfügen ins E-Mail-HTML entschärfen
-function escapeHtml(value: unknown): string {
-  return String(value ?? '')
-    .slice(0, 5000)
+function escapeHtml(value: string): string {
+  return value
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -11,44 +28,75 @@ function escapeHtml(value: unknown): string {
     .replace(/'/g, '&#39;')
 }
 
+// Nur echte Texte innerhalb der Längengrenze akzeptieren
+function text(value: unknown, max: number): string | null {
+  if (value === undefined || value === null || value === '') return ''
+  if (typeof value !== 'string' || value.length > max) return null
+  return value.trim()
+}
+
 export default defineEventHandler(async (event) => {
+  const length = Number(getRequestHeader(event, 'content-length') || 0)
+  if (length > MAX_BODY_BYTES) {
+    throw createError({ statusCode: 413, message: 'Anfrage zu groß.' })
+  }
+
+  const ip = getRequestIP(event, { xForwardedFor: true }) || 'unbekannt'
+  if (isRateLimited(ip)) {
+    throw createError({ statusCode: 429, message: 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.' })
+  }
+
   const body = await readBody(event)
-  const { name, company, email, phone, message, founding, website } = body ?? {}
+  if (!body || typeof body !== 'object') {
+    throw createError({ statusCode: 400, message: 'Ungültige Anfrage.' })
+  }
 
   // Honeypot ausgefüllt → Bot. Erfolg vortäuschen, nichts senden.
-  if (website) {
+  if (body.website) {
     return { success: true }
   }
 
-  if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email))) {
+  const name = text(body.name, LIMITS.name)
+  const company = text(body.company, LIMITS.company)
+  const email = text(body.email, LIMITS.email)
+  const phone = text(body.phone, LIMITS.phone)
+  const message = text(body.message, LIMITS.message)
+  const founding = body.founding === true
+
+  if (
+    [name, company, email, phone, message].some((v) => v === null)
+    || !name || !email || !message
+    || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)
+  ) {
     throw createError({ statusCode: 400, message: 'Name, gültige E-Mail und Nachricht sind erforderlich.' })
   }
 
   const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
-    throw createError({ statusCode: 500, message: 'Email service not configured.' })
+    console.error('[contact] RESEND_API_KEY fehlt')
+    throw createError({ statusCode: 500, message: 'Senden derzeit nicht möglich.' })
   }
 
   const resend = new Resend(resendApiKey)
 
   const rows: [string, string][] = [
     ['Name', escapeHtml(name)],
-    ['Unternehmen', escapeHtml(company) || '–'],
+    ['Unternehmen', company ? escapeHtml(company) : '–'],
     ['E-Mail', `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`],
-    ['Telefon', escapeHtml(phone) || '–'],
+    ['Telefon', phone ? escapeHtml(phone) : '–'],
     ['Gründungskunden-Programm', founding ? 'Ja, interessiert' : 'Nein'],
-    ['Größter Zeitfresser', escapeHtml(message).replace(/\n/g, '<br>')],
+    ['Größter Zeitfresser', escapeHtml(message!).replace(/\n/g, '<br>')],
   ]
 
-  const subjectName = String(name).replace(/[\r\n]/g, ' ').slice(0, 100)
-  const subjectCompany = company ? ` (${String(company).replace(/[\r\n]/g, ' ').slice(0, 100)})` : ''
+  const subjectName = name.replace(/[\r\n]/g, ' ').slice(0, 100)
+  const subjectCompany = company ? ` (${company.replace(/[\r\n]/g, ' ').slice(0, 100)})` : ''
 
   const { data, error } = await resend.emails.send({
     // Absender über RESEND_FROM (z. B. 'Doblyx Website <website@doblyx.com>'), sobald die Domain in Resend bestätigt ist
     from: process.env.RESEND_FROM || 'Doblyx Website <onboarding@resend.dev>',
     to: 'office@doblyx.com',
-    subject: `${founding ? '⭐ Gründungskunde – ' : ''}Erstgespräch: ${subjectName}${subjectCompany}`,
-    replyTo: String(email),
+    subject: `${founding ? '⭐ Gründungskunde: ' : ''}Erstgespräch: ${subjectName}${subjectCompany}`,
+    replyTo: email,
     html: `
       <h2>Neue Anfrage für ein Erstgespräch</h2>
       <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
@@ -63,7 +111,9 @@ export default defineEventHandler(async (event) => {
   })
 
   if (error) {
-    throw createError({ statusCode: 500, message: error.message })
+    // Details nur ins Server-Log, nicht an den Besucher
+    console.error('[contact] Resend-Fehler:', error.message)
+    throw createError({ statusCode: 500, message: 'Senden derzeit nicht möglich.' })
   }
 
   return { success: true, id: data?.id }

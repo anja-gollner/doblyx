@@ -35,7 +35,7 @@ export default defineNuxtConfig({
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob:",
           "font-src 'self' data:",
-          "connect-src 'self' https://cloud.umami.is https://api-gateway.umami.dev",
+          "connect-src 'self' https://cloud.umami.is https://api-gateway.umami.dev https://gateway.umami.is",
           "frame-ancestors 'none'",
           "base-uri 'self'",
           "form-action 'self'",

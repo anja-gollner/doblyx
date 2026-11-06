@@ -138,6 +138,15 @@
   }
 }
 
+/* Direkter Link auf einen Abschnitt (z. B. /#kontakt): sofort sichtbar, dort löst kein Scrollen die Einblendung aus */
+.js section:target .reveal,
+.js section:target .reveal.heading,
+.js section:target .reveal.font-serif {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
 .word-mask {
   display: inline-block;
   overflow: hidden;

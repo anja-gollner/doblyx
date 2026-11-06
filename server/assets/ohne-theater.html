@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doblyx | KI ohne Theater</title>
+  <meta name="description" content="Doblyx automatisiert wiederkehrende Aufgaben mit KI: Anfragen, Angebote, Dokumente. Maßgeschneidert und persönlich betreut aus Österreich." />
+  <meta name="theme-color" content="#02070A" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FC734D'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="/ohne-theater/assets/index-B5Zi7TLR.js"></script>
+  <link rel="stylesheet" crossorigin href="/ohne-theater/assets/index-n9DgjDuq.css">
+</head>
+<body>
+  <!-- Nur für die Scrolllänge: die Bühne selbst steht fix -->
+  <div class="track" aria-hidden="true"></div>
+
+  <main class="stage">
+    <!-- EBENE 1: die „Abzock-Seite“, echtes HTML, die Glut läuft als Canvas darüber -->
+    <section class="scam" id="scam" aria-label="Parodie einer unseriösen KI-Werbeseite">
+      <div class="scam-box">
+        <div class="ticker"><span>+++ NUR HEUTE +++ KI MACHT SIE REICH +++ IHRE KONKURRENZ HASST DIESEN TRICK +++ NUR NOCH 3 PLÄTZE FREI +++ NUR HEUTE +++ KI MACHT SIE REICH +++ IHRE KONKURRENZ HASST DIESEN TRICK +++ NUR NOCH 3 PLÄTZE FREI +++</span></div>
+
+        <header class="scam-head">
+          <h1>$$$ KI-MILLIONÄR IN 7 TAGEN $$$</h1>
+          <p>Nie wieder arbeiten dank EINEM Prompt!!! <b>(Ergebnisse nicht garantiert)</b></p>
+        </header>
+
+        <nav class="scam-nav">
+          <a href="#">Startseite</a> | <a href="#">Geheimnis</a> | <a href="#">Beweise</a> | <a href="#">Gästebuch</a> | <a href="#">Mein Lamborghini</a>
+        </nav>
+
+        <div class="scam-body">
+          <div>
+            <p><b>Herzlich Willkommen auf meiner Homepage!</b> Ich bin der <b>„KI-PAPST“</b>, geprüft von meiner Mama und vertraut von mindestens <b>3 Personen</b>.</p>
+            <p>Ihre Firma läuft noch mit Menschen? Mit meiner <blink-ish>GEHEIMEN METHODE</blink-ish> erledigt ein einziger Chatbot alles. Über Nacht. Steuerberater sind sprachlos!</p>
+            <p class="scam-small">Dieses Angebot ist so gut, dass es eigentlich verboten gehört. Ist es nicht. Aber fast.</p>
+          </div>
+          <div>
+            <p><b>Was Sie bekommen:</b></p>
+            <ul>
+              <li><b>7-Tage-Kurs</b>, 6 Tage davon Werbung</li>
+              <li><b>1.000 geheime Prompts</b>, kopiert</li>
+              <li><b>Buzzwords</b>, so viele Sie wollen</li>
+              <li><b>Kontostand-Screenshot</b>, nicht von mir</li>
+              <li><b>Bonus:</b> ein zweiter Kurs</li>
+            </ul>
+            <blockquote>„Noch nie ausprobiert, aber klingt super.“<br /><i>Max M., KI-Experte seit Dienstag</i></blockquote>
+          </div>
+        </div>
+
+        <div class="scam-offer">
+          <p>Angebot endet in: <span class="timer" id="timer">00:09:59</span></p>
+          <p class="scam-price"><s>99.999 €</s> <b>JETZT NUR 9,99 €*</b></p>
+          <p class="scam-small">*Kein echter Preis. Hier kann man nichts kaufen, keine Sorge.</p>
+        </div>
+
+        <footer class="scam-foot">
+          Sie sind Besucher <span class="counter">0000004</span> · Optimiert für Netscape Navigator bei 800×600 · © 1999
+        </footer>
+      </div>
+
+      <button class="scam-cta" type="button" data-scroll-start>▼▼▼ RUNTERSCROLLEN FÜR DEN GEHEIMEN TRICK ▼▼▼</button>
+
+      <!-- Klassisches Gewinner-Fenster, enthält bewusst kein Formular -->
+      <div class="popup" id="popup" role="note">
+        <div class="popup-bar"><span>Glückwunsch.exe</span><button type="button" id="popup-close" aria-label="Fenster schließen">×</button></div>
+        <div class="popup-body">
+          <p><b>SIE HABEN GEWONNEN!!!</b><br />Sie sind der 1.000.000ste KI-Experte.</p>
+          <p class="scam-small">Gewinn: dieses Fenster. Bitte weiterscrollen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EBENE 2: Glut, Funken und die 3D-Szene -->
+    <canvas id="gl" aria-hidden="true"></canvas>
+
+    <!-- EBENE 3: der echte Hero -->
+    <section class="hero" id="hero" aria-label="Doblyx">
+      <a class="brand" href="https://doblyx.com" aria-label="Doblyx AI, zur Website">
+        <img src="/ohne-theater/images/doblyx-logo.svg" alt="Doblyx AI" width="133" height="26" />
+      </a>
+
+      <div class="hero-copy">
+        <h2>KI ohne <em>Theater.</em></h2>
+        <p>Keine Versprechen, keine Geheimtricks. Doblyx automatisiert wiederkehrende Aufgaben: Anfragen, Angebote, Dokumente. Maßgeschneidert und persönlich betreut aus Österreich.</p>
+      </div>
+
+      <div class="nodes" aria-hidden="true">
+        <span class="node" data-anchor="n1"><b>@</b></span>
+        <span class="node" data-anchor="n2"><b>{ }</b></span>
+      </div>
+
+      <div class="cards">
+        <a class="card" data-anchor="c1" href="https://doblyx.com/#leistungen">
+          <small>01</small>
+          <h3>Vertrieb &amp; Anfragen</h3>
+          <p>Jede Anfrage wird sofort erfasst und beantwortet, auch am Wochenende.</p>
+        </a>
+        <a class="card" data-anchor="c2" href="https://doblyx.com/#leistungen">
+          <small>02</small>
+          <h3>Backoffice &amp; Dokumente</h3>
+          <p>KI liest die Daten aus und überträgt sie. Schluss mit Copy &amp; Paste.</p>
+        </a>
+        <a class="card" data-anchor="c3" href="https://doblyx.com/#leistungen">
+          <small>03</small>
+          <h3>KI-Assistenten</h3>
+          <p>Interne Assistenten, die Ihr Firmenwissen kennen.</p>
+        </a>
+        <a class="card" data-anchor="c4" href="https://doblyx.com/#kontakt">
+          <small>Der echte Trick</small>
+          <h3>Kostenloses Erstgespräch</h3>
+          <p>30 Minuten. Wir klären, wo Sie Zeit verlieren.</p>
+        </a>
+      </div>
+
+      <a class="cta" href="https://doblyx.com/#kontakt">Erstgespräch vereinbaren <span aria-hidden="true">→</span></a>
+    </section>
+
+    <button class="skip" id="skip" type="button">[ Intro überspringen ]</button>
+    <a class="legal" href="https://doblyx.com/impressum">Impressum</a>
+    <a class="legal" href="https://doblyx.com/datenschutz">Datenschutz</a>
+  </main>
+</body>
+</html>

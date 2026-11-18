@@ -115,6 +115,27 @@
   }
 }
 
+/* „Zum Inhalt springen“: unsichtbar, bis er per Tastatur fokussiert wird */
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.7rem 1.1rem;
+  border-radius: 9999px;
+  background: #F3F5F7;
+  color: #02070A;
+  font-size: 14px;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: none;
+  outline: 2px solid #FC734D;
+  outline-offset: 2px;
+}
+
 /* Scroll-Reveal: nur mit JS verstecken, damit Inhalte ohne JS sichtbar bleiben */
 .js .reveal {
   opacity: 0;

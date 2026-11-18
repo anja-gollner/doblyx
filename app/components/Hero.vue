@@ -14,16 +14,25 @@ const factsRight = [
   { value: '1:1', label: 'Direkt mit dem Gründer' },
 ]
 
+// Echte Pixelmaße, damit das Layout beim Laden nicht springt
+const heroImg = {
+  build: { src: '/hero/build.jpg', w: 720, h: 402 },
+  architecture: { src: '/hero/architecture.jpg', w: 720, h: 408 },
+  aiPrint: { src: '/hero/ai_print.jpg', w: 720, h: 434 },
+  office: { src: '/hero/office_architecture.jpg', w: 720, h: 479 },
+  safe: { src: '/hero/process-safe.jpg', w: 720, h: 417 },
+}
+
 const tiles = [
-  { label: 'Vertrieb', img: '/hero/build.jpg', pos: 'center' },
-  { label: 'Immobilien', img: '/hero/architecture.jpg', pos: '60% center' },
-  { label: 'KI-Assistent', img: '/hero/ai_print.jpg', pos: '70% center' },
-  { label: 'Büro', img: '/hero/office_architecture.jpg', pos: 'center' },
-  { label: 'Datenschutz', img: '/hero/process-safe.jpg', pos: '40% center' },
-  { label: 'Workflows', img: '/hero/build.jpg', pos: '25% center' },
+  { label: 'Vertrieb', img: heroImg.build, pos: 'center' },
+  { label: 'Immobilien', img: heroImg.architecture, pos: '60% center' },
+  { label: 'KI-Assistent', img: heroImg.aiPrint, pos: '70% center' },
+  { label: 'Büro', img: heroImg.office, pos: 'center' },
+  { label: 'Datenschutz', img: heroImg.safe, pos: '40% center' },
+  { label: 'Workflows', img: heroImg.build, pos: '25% center' },
 ]
 
-const filmstrip = ['/hero/office_architecture.jpg', '/hero/build.jpg', '/hero/ai_print.jpg', '/hero/architecture.jpg']
+const filmstrip = [heroImg.office, heroImg.build, heroImg.aiPrint, heroImg.architecture]
 
 const offerLines = ['Analyse der Abläufe', 'Umsetzung Workflow', 'Einschulung Team']
 
@@ -164,7 +173,7 @@ onMounted(async () => {
               <div class="panel flex h-full flex-col bg-[#f7f2ec]/95">
                 <div class="grid flex-1 grid-cols-3 grid-rows-2 gap-2">
                   <div v-for="(tile, ti) in tiles" :key="tile.label" class="tile group/tile relative overflow-hidden rounded-[0.9rem] bg-ink">
-                    <img :src="tile.img" alt="" class="kenburns absolute inset-0 h-full w-full object-cover" :style="{ objectPosition: tile.pos, animationDelay: `${-ti * 2.3}s` }" loading="eager" decoding="async" />
+                    <img :src="tile.img.src" :width="tile.img.w" :height="tile.img.h" alt="" class="kenburns absolute inset-0 h-full w-full object-cover" :style="{ objectPosition: tile.pos, animationDelay: `${-ti * 2.3}s` }" loading="eager" :fetchpriority="ti === 0 ? 'high' : undefined" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
                     <span class="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-white/30 bg-white/20 text-[8px] leading-none text-white backdrop-blur-md">•••</span>
                     <span class="absolute bottom-1.5 left-1.5 rounded-full border border-white/25 bg-black/25 px-2 py-[2px] font-mono text-[8.5px] text-white backdrop-blur-md">{{ tile.label }}</span>
@@ -224,8 +233,8 @@ onMounted(async () => {
                 </div>
                 <!-- Foto-Filmstreifen mit Abspielmarke -->
                 <div class="relative mt-3 flex gap-1 rounded-[0.7rem] border border-white/10 bg-black/30 p-1">
-                  <div v-for="(src, i) in filmstrip" :key="i" class="relative h-12 flex-1 overflow-hidden rounded-[0.45rem]">
-                    <img :src="src" alt="" class="absolute inset-0 h-full w-full object-cover" loading="eager" decoding="async" />
+                  <div v-for="(img, i) in filmstrip" :key="i" class="relative h-12 flex-1 overflow-hidden rounded-[0.45rem]">
+                    <img :src="img.src" :width="img.w" :height="img.h" alt="" class="absolute inset-0 h-full w-full object-cover" loading="eager" decoding="async" />
                   </div>
                   <span class="playhead pointer-events-none absolute inset-y-0 w-[30%] rounded-[0.5rem] border-2 border-white/90 shadow-[0_0_14px_rgba(79,184,236,0.6)]" />
                 </div>

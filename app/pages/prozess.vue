@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Ablauf | Doblyx AI',
+  title: 'So läuft ein KI-Automatisierungsprojekt ab | Doblyx AI',
   meta: [
     { name: 'description', content: `So arbeiten wir: kostenloses Erstgespräch, KI-Umsetzungsanalyse zum Fixpreis von ${site.analysisPrice}, Umsetzung als festes Projekt und Ausbau Schritt für Schritt.` },
   ],

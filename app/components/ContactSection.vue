@@ -55,7 +55,7 @@ const nextSteps = [
 
         <div class="reveal mt-10 flex items-center gap-4 rounded-2xl border border-[var(--line)] bg-ink-800 p-4">
           <div class="h-14 w-14 flex-shrink-0 overflow-hidden rounded-full border border-[var(--line-strong)]">
-            <img src="/eric.jpg" alt="Eric Dobler" class="h-full w-full origin-[50%_30%] scale-[1.7] object-cover" width="56" height="56" loading="lazy" />
+            <img src="/eric-avatar.jpg" alt="Eric Dobler" class="h-full w-full origin-[50%_30%] scale-[1.7] object-cover" width="56" height="56" loading="lazy" decoding="async" />
           </div>
           <div>
             <p class="text-[14px] text-fg">Sie sprechen direkt mit Eric Dobler</p>
@@ -98,19 +98,19 @@ const nextSteps = [
           <div class="grid gap-5 sm:grid-cols-2">
             <label class="block">
               <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Name *</span>
-              <input v-model="form.name" type="text" required autocomplete="name" placeholder="Max Mustermann" class="field" />
+              <input v-model="form.name" type="text" required autocomplete="name" enterkeyhint="next" placeholder="Max Mustermann" class="field" />
             </label>
             <label class="block">
               <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Unternehmen</span>
-              <input v-model="form.company" type="text" autocomplete="organization" placeholder="Firmenname" class="field" />
+              <input v-model="form.company" type="text" autocomplete="organization" enterkeyhint="next" placeholder="Firmenname" class="field" />
             </label>
             <label class="block">
               <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">E-Mail *</span>
-              <input v-model="form.email" type="email" required autocomplete="email" placeholder="name@firma.at" class="field" />
+              <input v-model="form.email" type="email" required autocomplete="email" enterkeyhint="next" placeholder="name@firma.at" class="field" />
             </label>
             <label class="block">
               <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Telefon <span class="normal-case tracking-normal">(optional)</span></span>
-              <input v-model="form.phone" type="tel" autocomplete="tel" placeholder="+43 …" class="field" />
+              <input v-model="form.phone" type="tel" autocomplete="tel" enterkeyhint="next" placeholder="+43 …" class="field" />
             </label>
           </div>
 
@@ -120,6 +120,7 @@ const nextSteps = [
               v-model="form.message"
               rows="4"
               required
+              enterkeyhint="send"
               placeholder="z. B. „Wir beantworten jede Anfrage händisch und tippen alles doppelt ins CRM.“"
               class="field resize-none"
             />

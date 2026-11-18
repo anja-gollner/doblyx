@@ -5,11 +5,14 @@ const props = defineProps<{
   label: string
   className?: string
 }>()
+
+// Als String würde 'NuxtLink' nicht aufgelöst und ein Element ohne href entstehen
+const NuxtLinkComponent = resolveComponent('NuxtLink')
 </script>
 
 <template>
   <component
-    :is="props.to ? 'NuxtLink' : 'a'"
+    :is="props.to ? NuxtLinkComponent : 'a'"
     :href="props.href"
     :to="props.to"
     class="group rolling-link relative inline-flex items-center overflow-hidden leading-tight"

@@ -83,7 +83,7 @@ onBeforeUnmount(() => {
             class="burger relative flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] backdrop-blur-md lg:hidden"
             :class="{ 'is-open': mobileOpen }"
             :aria-expanded="mobileOpen"
-            aria-controls="mobile-menu"
+            :aria-controls="mobileOpen ? 'mobile-menu' : undefined"
             :aria-label="mobileOpen ? 'Menü schließen' : 'Menü öffnen'"
             @click="mobileOpen = !mobileOpen"
           >

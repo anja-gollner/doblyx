@@ -30,4 +30,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://doblyx.com/sitemap.xml
+Sitemap: https://www.doblyx.com/sitemap.xml

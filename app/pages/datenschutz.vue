@@ -4,14 +4,16 @@ const isEn = ref(false)
 
 useHead({
   title: computed(() => isEn.value ? 'Privacy Policy | Doblyx AI' : 'Datenschutzerklärung | Doblyx AI'),
-  meta: [{ name: 'robots', content: 'noindex, nofollow' }],
+  meta: [{ name: 'robots', content: 'noindex, follow' }],
 })
 </script>
 
 <template>
   <div>
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
     <Navbar />
 
+    <main id="main">
     <section class="starfield relative overflow-hidden px-6 pb-24 pt-40">
       <HorizonGlow tone="mix" />
       <div class="relative z-[1] mx-auto max-w-3xl">
@@ -328,6 +330,7 @@ useHead({
         </div>
       </div>
     </section>
+    </main>
 
     <FooterSection />
   </div>

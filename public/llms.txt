@@ -8,7 +8,7 @@
 - Gründer & Geschäftsführer: Eric Dobler
 - Einsatzgebiet: Österreich, Deutschland, Schweiz (DACH) · Sprache: Deutsch
 - Kontakt: office@doblyx.com · +43 676 5800866
-- Website: https://doblyx.com
+- Website: https://www.doblyx.com
 
 ## Leistungen
 - **Vertrieb & Anfragen:** Anfragen werden sofort erfasst, vorqualifiziert und beantwortet, auch am Wochenende. Kontakte landen automatisch im CRM, Termine im Kalender.
@@ -53,6 +53,6 @@ Eine berechtigte Frage. Deshalb starten wir mit einem kostenlosen Erstgespräch,
 Das hängt vom Umfang ab. Den konkreten Zeitplan erhalten Sie mit dem Umsetzungsplan, also bevor das Projekt startet.
 
 ## Seiten
-- [Startseite](https://doblyx.com/): Leistungen, Anwendungsfälle, Ablauf, FAQ, Kontakt
-- [Ablauf im Detail](https://doblyx.com/prozess): die vier Phasen der Zusammenarbeit
-- [Impressum](https://doblyx.com/impressum)
+- [Startseite](https://www.doblyx.com/): Leistungen, Anwendungsfälle, Ablauf, FAQ, Kontakt
+- [Ablauf im Detail](https://www.doblyx.com/prozess): die vier Phasen der Zusammenarbeit
+- [Impressum](https://www.doblyx.com/impressum)

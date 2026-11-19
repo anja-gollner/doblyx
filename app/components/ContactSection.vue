@@ -128,7 +128,7 @@ const nextSteps = [
 
           <label class="absolute -left-[9999px]" aria-hidden="true">
             Website
-            <input v-model="form.website" type="text" tabindex="-1" autocomplete="off" />
+            <input v-model="form.website" type="text" name="website" tabindex="-1" autocomplete="off" />
           </label>
 
           <!-- Auswahlkarte Gründungskunden-Programm -->

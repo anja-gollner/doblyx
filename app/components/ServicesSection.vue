@@ -2,21 +2,21 @@
 const services = [
   {
     no: '01',
-    title: 'Vertrieb & Anfragen',
-    text: 'Jede Anfrage wird sofort erfasst, vorqualifiziert und beantwortet, auch am Wochenende. Kontakte landen automatisch im CRM, Termine direkt im Kalender.',
-    tags: ['Lead-Erfassung', 'Sofort-Antworten', 'CRM-Pflege', 'Terminbuchung'],
+    title: 'Anfragen & Vertrieb',
+    text: 'Jede Anfrage wird sofort erfasst, mit den wichtigsten Daten vorqualifiziert und beantwortet, auch am Wochenende. Kontakte landen im CRM, Termine im Kalender, Angebote werden nachgefasst.',
+    tags: ['Anfrage-Erfassung', 'Vorqualifizierung', 'Nachfassen', 'Terminbuchung'],
   },
   {
     no: '02',
-    title: 'Backoffice & Dokumente',
-    text: 'Rechnungen, Verträge, Formulare: KI liest die Daten aus und überträgt sie dorthin, wo sie gebraucht werden. Schluss mit Copy & Paste.',
-    tags: ['Dokumenten-KI', 'Datenübertragung', 'Freigaben', 'Reports'],
+    title: 'Büro & Dokumente',
+    text: 'Angebotsentwürfe, Rechnungen, Förder- und Anmeldeunterlagen: KI liest Daten aus, füllt Vorlagen vor und überträgt alles dorthin, wo es gebraucht wird.',
+    tags: ['Angebotsentwurf', 'Dokumenten-KI', 'Datenübertragung', 'Freigaben'],
   },
   {
     no: '03',
-    title: 'KI-Assistenten & Schnittstellen',
-    text: 'Interne Assistenten, die Ihr Firmenwissen kennen, und Schnittstellen, die Ihre bestehenden Programme endlich miteinander sprechen lassen.',
-    tags: ['Wissens-Assistent', 'E-Mail-KI', 'Integrationen', 'Workflows'],
+    title: 'Firmenwissen & KI-Assistent',
+    text: 'Datenblätter, Preislisten, Abläufe und Erfahrung Ihrer Leute an einem Ort. Ein interner Assistent beantwortet Fragen Ihres Teams mit Quellenangabe.',
+    tags: ['Wissensdatenbank', 'KI-Assistent', 'Schnittstellen', 'Workflows'],
   },
 ]
 </script>
@@ -32,7 +32,7 @@ const services = [
           </h2>
         </div>
         <p class="reveal max-w-sm text-[15px] leading-7 text-muted">
-          Keine Software von der Stange. Wir bauen auf Ihren bestehenden Programmen auf und automatisieren genau die Schritte, die Sie heute ausbremsen.
+          Keine Software von der Stange. Wir bauen auf Ihren bestehenden Programmen auf und automatisieren genau die Schritte, die Ihren Betrieb heute ausbremsen.
         </p>
       </div>
 

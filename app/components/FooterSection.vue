@@ -1,11 +1,16 @@
 <script setup lang="ts">
+// Schluss-CTA je Seite: Überschrift aus zwei Teilen, der zweite kursiv
+const props = withDefaults(defineProps<{ title?: string, accent?: string }>(), {
+  title: 'Weniger Büro.',
+  accent: 'Mehr Anlagen.',
+})
+
 const year = new Date().getFullYear()
 
-const sections = [
-  { id: 'leistungen', label: 'Leistungen' },
-  { id: 'anwendungen', label: 'Anwendungsfälle' },
-  { id: 'gruendungskunden', label: 'Gründungskunden' },
-  { id: 'faq', label: 'FAQ' },
+// Etappe 2 ergänzt: Über uns und die Spalte „Branchen“
+const pages = [
+  { to: '/ai-ready-check', label: 'AI Ready Check' },
+  { to: '/ablauf', label: 'Ablauf' },
 ]
 </script>
 
@@ -14,14 +19,10 @@ const sections = [
     <!-- Abschluss-CTA -->
     <div class="container-site py-24 text-center sm:py-32">
       <p class="reveal eyebrow">Bereit?</p>
-      <p class="reveal mx-auto mt-6 max-w-4xl font-serif text-display-lg text-fg">
-        Weniger Routine. <span class="accent">Mehr Wachstum.</span>
-      </p>
-      <div class="reveal mt-10 flex justify-center">
-        <a href="/#kontakt" class="btn-primary" @click.prevent="useScrollTo('kontakt')">
-          Kostenloses Erstgespräch vereinbaren <span class="arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
+      <h2 class="reveal mx-auto mt-6 max-w-4xl font-serif text-display-lg font-normal text-fg">
+        {{ props.title }} <span class="accent">{{ props.accent }}</span>
+      </h2>
+      <CtaReadyCheck class="reveal mt-10" center />
     </div>
 
     <div class="container-site">
@@ -31,17 +32,16 @@ const sections = [
             <Logo class="h-7 w-auto" />
           </NuxtLink>
           <p class="mt-6 max-w-sm text-[14px] leading-7 text-muted">
-            Doblyx AI GmbH: KI-Automatisierung für Unternehmen, die mehr schaffen wollen, ohne mehr Personal aufzubauen.
+            Doblyx AI GmbH: KI-Lösungen für Solar-, Wärmepumpen- und Elektrobetriebe in Österreich und Deutschland.
           </p>
         </div>
 
         <nav class="lg:col-span-2" aria-label="Seiten">
           <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Website</p>
           <ul class="mt-5 space-y-3">
-            <li v-for="s in sections" :key="s.id">
-              <RollingLink :href="`/#${s.id}`" :label="s.label" class-name="text-[14px] text-fg/80" @click.prevent="useScrollTo(s.id)" />
+            <li v-for="p in pages" :key="p.to">
+              <RollingLink :to="p.to" :label="p.label" class-name="text-[14px] text-fg/80" />
             </li>
-            <li><RollingLink to="/prozess" label="Ablauf im Detail" class-name="text-[14px] text-fg/80" /></li>
           </ul>
         </nav>
 

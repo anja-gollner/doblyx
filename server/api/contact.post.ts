@@ -2,6 +2,17 @@ import { Resend } from 'resend'
 
 // Maximale Länge je Feld (Zeichen); größere Anfragen werden abgelehnt
 const LIMITS = { name: 120, company: 160, email: 200, phone: 40, message: 4000 }
+
+// Erlaubte Werte der Auswahlfelder (wie im Formular)
+const OPTIONS = {
+  branche: ['Photovoltaik', 'Wärmepumpen / Heizung', 'Elektrotechnik', 'Andere Energiebranche', 'Andere Branche'],
+  mitarbeiter: ['1–14', '15–30', '31–70', 'über 70'],
+  rolle: ['Geschäftsführung / Inhaber', 'Bereichs- oder Büroleitung', 'Andere'],
+}
+
+function choice(value: unknown, allowed: string[]): string | null {
+  return typeof value === 'string' && allowed.includes(value) ? value : null
+}
 const MAX_BODY_BYTES = 20_000
 
 // Einfache Mengenbegrenzung pro IP gegen Spam-Fluten (pro Server-Instanz)
@@ -61,14 +72,16 @@ export default defineEventHandler(async (event) => {
   const email = text(body.email, LIMITS.email)
   const phone = text(body.phone, LIMITS.phone)
   const message = text(body.message, LIMITS.message)
-  const founding = body.founding === true
+  const branche = choice(body.branche, OPTIONS.branche)
+  const mitarbeiter = choice(body.mitarbeiter, OPTIONS.mitarbeiter)
+  const rolle = choice(body.rolle, OPTIONS.rolle)
 
   if (
     [name, company, email, phone, message].some((v) => v === null)
-    || !name || !email || !message
+    || !name || !company || !email || !phone || !branche || !mitarbeiter || !rolle
     || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)
   ) {
-    throw createError({ statusCode: 400, message: 'Name, gültige E-Mail und Nachricht sind erforderlich.' })
+    throw createError({ statusCode: 400, message: 'Bitte alle Pflichtfelder korrekt ausfüllen.' })
   }
 
   const resendApiKey = process.env.RESEND_API_KEY
@@ -81,24 +94,27 @@ export default defineEventHandler(async (event) => {
 
   const rows: [string, string][] = [
     ['Name', escapeHtml(name)],
-    ['Unternehmen', company ? escapeHtml(company) : '–'],
+    ['Betrieb', escapeHtml(company)],
+    ['Branche', escapeHtml(branche)],
+    ['Mitarbeiter', escapeHtml(mitarbeiter)],
+    ['Rolle', escapeHtml(rolle)],
+    ['Telefon', `<a href="tel:${escapeHtml(phone.replace(/[^\d+]/g, ''))}">${escapeHtml(phone)}</a>`],
     ['E-Mail', `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`],
-    ['Telefon', phone ? escapeHtml(phone) : '–'],
-    ['Gründungskunden-Programm', founding ? 'Ja, interessiert' : 'Nein'],
-    ['Größter Zeitfresser', escapeHtml(message!).replace(/\n/g, '<br>')],
+    ['Größter Zeitfresser', message ? escapeHtml(message).replace(/\n/g, '<br>') : '–'],
   ]
 
   const subjectName = name.replace(/[\r\n]/g, ' ').slice(0, 100)
-  const subjectCompany = company ? ` (${company.replace(/[\r\n]/g, ' ').slice(0, 100)})` : ''
+  const subjectCompany = ` (${company.replace(/[\r\n]/g, ' ').slice(0, 100)})`
 
   const { data, error } = await resend.emails.send({
     // Absender über RESEND_FROM (z. B. 'Doblyx Website <website@doblyx.com>'), sobald die Domain in Resend bestätigt ist
     from: process.env.RESEND_FROM || 'Doblyx Website <onboarding@resend.dev>',
     to: 'office@doblyx.com',
-    subject: `${founding ? '⭐ Gründungskunde: ' : ''}Erstgespräch: ${subjectName}${subjectCompany}`,
+    subject: `AI Ready Check: ${subjectName}${subjectCompany} · ${branche}`,
     replyTo: email,
     html: `
-      <h2>Neue Anfrage für ein Erstgespräch</h2>
+      <h2>Neue Anfrage für den AI Ready Check</h2>
+      <p>Bitte innerhalb eines Werktags zurückrufen.</p>
       <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
         ${rows.map(([label, value]) => `
         <tr>
@@ -106,7 +122,7 @@ export default defineEventHandler(async (event) => {
           <td style="padding: 8px 12px; border-bottom: 1px solid #eee;">${value}</td>
         </tr>`).join('')}
       </table>
-      <p style="margin-top: 20px; color: #999; font-size: 12px;">Gesendet über das Kontaktformular auf doblyx.com</p>
+      <p style="margin-top: 20px; color: #999; font-size: 12px;">Gesendet über das Anfrageformular auf doblyx.com</p>
     `,
   })
 

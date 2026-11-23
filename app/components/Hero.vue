@@ -2,17 +2,8 @@
 const canvasRef = ref<HTMLElement | null>(null)
 useShaderHero(canvasRef)
 
-const orbRef = ref<HTMLElement | null>(null)
-useMagnetic(orbRef)
-
-const factsLeft = [
-  { value: '30 Min.', label: 'Kostenloses Erstgespräch' },
-  { value: 'Fixpreis', label: 'Umsetzungsanalyse' },
-]
-const factsRight = [
-  { value: `${site.foundingSlots - site.foundingTaken} Plätze`, label: 'noch frei für Gründungskunden' },
-  { value: '1:1', label: 'Direkt mit dem Gründer' },
-]
+const badges = ['AI Ready Check · 45–60 Min.', 'Ihr KI-Score über 4 Dimensionen', 'Direkt mit dem Gründer']
+const titleWords = ['KI', 'für', 'Solar-,', 'Wärmepumpen-', 'und', 'Elektrobetriebe.']
 
 // Echte Pixelmaße, damit das Layout beim Laden nicht springt
 const heroImg = {
@@ -24,17 +15,17 @@ const heroImg = {
 }
 
 const tiles = [
-  { label: 'Vertrieb', img: heroImg.build, pos: 'center' },
-  { label: 'Immobilien', img: heroImg.architecture, pos: '60% center' },
-  { label: 'KI-Assistent', img: heroImg.aiPrint, pos: '70% center' },
-  { label: 'Büro', img: heroImg.office, pos: 'center' },
-  { label: 'Datenschutz', img: heroImg.safe, pos: '40% center' },
-  { label: 'Workflows', img: heroImg.build, pos: '25% center' },
+  { label: 'Photovoltaik', img: heroImg.build, pos: 'center' },
+  { label: 'Wärmepumpen', img: heroImg.architecture, pos: '60% center' },
+  { label: 'Elektrotechnik', img: heroImg.aiPrint, pos: '70% center' },
+  { label: 'Speicher', img: heroImg.office, pos: 'center' },
+  { label: 'Wallbox', img: heroImg.safe, pos: '40% center' },
+  { label: 'Service & Wartung', img: heroImg.build, pos: '25% center' },
 ]
 
 const filmstrip = [heroImg.office, heroImg.build, heroImg.aiPrint, heroImg.architecture]
 
-const offerLines = ['Analyse der Abläufe', 'Umsetzung Workflow', 'Einschulung Team']
+const offerLines = ['Module', 'Wechselrichter', 'Speicher', 'Montage']
 
 const flowTicks = ['08:00', '08:05', '08:10', '08:15', '08:20', '08:25', '08:30']
 const flowNodes = ['E-Mail', 'KI', 'CRM', 'Kalender']
@@ -107,60 +98,28 @@ onMounted(async () => {
     <div ref="canvasRef" class="absolute inset-0 -z-10" aria-hidden="true" />
     <div class="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent to-[#02070A]" aria-hidden="true" />
 
-    <div class="relative mx-auto flex min-h-[100svh] max-w-[90rem] flex-col items-center px-5 pt-32 text-center sm:px-8 sm:pt-36 lg:pt-[17vh]">
-      <h1 class="hero-title font-serif text-[clamp(2.75rem,6.6vw,6.5rem)] font-normal leading-[0.98] tracking-[-0.01em] text-white">
-        <span class="word-mask"><span class="word">Arbeit,</span></span> <span class="word-mask"><span class="word">die</span></span> <span class="word-mask"><span class="word">sich</span></span>
-        <br />
-        <span class="word-mask"><span class="word">von</span></span> <span class="word-mask"><span class="word">selbst</span></span> <span class="word-mask"><span class="word italic">erledigt.</span></span>
+    <div class="relative mx-auto flex min-h-[100svh] max-w-[90rem] flex-col items-center px-5 pt-32 text-center sm:px-8 sm:pt-36 lg:pt-[15vh]">
+      <p class="hero-late eyebrow !text-white/80 max-sm:!tracking-[0.16em] max-sm:before:hidden">Für Solar-, Wärmepumpen- und Elektrobetriebe</p>
+
+      <h1 class="hero-title mt-6 max-w-[68rem] font-serif text-[clamp(2.4rem,5.4vw,5.4rem)] font-normal leading-[1.02] tracking-[-0.01em] text-white">
+        <template v-for="(word, i) in titleWords" :key="word"><span class="word-mask"><span class="word" :class="{ italic: i === titleWords.length - 1 }">{{ word }}</span></span>{{ ' ' }}</template>
       </h1>
 
       <p class="hero-late mt-7 max-w-[46rem] font-mono text-[13px] leading-6 text-white/85 sm:text-[15px] sm:leading-[1.65]">
-        Ihr Team verliert Stunden mit Anfragen, Angeboten und Papierkram?
-        <br class="hidden sm:block" />
-        Wir automatisieren genau das, damit Ihr Team wieder Zeit für Kunden hat.
+        Wir automatisieren Anfragen, Angebote und Papierkram, damit Ihr Büro mit den Aufträgen mithält und Ihr Team wieder Zeit für Kunden und Baustelle hat.
       </p>
 
-      <!-- Orb-Button: mattiertes Glas mit äußerem Ring -->
-      <div class="hero-late mt-8">
-        <a ref="orbRef" href="#kontakt" class="orb" aria-label="Kostenloses Erstgespräch vereinbaren" @click.prevent="useScrollTo('kontakt')">
-          <span class="orb-inner">
-            <span class="orb-sheen" aria-hidden="true" />
-            <Logo icon-only class="orb-icon h-6 w-auto" aria-hidden="true" />
-            <span class="mt-1.5 font-mono text-[11.5px] text-white/90">Erstgespräch</span>
-          </span>
-        </a>
-      </div>
+      <CtaReadyCheck class="hero-late mt-9" center on-dark>
+        <a :href="site.phoneHref" class="btn-ghost !border-white/30 text-white hover:!border-white">Anrufen</a>
+      </CtaReadyCheck>
 
-      <!-- Mobil: Fakten unter dem Button -->
-      <dl class="hero-late mt-10 grid w-full max-w-xs grid-cols-2 gap-5 text-left lg:hidden">
-        <div v-for="fact in [...factsLeft, ...factsRight]" :key="fact.label" class="flex flex-col-reverse">
-          <dt class="font-mono text-[10px] text-white/60">{{ fact.label }}</dt>
-          <dd class="font-serif text-2xl text-white">{{ fact.value }}</dd>
-        </div>
-      </dl>
+      <ul class="hero-late mt-7 flex flex-wrap justify-center gap-2">
+        <li v-for="badge in badges" :key="badge" class="rounded-full border border-white/20 bg-white/[0.06] px-3.5 py-1.5 font-mono text-[10.5px] text-white/85 backdrop-blur-md">{{ badge }}</li>
+      </ul>
 
-      <!-- Desktop: Fakten links und rechts mit runden Glas-Buttons -->
-      <div class="hero-late absolute left-8 top-[43%] hidden items-center gap-8 lg:flex xl:left-10">
-        <a href="#leistungen" class="glass-circle" aria-label="Zu den Leistungen" @click.prevent="useScrollTo('leistungen')">
-          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6" /></svg>
-        </a>
-        <dl class="space-y-5 text-left">
-          <div v-for="fact in factsLeft" :key="fact.label" class="flex flex-col-reverse">
-            <dt class="font-mono text-[12px] text-white/65">{{ fact.label }}</dt>
-            <dd class="font-serif text-[2rem] leading-tight text-white">{{ fact.value }}</dd>
-          </div>
-        </dl>
-      </div>
-      <div class="hero-late absolute right-8 top-[43%] hidden items-center gap-8 lg:flex xl:right-10">
-        <dl class="space-y-5 text-right">
-          <div v-for="fact in factsRight" :key="fact.label" class="flex flex-col-reverse">
-            <dt class="font-mono text-[12px] text-white/65">{{ fact.label }}</dt>
-            <dd class="font-serif text-[2rem] leading-tight text-white">{{ fact.value }}</dd>
-          </div>
-        </dl>
-        <a :href="site.phoneHref" class="glass-circle" :aria-label="`Anrufen: ${site.phone}`">
-          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
-        </a>
+      <div class="hero-late mt-6 flex items-center gap-3 text-left">
+        <img src="/eric-avatar.jpg" alt="Eric Dobler" width="56" height="56" class="h-14 w-14 rounded-full border border-white/30 object-cover" decoding="async" />
+        <p class="text-[13.5px] text-white/85">Sie sprechen direkt mit Eric Dobler, Gründer.</p>
       </div>
 
       <!-- Vorschau-Karten am unteren Rand: Glas mit Verlaufsrand, edle Innenflächen -->
@@ -185,7 +144,7 @@ onMounted(async () => {
 
           <!-- Karte 2: KI-Angebotsentwurf (Rosé-Glas, Dokument-Optik) -->
           <div class="hero-card text-left">
-            <p class="card-label">KI-Angebotsentwurf</p>
+            <p class="card-label">Angebotsentwurf PV-Anlage</p>
             <div class="card-frame">
               <div class="panel flex h-full flex-col bg-gradient-to-b from-white/[0.92] via-[#fdf1ec]/90 to-[#f9d6c8]/85">
                 <div class="flex items-center justify-between">
@@ -200,7 +159,7 @@ onMounted(async () => {
                 </div>
                 <p class="mt-4 font-serif text-[1.45rem] leading-none text-ink">Angebot <span class="italic text-ink/50">Entwurf</span></p>
                 <ul class="mt-3">
-                  <li v-for="(line, i) in offerLines" :key="line" class="flex min-h-[2.1rem] items-center justify-between border-b border-ink/[0.07] py-2 text-[11.5px] text-ink/75">
+                  <li v-for="(line, i) in offerLines" :key="line" class="flex min-h-[1.8rem] items-center justify-between border-b border-ink/[0.07] py-1.5 text-[11.5px] text-ink/75">
                     <span>{{ typed[i] }}<span v-if="typingLine === i" class="caret" /></span>
                     <span class="check flex h-4 w-4 items-center justify-center rounded-full bg-[#0297DE]/12 text-[9px] text-[#0297DE]" :class="{ 'is-on': checked[i] }">✓</span>
                   </li>
@@ -249,7 +208,7 @@ onMounted(async () => {
                 </div>
                 <div class="booked mt-3.5 flex items-center gap-2 rounded-[0.6rem] bg-gradient-to-r from-[#FC734D] to-[#fd9a7d] px-3 py-2 font-mono text-[9.5px] text-white shadow-[0_10px_24px_-10px_rgba(252,115,77,0.9)]" :class="{ 'is-done': flowDone }">
                   <span class="flex h-4 w-4 items-center justify-center rounded bg-white/25 text-[8px]">▸</span>
-                  Anfrage → Termin gebucht
+                  PV-Anfrage → Termin gebucht
                 </div>
                 <div class="mt-2 flex items-center justify-between rounded-[0.6rem] border border-white/[0.08] bg-white/[0.04] px-3 py-2 font-mono text-[9.5px] text-white/70">
                   <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#4fb8ec]" />CRM-Eintrag angelegt</span>
@@ -283,114 +242,6 @@ onMounted(async () => {
 
 .js .hero-fallback.is-visible {
   opacity: 1;
-}
-
-/* Runder Glas-Button: mattiert, durchscheinend, dünner heller Rand + äußerer Ring */
-.orb {
-  position: relative;
-  display: flex;
-  height: 7rem;
-  width: 7rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.orb::before {
-  content: '';
-  position: absolute;
-  inset: -0.6rem;
-  border-radius: inherit;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-}
-
-/* Milchiges Glas wie eine Seifenblase: innen klarer, zum Rand weißer */
-.orb-inner {
-  position: relative;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: inherit;
-  border: 2px solid rgba(255, 255, 255, 0.92);
-  background: radial-gradient(circle at 50% 45%, rgba(255, 246, 240, 0.3) 0%, rgba(255, 246, 240, 0.42) 55%, rgba(255, 255, 255, 0.75) 100%);
-  box-shadow:
-    inset 0 0 14px 2px rgba(255, 255, 255, 0.55),
-    0 0 14px rgba(255, 255, 255, 0.45),
-    0 0 40px rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(2.5px) saturate(115%);
-}
-
-.orb {
-  transition: transform 0.7s var(--ease);
-}
-
-/* Lichtreflex, der langsam um den Rand wandert */
-.orb-sheen {
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: conic-gradient(from 0deg, transparent 0deg, transparent 250deg, rgba(255, 255, 255, 0.95) 300deg, transparent 340deg);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
-  filter: blur(0.5px);
-  animation: orb-spin 5s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes orb-spin {
-  to { transform: rotate(360deg); }
-}
-
-.orb-inner,
-.orb-icon {
-  transition: transform 0.6s var(--ease), background 0.6s ease, box-shadow 0.6s ease;
-}
-
-.orb:hover .orb-inner {
-  transform: scale(1.06);
-  background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.5) 65%, rgba(255, 255, 255, 0.85));
-  box-shadow:
-    inset 0 0 18px 3px rgba(255, 255, 255, 0.7),
-    0 0 24px rgba(255, 255, 255, 0.6),
-    0 0 60px rgba(255, 255, 255, 0.25);
-}
-
-.orb:hover .orb-icon {
-  transform: rotate(-12deg) scale(1.08);
-}
-
-.orb:hover .orb-sheen {
-  animation-duration: 1.6s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .orb-sheen {
-    animation: none;
-  }
-}
-
-.glass-circle {
-  display: flex;
-  height: 5.25rem;
-  width: 5.25rem;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  transition: background 0.4s ease, border-color 0.4s ease;
-}
-
-.glass-circle:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .card-label {

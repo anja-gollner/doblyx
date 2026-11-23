@@ -5,12 +5,8 @@ export const site = {
   phoneHref: 'tel:+436765800866',
   linkedin: 'https://www.linkedin.com/in/eric-dobler/',
   location: 'Hartberg, Steiermark',
-  // Gründungskunden-Programm: Anzahl vergebener Plätze hier hochzählen
-  foundingSlots: 3,
-  foundingTaken: 0,
-  // Preise: bezahltes Einstiegsprodukt und Untergrenze für Umsetzungsprojekte
-  analysisPrice: '1.490 €',
-  projectFrom: '10.000 €',
+  // Einziger Preis auf der Website: Wert des AI Ready Checks
+  readyCheckValue: '749 €',
   // Umami Analytics (cloud.umami.is): Website-ID hier eintragen, leer = Analytics aus
   umamiWebsiteId: '282301e0-29f2-4412-be7f-fcac876412a9',
   // Impressum: Angaben aus GISA-Auszug und Firmenbuch eintragen (leer = Zeile wird nicht angezeigt)

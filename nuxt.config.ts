@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { SITE_URL, description } from './app/utils/seo'
+import { SITE_URL, description, pageMeta } from './app/utils/seo'
 
 // Test-Version (z. B. mydoblyx.com): `npm run build:staging` – für Suchmaschinen komplett gesperrt
 const isStaging = process.env.SITE_ENV === 'staging'
@@ -22,6 +22,8 @@ export default defineNuxtConfig({
 
   // Test-Version: zusätzlich Sperr-Header und eine robots.txt, die alles verbietet
   routeRules: {
+    // Alte Ablauf-Seite: dauerhaft auf die neue
+    '/prozess': { redirect: { to: '/ablauf', statusCode: 301 } },
     '/**': {
       headers: {
         // Sicherheits-Header für alle Seiten
@@ -68,7 +70,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/', '/prozess', '/impressum', '/datenschutz'],
+      routes: ['/', '/ai-ready-check', '/ablauf', '/impressum', '/datenschutz'],
     },
   },
 
@@ -84,7 +86,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'KI-Automatisierung für Unternehmen in Österreich | Doblyx AI',
+      title: pageMeta['/']!.title,
       htmlAttrs: {
         lang: 'de',
       },
@@ -94,7 +96,7 @@ export default defineNuxtConfig({
         { name: 'robots', content: isStaging ? 'noindex, nofollow' : 'index, follow' },
         { name: 'author', content: 'Doblyx AI GmbH' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Doblyx AI: Arbeit, die sich von selbst erledigt.' },
+        { property: 'og:title', content: pageMeta['/']!.title },
         { property: 'og:description', content: description },
         { property: 'og:image', content: `${SITE_URL}/og-image.png` },
         { property: 'og:image:width', content: '1200' },
@@ -102,7 +104,7 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'Doblyx AI' },
         { property: 'og:locale', content: 'de_AT' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Doblyx AI: Arbeit, die sich von selbst erledigt.' },
+        { name: 'twitter:title', content: pageMeta['/']!.title },
         { name: 'twitter:description', content: description },
         { name: 'twitter:image', content: `${SITE_URL}/og-image.png` },
       ],

@@ -1,5 +1,32 @@
 <script setup lang="ts">
+import type { FaqItem } from '~/utils/faq'
+
+const props = defineProps<{ items: FaqItem[] }>()
 const open = ref<number | null>(0)
+
+// FAQPage-Schema aus denselben Daten wie die sichtbare Liste
+useHead({
+  script: [{
+    key: 'faq-schema',
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: props.items.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    }),
+  }],
+})
+
+// Antwort in Text vor und nach dem optionalen Link teilen
+function parts(item: FaqItem) {
+  if (!item.link) return null
+  const [before, ...rest] = item.a.split(item.link.text)
+  return { before, after: rest.join(item.link.text) }
+}
 
 function toggle(i: number) {
   open.value = open.value === i ? null : i
@@ -22,7 +49,7 @@ function toggle(i: number) {
       </div>
 
       <ul class="lg:col-span-8">
-        <li v-for="(item, i) in faq" :key="item.q" class="reveal border-t border-[var(--line)] last:border-b">
+        <li v-for="(item, i) in props.items" :key="item.q" class="reveal border-t border-[var(--line)] last:border-b">
           <h3>
             <button
               :id="`faq-q-${i}`"
@@ -47,7 +74,10 @@ function toggle(i: number) {
             :class="open === i ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
           >
             <div class="overflow-hidden">
-              <p class="max-w-2xl pb-7 text-[15px] leading-7 text-muted">{{ item.a }}</p>
+              <p v-if="parts(item)" class="max-w-2xl pb-7 text-[15px] leading-7 text-muted">
+                {{ parts(item)!.before }}<NuxtLink :to="item.link!.to" class="text-fg underline decoration-cantaloupe/60 underline-offset-4">{{ item.link!.text }}</NuxtLink>{{ parts(item)!.after }}
+              </p>
+              <p v-else class="max-w-2xl pb-7 text-[15px] leading-7 text-muted">{{ item.a }}</p>
             </div>
           </div>
         </li>

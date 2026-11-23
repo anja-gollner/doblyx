@@ -1,16 +1,14 @@
 <script setup lang="ts">
 const benefits = [
-  { title: 'Gründungskonditionen', text: 'Sonderkonditionen auf Ihr erstes Projekt, die es später so nicht mehr gibt.' },
+  { title: 'Besondere Konditionen', text: 'Auf Ihr erstes Projekt, die es später so nicht mehr gibt.' },
   { title: 'Direkter Draht zum Gründer', text: 'Kein Account-Manager, kein Ticketsystem. Sie haben Eric direkt am Telefon.' },
   { title: 'Volle Priorität', text: 'Ihr Projekt bekommt unsere ungeteilte Aufmerksamkeit, bei Umsetzung und Support.' },
-  { title: 'Mitgestalten', text: 'Ihr Feedback fließt direkt in unsere Lösungen ein. Sie prägen, wie wir arbeiten.' },
+  { title: 'Mitgestalten', text: 'Ihr Feedback fließt direkt in unsere Lösungen für die Energiebranche ein.' },
 ]
-
-const free = site.foundingSlots - site.foundingTaken
 </script>
 
 <template>
-  <section id="gruendungskunden" class="relative py-14 sm:py-20 lg:py-28">
+  <section id="pilotpartner" class="relative py-14 sm:py-20 lg:py-28">
     <HorizonGlow tone="mix" />
     <div class="container-site">
       <div class="reveal relative overflow-hidden rounded-[2rem] p-px">
@@ -22,35 +20,18 @@ const free = site.foundingSlots - site.foundingTaken
 
           <div class="relative grid gap-14 lg:grid-cols-12">
             <div class="lg:col-span-6">
-              <p class="eyebrow">Gründungskunden-Programm</p>
+              <p class="eyebrow">Pilotpartner Energiebranche</p>
               <h2 class="heading mt-6">
                 Wir sind neu. <span class="accent">Das ist Ihr Vorteil.</span>
               </h2>
               <p class="mt-6 max-w-lg text-[15px] leading-7 text-fg/70">
-                Doblyx ist ein junges Unternehmen, und das sagen wir offen. Statt geschönter Referenzen bieten wir unseren ersten {{ site.foundingSlots }} Kunden etwas, das große Agenturen nicht können: volle Aufmerksamkeit und besondere Konditionen.
+                Doblyx ist ein junges Unternehmen, und das sagen wir offen. Statt geschönter Referenzen bieten wir unseren ersten Partnern aus der Energiebranche besondere Konditionen und volle Aufmerksamkeit.
               </p>
               <p class="mt-4 max-w-lg text-[14px] leading-6 text-muted">
-                Unsere einzige Bitte: ehrliches Feedback und, wenn Sie zufrieden sind, eine kurze Fallstudie über unser gemeinsames Projekt.
+                Unsere Bitte: ehrliches Feedback und, wenn Sie zufrieden sind, eine kurze Fallstudie.
               </p>
 
-              <div class="mt-10 flex flex-wrap items-center gap-6">
-                <a href="#kontakt" class="btn-primary" @click.prevent="useScrollTo('kontakt')">
-                  Platz anfragen <span class="arrow" aria-hidden="true">→</span>
-                </a>
-                <div class="flex items-center gap-3">
-                  <div class="flex gap-1.5" aria-hidden="true">
-                    <span
-                      v-for="n in site.foundingSlots"
-                      :key="n"
-                      class="h-2.5 w-2.5 rounded-full"
-                      :class="n <= site.foundingTaken ? 'bg-[var(--line-strong)]' : 'bg-cantaloupe'"
-                    />
-                  </div>
-                  <span class="font-mono text-[11px] uppercase tracking-[0.15em] text-fg/75">
-                    {{ free }} von {{ site.foundingSlots }} Plätzen frei
-                  </span>
-                </div>
-              </div>
+              <CtaReadyCheck class="mt-10" :note="false" />
             </div>
 
             <ul class="grid gap-3 self-center sm:grid-cols-2 lg:col-span-6">

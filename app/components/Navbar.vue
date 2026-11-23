@@ -3,19 +3,25 @@ const route = useRoute()
 const scrolled = ref(false)
 const mobileOpen = ref(false)
 
+// Etappe 2 ergänzt: Branchen (Dropdown) und Über uns
 const links = [
-  { id: 'leistungen', label: 'Leistungen' },
-  { id: 'anwendungen', label: 'Anwendungsfälle' },
-  { id: 'ablauf', label: 'Ablauf' },
-  { id: 'ueber', label: 'Über uns' },
-  { id: 'faq', label: 'FAQ' },
+  { to: '/ai-ready-check', label: 'AI Ready Check' },
+  { to: '/ablauf', label: 'Ablauf' },
 ]
 
-function go(id: string) {
+function closeMenu() {
   // Sperre sofort lösen, sonst ignoriert die Scroll-Engine das Ziel
   mobileOpen.value = false
   useScrollLock(false)
-  useScrollTo(id)
+}
+
+// CTA: auf /ai-ready-check direkt zum Formular scrollen
+function onCta(event: MouseEvent) {
+  closeMenu()
+  if (route.path.replace(/\/$/, '') === '/ai-ready-check') {
+    event.preventDefault()
+    useScrollTo('anfrage')
+  }
 }
 
 // Logo: auf der Startseite sanft zum Hero zurück, sonst zur Startseite
@@ -60,23 +66,28 @@ onBeforeUnmount(() => {
         aria-label="Hauptnavigation"
       >
         <NuxtLink to="/" class="flex items-center text-fg" aria-label="Doblyx AI, zum Seitenanfang" @click="onLogoClick">
-          <Logo class="h-6 w-auto sm:h-7" />
+          <Logo class="h-5 w-auto sm:h-7" />
         </NuxtLink>
 
         <ul class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 font-mono lg:flex">
-          <li v-for="(link, i) in links" :key="link.id" class="flex items-center gap-2">
+          <li v-for="(link, i) in links" :key="link.to" class="flex items-center gap-2">
             <span v-if="i === 0" class="h-1 w-1 rounded-full bg-cantaloupe" aria-hidden="true" />
-            <RollingLink :href="`/#${link.id}`" :label="link.label" class-name="text-[12px] text-fg/85" @click.prevent="go(link.id)" />
+            <RollingLink :to="link.to" :label="link.label" class-name="text-[12px] text-fg/85" />
           </li>
         </ul>
 
         <div class="flex items-center gap-2">
           <div class="hidden items-center gap-1 rounded-full border border-white/20 p-1 pl-4 font-mono sm:flex" :class="{ 'sm:!hidden': mobileOpen }">
             <a :href="site.phoneHref" class="pr-2 text-[12px] text-fg/85 transition-colors hover:text-white">Anrufen</a>
-            <a href="/#kontakt" class="rounded-full bg-white px-4 py-1.5 text-[12px] text-ink transition-colors hover:bg-cantaloupe hover:text-white" @click.prevent="go('kontakt')">
-              Erstgespräch
-            </a>
+            <NuxtLink to="/ai-ready-check#anfrage" class="rounded-full bg-white px-4 py-1.5 text-[12px] text-ink transition-colors hover:bg-cantaloupe hover:text-white" @click="onCta">
+              AI Ready Check anfragen
+            </NuxtLink>
           </div>
+
+          <!-- Handy: Primär-Button bleibt neben dem Menü sichtbar -->
+          <NuxtLink v-if="!mobileOpen" to="/ai-ready-check#anfrage" class="whitespace-nowrap rounded-full bg-white px-3 py-2.5 font-mono text-[11px] text-ink sm:hidden" @click="onCta">
+            AI Ready Check
+          </NuxtLink>
 
           <!-- Menü-Button: zwei Linien, die sich zum X drehen -->
           <button
@@ -102,18 +113,18 @@ onBeforeUnmount(() => {
         <nav class="container-site flex flex-1 flex-col pb-8 pt-28" aria-label="Menü">
           <p class="menu-item eyebrow" style="--i: 0">Menü</p>
           <ul class="mt-6">
-            <li v-for="(link, i) in links" :key="link.id" class="menu-item border-b border-white/[0.08]" :style="{ '--i': i + 1 }">
-              <a :href="`/#${link.id}`" class="group flex items-baseline justify-between py-4" @click.prevent="go(link.id)">
+            <li v-for="(link, i) in links" :key="link.to" class="menu-item border-b border-white/[0.08]" :style="{ '--i': i + 1 }">
+              <NuxtLink :to="link.to" class="group flex items-baseline justify-between py-4" @click="closeMenu">
                 <span class="font-serif text-[2.4rem] leading-none text-fg transition-colors group-active:text-cantaloupe">{{ link.label }}</span>
                 <span class="font-mono text-[11px] text-muted">0{{ i + 1 }}</span>
-              </a>
+              </NuxtLink>
             </li>
           </ul>
 
           <div class="mt-auto pt-10">
-            <a href="/#kontakt" class="menu-item btn-primary w-full" style="--i: 7" @click.prevent="go('kontakt')">
-              Kostenloses Erstgespräch vereinbaren <span class="arrow" aria-hidden="true">→</span>
-            </a>
+            <NuxtLink to="/ai-ready-check#anfrage" class="menu-item btn-primary w-full" style="--i: 7" @click="onCta">
+              AI Ready Check anfragen <span class="arrow" aria-hidden="true">→</span>
+            </NuxtLink>
             <div class="menu-item mt-6 grid grid-cols-2 gap-3 font-mono text-[11px]" style="--i: 8">
               <a :href="site.phoneHref" class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
                 <span class="block uppercase tracking-[0.18em] text-muted">Anrufen</span>
@@ -125,7 +136,7 @@ onBeforeUnmount(() => {
               </a>
             </div>
             <p class="menu-item mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted" style="--i: 9">
-              <span class="live-dot" /> Noch {{ site.foundingSlots - site.foundingTaken }} Gründungskunden-Plätze frei
+              <span class="live-dot" /> Wert {{ site.readyCheckValue }}, für Energiebetriebe aktuell ohne Kosten
             </p>
           </div>
         </nav>

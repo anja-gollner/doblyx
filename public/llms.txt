@@ -1,58 +1,27 @@
 # Doblyx AI
 
-> Doblyx AI GmbH ist eine KI-Automatisierungsagentur aus Hartberg (Steiermark, Österreich). Wir automatisieren wiederkehrende Aufgaben in Unternehmen: Anfragen, Angebote, Dokumente, Datenpflege. Maßgeschneidert, DSGVO-konform und persönlich betreut. Einstieg ist ein kostenloses 30-minütiges Erstgespräch, danach eine KI-Umsetzungsanalyse zum Fixpreis von 1.490 €.
+> Doblyx AI GmbH aus Hartberg (Steiermark, Österreich) baut KI-Lösungen für Solar-, Wärmepumpen- und Elektrobetriebe sowie andere Unternehmen der Energiebranche in Österreich und Deutschland. Wir automatisieren Anfragen, Angebote, Dokumente und Firmenwissen. Einstieg ist der AI Ready Check (Wert 749 €, für Energiebetriebe aktuell ohne Kosten).
 
 ## Auf einen Blick
 - Firma: Doblyx AI GmbH, Schildbach 42, 8230 Hartberg, Österreich
 - Firmenbuch: FN 670873d, LG f. ZRS Graz · UID: ATU82914937
 - Gründer & Geschäftsführer: Eric Dobler
-- Einsatzgebiet: Österreich, Deutschland, Schweiz (DACH) · Sprache: Deutsch
+- Zielgruppe: Photovoltaik-, Wärmepumpen- und Elektrobetriebe, typischerweise 15 bis 70 Mitarbeiter; andere Branchen auf Anfrage
+- Einsatzgebiet: Österreich und Deutschland · Sprache: Deutsch
 - Kontakt: office@doblyx.com · +43 676 5800866
 - Website: https://www.doblyx.com
 
 ## Leistungen
-- **Vertrieb & Anfragen:** Anfragen werden sofort erfasst, vorqualifiziert und beantwortet, auch am Wochenende. Kontakte landen automatisch im CRM, Termine im Kalender.
-- **Backoffice & Dokumente:** KI liest Rechnungen, Verträge und Formulare aus und überträgt die Daten in die richtigen Systeme.
-- **KI-Assistenten & Schnittstellen:** Interne Assistenten mit Firmenwissen und Schnittstellen, die bestehende Programme verbinden.
+- Anfragen & Vertrieb: Anfragen erfassen, vorqualifizieren, beantworten, Angebote nachfassen, Termine buchen.
+- Büro & Dokumente: Angebotsentwürfe, Rechnungen, Unterlagen für Netzanmeldung und Förderung vorbereiten.
+- Firmenwissen & KI-Assistent: zentrale Wissensdatenbank und interner Assistent mit Quellenangabe.
 
-## Typische Anwendungsfälle
-Interessenten-Anfragen (Immobilien), Angebote nachfassen (Solar & Energie), Angebotserstellung (Handwerk & Bau), Kunden-Onboarding (Dienstleistung), Kundenservice (Handel & E-Commerce), Eingangsrechnungen.
-
-## Ablauf und Preise
-1. Kostenloses Erstgespräch (30 Min., unverbindlich)
-2. KI-Umsetzungsanalyse zum Fixpreis von 1.490 €: detaillierte Aufnahme der Abläufe und fertiger Umsetzungsplan mit Aufwand, Kosten und erwarteter Ersparnis. Der Plan kann mit Doblyx oder mit jemand anderem umgesetzt werden.
-3. Umsetzung als festes Projekt, ab 10.000 €
-4. Ausbau: Projekt für Projekt, Wartung optional, kein Lock-in
-
-## Gründungskunden-Programm
-Doblyx ist ein junges Unternehmen. Die ersten 3 Kunden erhalten Sonderkonditionen, direkten Kontakt zum Gründer und volle Priorität, im Gegenzug für ehrliches Feedback und, bei Zufriedenheit, eine kurze Fallstudie.
-
-## Über den Gründer
-Eric Dobler kommt aus dem Leistungssport (Skirennlauf, Matura an einer Skisportschule) und ist heute auf KI-Automatisierung und Softwareentwicklung für Unternehmen spezialisiert. LinkedIn: https://www.linkedin.com/in/eric-dobler/
-
-## Häufige Fragen
-### Was kostet eine Automatisierung?
-Unsere Umsetzungsprojekte starten bei 10.000 €. Davor steht immer die KI-Umsetzungsanalyse zum Fixpreis von 1.490 €, damit Sie vor dem Projekt wissen, was es kostet und was es bringt. Ohne Ihre Zustimmung entstehen keine Kosten.
-
-### Was ist kostenlos, was kostet etwas?
-Das 30-minütige Erstgespräch ist kostenlos und unverbindlich. Wenn sich Automatisierung für Sie lohnt, folgt die KI-Umsetzungsanalyse zum Fixpreis von 1.490 €. Sie erhalten einen fertigen Umsetzungsplan, den Sie mit uns oder mit jemand anderem umsetzen können.
-
-### Brauchen wir technisches Know-how?
-Nein. Wir übernehmen Konzeption, Umsetzung und Einschulung. Von Ihnen brauchen wir nur jemanden, der Ihre Abläufe kennt.
-
-### Funktioniert das mit unseren bestehenden Programmen?
-In den allermeisten Fällen ja. Wir binden die Tools an, die Sie bereits nutzen, etwa Microsoft 365, Google Workspace sowie gängige CRM-, Buchhaltungs- und Projekttools. Technisch setzen wir unter anderem auf n8n und führende KI-Modelle.
-
-### Was passiert mit unseren Daten?
-Datenschutz ist bei uns Teil der Planung, kein Nachgedanke. Wir setzen DSGVO-konform um, schließen einen Auftragsverarbeitungsvertrag ab und betreiben die Lösungen nach Möglichkeit auf Servern in der EU.
-
-### Ihr seid ein junges Unternehmen. Warum sollten wir euch vertrauen?
-Eine berechtigte Frage. Deshalb starten wir mit einem kostenlosen Erstgespräch, legen Kosten vorab offen und arbeiten mit klarem Umfang, in dem Sie früh Ergebnisse sehen. Als Gründungskunde profitieren Sie zusätzlich von besonderen Konditionen.
-
-### Wie schnell läuft die erste Automatisierung?
-Das hängt vom Umfang ab. Den konkreten Zeitplan erhalten Sie mit dem Umsetzungsplan, also bevor das Projekt startet.
+## Ablauf
+1. AI Ready Check: 45–60 Minuten per Video-Call. AI Ready Score (0–100) über Prozessreife, Datenqualität, Technik und Organisation, größter Hebel, passende Anwendungsfälle.
+2. Danach ein konkreter Vorschlag für den nächsten Schritt, zugeschnitten auf den Betrieb.
+3. Umsetzung als festes Projekt, individuell kalkuliert, kein Lock-in.
+4. Betreuung und Ausbau auf Wunsch.
 
 ## Seiten
-- [Startseite](https://www.doblyx.com/): Leistungen, Anwendungsfälle, Ablauf, FAQ, Kontakt
-- [Ablauf im Detail](https://www.doblyx.com/prozess): die vier Phasen der Zusammenarbeit
-- [Impressum](https://www.doblyx.com/impressum)
+- AI Ready Check: https://www.doblyx.com/ai-ready-check
+- Ablauf: https://www.doblyx.com/ablauf

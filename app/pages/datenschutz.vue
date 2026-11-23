@@ -162,10 +162,10 @@ useHead({
               6.1 Kontaktformular auf dieser Website
             </h3>
             <p>
-              Wenn Sie uns über das Kontaktformular eine Anfrage senden, verarbeiten wir Ihre Angaben aus dem Formular (Name, E-Mail-Adresse, optional Unternehmen und Telefonnummer, Ihre Nachricht sowie die Angabe, ob Sie sich für das Gründungskunden-Programm interessieren), um Ihre Anfrage zu bearbeiten und Ihnen einen Termin für den Potenzial-Check vorzuschlagen.
+              Wenn Sie uns über das Kontaktformular eine Anfrage senden, verarbeiten wir Ihre Angaben aus dem Formular (Name, Betrieb, Branche, Mitarbeiterzahl, Ihre Rolle im Betrieb, Telefonnummer, E-Mail-Adresse und optional Ihre Nachricht), um Sie zurückzurufen und mit Ihnen einen Termin für den AI Ready Check zu vereinbaren.
             </p>
             <p class="mt-2">
-              Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen auf Ihre Anfrage hin) sowie Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Beantwortung von Anfragen). Die Angabe von Name, E-Mail-Adresse und Nachricht ist erforderlich, damit wir Ihre Anfrage bearbeiten können; alle weiteren Angaben sind freiwillig.
+              Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen auf Ihre Anfrage hin) sowie Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Beantwortung von Anfragen). Die als Pflichtfeld markierten Angaben sind erforderlich, damit wir Ihre Anfrage bearbeiten und Sie zurückrufen können; Ihre Nachricht ist freiwillig.
             </p>
             <p class="mt-2">
               Für den technischen Versand der Formularinhalte an unser Postfach nutzen wir den E-Mail-Dienst Resend (Anbieter: Resend, Inc., USA). Dabei werden die Formularinhalte an Server von Resend übermittelt und von dort an uns zugestellt. Resend verarbeitet die Daten ausschließlich in unserem Auftrag. Die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework, sofern der Anbieter zertifiziert ist, andernfalls auf Grundlage der Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).

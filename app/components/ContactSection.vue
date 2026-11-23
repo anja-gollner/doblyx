@@ -2,38 +2,11 @@
 const finaleRef = ref<HTMLElement | null>(null)
 useShaderHero(finaleRef, { hill: false })
 
-const form = reactive({
-  name: '',
-  company: '',
-  email: '',
-  phone: '',
-  message: '',
-  founding: false,
-  website: '', // Honeypot gegen Spam-Bots, bleibt für Menschen unsichtbar
-})
-const submitted = ref(false)
-const sending = ref(false)
-const error = ref(false)
-
-async function handleSubmit() {
-  sending.value = true
-  error.value = false
-  try {
-    await $fetch('/api/contact', { method: 'POST', body: form })
-    submitted.value = true
-    trackEvent('anfrage-gesendet', { gruendungskunde: form.founding })
-  } catch {
-    error.value = true
-  } finally {
-    sending.value = false
-  }
-}
-
 const nextSteps = [
   'Sie senden uns Ihre Anfrage.',
-  'Wir melden uns innerhalb von 24 Stunden (werktags) mit Terminvorschlägen.',
-  '30 Minuten Erstgespräch per Video-Call oder Telefon, kostenlos.',
-  'Wenn es passt: Angebot für die KI-Umsetzungsanalyse zum Fixpreis.',
+  'Eric ruft Sie innerhalb eines Werktags an.',
+  'Gemeinsam vereinbaren Sie den Termin für den AI Ready Check (45–60 Min. per Video-Call).',
+  'Danach wissen Sie, wo Ihr Betrieb steht und welcher nächste Schritt sinnvoll ist.',
 ]
 </script>
 
@@ -50,12 +23,12 @@ const nextSteps = [
           Lassen Sie uns <span class="accent">sprechen.</span>
         </h2>
         <p class="reveal mt-6 max-w-md text-[15px] leading-7 text-muted">
-          Vereinbaren Sie ein kostenloses Erstgespräch. Ohne Verkaufsdruck und ohne Verpflichtung, nur ein ehrlicher Blick auf Ihre Abläufe.
+          Fordern Sie Ihren AI Ready Check an. Ohne Verkaufsdruck, nur ein ehrlicher Blick auf Ihren Betrieb.
         </p>
 
         <div class="reveal mt-10 flex items-center gap-4 rounded-2xl border border-[var(--line)] bg-ink-800 p-4">
           <div class="h-14 w-14 flex-shrink-0 overflow-hidden rounded-full border border-[var(--line-strong)]">
-            <img src="/eric-avatar.jpg" alt="Eric Dobler" class="h-full w-full origin-[50%_30%] scale-[1.7] object-cover" width="56" height="56" loading="lazy" decoding="async" />
+            <img src="/eric-avatar.jpg" alt="Eric Dobler" class="h-full w-full object-cover" width="56" height="56" loading="lazy" decoding="async" />
           </div>
           <div>
             <p class="text-[14px] text-fg">Sie sprechen direkt mit Eric Dobler</p>
@@ -90,87 +63,7 @@ const nextSteps = [
       </div>
 
       <div class="reveal lg:col-span-7">
-        <form
-          v-if="!submitted"
-          class="glass-card bg-ink/60 p-6 sm:p-10"
-          @submit.prevent="handleSubmit"
-        >
-          <div class="grid gap-5 sm:grid-cols-2">
-            <label class="block">
-              <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Name *</span>
-              <input v-model="form.name" type="text" required autocomplete="name" enterkeyhint="next" placeholder="Max Mustermann" class="field" />
-            </label>
-            <label class="block">
-              <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Unternehmen</span>
-              <input v-model="form.company" type="text" autocomplete="organization" enterkeyhint="next" placeholder="Firmenname" class="field" />
-            </label>
-            <label class="block">
-              <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">E-Mail *</span>
-              <input v-model="form.email" type="email" required autocomplete="email" enterkeyhint="next" placeholder="name@firma.at" class="field" />
-            </label>
-            <label class="block">
-              <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Telefon <span class="normal-case tracking-normal">(optional)</span></span>
-              <input v-model="form.phone" type="tel" autocomplete="tel" enterkeyhint="next" placeholder="+43 …" class="field" />
-            </label>
-          </div>
-
-          <label class="mt-5 block">
-            <span class="mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Was kostet Sie aktuell am meisten Zeit? *</span>
-            <textarea
-              v-model="form.message"
-              rows="4"
-              required
-              enterkeyhint="send"
-              placeholder="z. B. „Wir beantworten jede Anfrage händisch und tippen alles doppelt ins CRM.“"
-              class="field resize-none"
-            />
-          </label>
-
-          <label class="absolute -left-[9999px]" aria-hidden="true">
-            Website
-            <input v-model="form.website" type="text" name="website" tabindex="-1" autocomplete="off" />
-          </label>
-
-          <!-- Auswahlkarte Gründungskunden-Programm -->
-          <label class="founding-option group mt-5 flex cursor-pointer items-center gap-4 rounded-2xl border p-4 transition-all duration-500 sm:p-5" :class="form.founding ? 'is-on' : ''">
-            <input v-model="form.founding" type="checkbox" class="peer sr-only" />
-            <span class="check-box flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-lg border transition-all duration-300 peer-focus-visible:ring-2 peer-focus-visible:ring-cantaloupe" aria-hidden="true">
-              <svg class="h-3.5 w-3.5 transition-transform duration-300" :class="form.founding ? 'scale-100' : 'scale-0'" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            </span>
-            <span class="flex-1">
-              <span class="block text-[14.5px] text-fg">Ich möchte Gründungskunde werden</span>
-              <span class="mt-0.5 block text-[12.5px] leading-5 text-muted">Sonderkonditionen und direkter Draht zum Gründer</span>
-            </span>
-            <span class="hidden items-center gap-2 rounded-full border border-cantaloupe/30 bg-cantaloupe/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-cantaloupe sm:flex">
-              <span class="live-dot" />{{ site.foundingSlots - site.foundingTaken }} frei
-            </span>
-          </label>
-
-          <p v-if="error" class="mt-5 text-[14px] text-cantaloupe" role="alert">
-            Das hat leider nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie direkt an
-            <a :href="`mailto:${site.email}`" class="underline">{{ site.email }}</a>.
-          </p>
-
-          <button type="submit" :disabled="sending" class="btn-primary mt-7 w-full disabled:opacity-60">
-            <template v-if="!sending">Kostenloses Erstgespräch anfragen <span class="arrow" aria-hidden="true">→</span></template>
-            <template v-else>Wird gesendet …</template>
-          </button>
-
-          <p class="mt-5 text-center text-[12px] leading-5 text-muted">
-            Mit dem Absenden verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage, gemäß unserer
-            <NuxtLink to="/datenschutz" class="underline underline-offset-2 hover:text-fg">Datenschutzerklärung</NuxtLink>.
-          </p>
-        </form>
-
-        <div v-else class="glass-card flex min-h-[420px] flex-col items-center justify-center bg-ink/60 p-10 text-center" role="status">
-          <span class="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-electric to-cantaloupe text-ink">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-          </span>
-          <h3 class="mt-6 font-serif text-4xl text-fg">Danke, {{ form.name.split(' ')[0] }}.</h3>
-          <p class="mt-3 max-w-sm text-[15px] leading-7 text-muted">
-            Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden (werktags) mit Terminvorschlägen bei Ihnen.
-          </p>
-        </div>
+        <AnfrageFormular />
       </div>
     </div>
   </section>
@@ -184,30 +77,5 @@ const nextSteps = [
   height: 640px;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
   mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
-}
-
-.founding-option {
-  border-color: var(--line);
-  background: rgba(255, 255, 255, 0.025);
-}
-
-.founding-option:hover {
-  border-color: var(--line-strong);
-}
-
-.founding-option.is-on {
-  border-color: rgba(252, 115, 77, 0.55);
-  background: linear-gradient(100deg, rgba(252, 115, 77, 0.12), rgba(2, 151, 222, 0.06));
-  box-shadow: 0 0 0 4px rgba(252, 115, 77, 0.08), 0 14px 40px -20px rgba(252, 115, 77, 0.7);
-}
-
-.check-box {
-  border-color: var(--line-strong);
-  color: #02070A;
-}
-
-.founding-option.is-on .check-box {
-  border-color: #FC734D;
-  background: #FC734D;
 }
 </style>

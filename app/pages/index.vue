@@ -1,20 +1,5 @@
 <script setup lang="ts">
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faq.map((item) => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: { '@type': 'Answer', text: item.a },
-        })),
-      }),
-    },
-  ],
-})
+usePageMeta('/')
 </script>
 
 <template>
@@ -27,11 +12,9 @@ useHead({
         <ServicesSection />
         <UseCasesSection />
         <OfferSection />
-        <ProcessSection />
-        <FoundingSection />
-        <FounderSection />
+        <PilotSection />
         <PromiseSection />
-        <FaqSection />
+        <FaqListe :items="faqHome" />
         <ContactSection />
       </div>
     </main>

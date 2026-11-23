@@ -1,63 +1,59 @@
 <script setup lang="ts">
-useHead({
-  title: 'So läuft ein KI-Automatisierungsprojekt ab | Doblyx AI',
-  meta: [
-    { name: 'description', content: `So arbeiten wir: kostenloses Erstgespräch, KI-Umsetzungsanalyse zum Fixpreis von ${site.analysisPrice}, Umsetzung als festes Projekt und Ausbau Schritt für Schritt.` },
-  ],
-})
+usePageMeta('/ablauf')
 
 const phases = [
   {
     no: '01',
-    title: 'Erstgespräch',
+    title: 'AI Ready Check',
     lead: 'Verstehen, bevor wir bauen.',
-    duration: '30 Minuten · kostenlos',
-    text: 'In einem kurzen Gespräch lernen wir Ihr Unternehmen und Ihre Abläufe kennen. Wo geht Zeit verloren? Wo wird doppelt gearbeitet? Wo bleiben Anfragen liegen?',
+    meta: `45–60 Minuten · Wert ${site.readyCheckValue} · aktuell ohne Kosten`,
+    text: 'Im Video-Call lernen wir Ihren Betrieb kennen: Ziele, Abläufe, Daten. Sie bekommen Ihren AI Ready Score und sehen, in welchem Bereich KI den größten Hebel hat.',
     points: [
-      'Gespräch per Video-Call oder Telefon',
-      'Erste Einschätzung, wo die größten Hebel liegen',
-      'Ehrliche Antwort, ob sich Automatisierung für Sie lohnt',
+      'Score von 0 bis 100 über vier Dimensionen',
+      'Der Bereich mit dem größten Hebel',
+      'Ehrliche Antwort, ob sich KI für Sie jetzt lohnt',
     ],
-    outcome: 'Klarheit, ob eine Umsetzungsanalyse für Sie sinnvoll ist. Unverbindlich und ohne Kosten.',
+    outcome: 'Klarheit, wo Sie stehen und wo KI Ihnen am meisten bringt.',
+    link: { to: '/ai-ready-check', label: 'Mehr zum AI Ready Check' },
   },
   {
     no: '02',
-    title: 'KI-Umsetzungsanalyse',
-    lead: 'Klarheit, bevor ein Projekt startet.',
-    duration: `Fixpreis · ${site.analysisPrice}`,
-    text: 'Wir nehmen Ihre Abläufe im Detail auf: welche Programme Sie nutzen, wie die Daten fließen und wo Zeit verloren geht. Daraus rechnen wir durch, welche Automatisierung sich wirklich lohnt. Verständlich erklärt, ohne Fachchinesisch.',
+    title: 'Ihr Vorschlag',
+    lead: 'Der nächste Schritt, der zu Ihrem Betrieb passt.',
+    meta: 'Nach dem Check',
+    text: 'Aus dem Check wissen wir, wo Ihr größter Hebel liegt. Daraus machen wir Ihnen einen konkreten Vorschlag für den nächsten Schritt, zugeschnitten auf Ihren Betrieb und die Größe Ihres Vorhabens.',
     points: [
-      'Detaillierte Aufnahme Ihrer Abläufe',
-      'Priorisierte Automatisierungs-Hebel',
-      'Aufwand, Kosten und erwartete Ersparnis je Hebel',
+      'Ein Vorschlag statt Paketauswahl',
+      'Umfang, Zeitplan und Preis vorab klar',
+      'Sie entscheiden, ob es weitergeht',
     ],
-    outcome: 'Ein fertiger Umsetzungsplan. Sie können ihn mit uns umsetzen oder mit jemand anderem.',
+    outcome: 'Ein klarer nächster Schritt mit festem Umfang.',
   },
   {
     no: '03',
     title: 'Umsetzung',
     lead: 'Festes Projekt statt Blackbox.',
-    duration: `Projekte ab ${site.projectFrom}`,
-    text: 'Auf Basis des Plans erhalten Sie ein verbindliches Angebot mit klarem Umfang. Wir bauen in Etappen und zeigen Ihnen regelmäßig, was schon funktioniert. Ihre bestehenden Programme bleiben, wir verbinden sie nur intelligenter.',
+    meta: 'Individuell kalkuliert',
+    text: 'Sie erhalten ein verbindliches Angebot mit klarem Umfang. Wir bauen in Etappen und zeigen Ihnen regelmäßig, was schon funktioniert. Ihre bestehenden Programme bleiben, wir verbinden sie nur intelligenter.',
     points: [
       'Verbindlicher Umfang und Preis vor Projektstart',
       'Tests mit echten Daten, bevor etwas live geht',
       'Einschulung Ihres Teams und vollständige Dokumentation',
     ],
-    outcome: 'Eine laufende, getestete Automatisierung, die Ihnen gehört. Kein Lock-in.',
+    outcome: 'Eine laufende, getestete Lösung, die Ihnen gehört. Kein Lock-in.',
   },
   {
     no: '04',
-    title: 'Ausbau',
+    title: 'Betreuung & Ausbau',
     lead: 'Der nächste Hebel, wenn Sie bereit sind.',
-    duration: 'Sie entscheiden',
-    text: 'Nach dem ersten Projekt zeigen wir Ihnen, welcher Ablauf als nächstes den größten Hebel hat. Sie entscheiden Projekt für Projekt, ohne laufende Verpflichtung.',
+    meta: 'Sie entscheiden',
+    text: 'Nach dem ersten Projekt zeigen wir Ihnen, welcher Ablauf als Nächstes den größten Hebel hat. Sie entscheiden Projekt für Projekt.',
     points: [
       'Empfehlung für den nächsten sinnvollen Schritt',
       'Jedes Folgeprojekt mit eigenem, klarem Angebot',
-      'Wartung nur auf Wunsch, optional',
+      'Wartung und Betreuung auf Wunsch',
     ],
-    outcome: 'Ein System, das mit Ihrem Unternehmen wächst, in Ihrem Tempo.',
+    outcome: 'Ein System, das mit Ihrem Betrieb wächst, in Ihrem Tempo.',
   },
 ]
 </script>
@@ -72,10 +68,10 @@ const phases = [
         <div class="container-site relative text-center">
           <p class="reveal eyebrow">Ablauf</p>
           <h1 class="reveal mx-auto mt-6 max-w-4xl font-serif text-display-lg text-fg">
-            Ein Prozess, der <span class="accent">Vertrauen schafft.</span>
+            Vom ersten Gespräch zur <span class="accent">laufenden Lösung.</span>
           </h1>
           <p class="reveal mx-auto mt-8 max-w-xl text-[15px] leading-7 text-fg/70">
-            Kein starres Framework, keine endlosen Workshops. Vier klare Schritte, bei denen Sie jederzeit wissen, wo Sie stehen und was es kostet.
+            Kein starres Framework, keine Paketauswahl. Ein klarer Einstieg, ein konkreter Vorschlag und eine Umsetzung, bei der Sie jederzeit wissen, wo Sie stehen.
           </p>
           <ol class="reveal mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-2">
             <li v-for="phase in phases" :key="phase.no">
@@ -97,10 +93,10 @@ const phases = [
             class="grid scroll-mt-28 gap-10 border-t border-[var(--line)] py-16 sm:py-20 lg:grid-cols-12"
           >
             <div class="reveal lg:col-span-5">
-              <span class="font-serif text-[clamp(4rem,9vw,7.5rem)] leading-none text-transparent [-webkit-text-stroke:1px_rgba(243,245,247,0.25)]">{{ phase.no }}</span>
+              <span class="font-serif text-[clamp(4rem,9vw,7.5rem)] leading-none text-transparent [-webkit-text-stroke:1px_rgba(243,245,247,0.25)]" aria-hidden="true">{{ phase.no }}</span>
               <h2 class="mt-4 font-serif text-display-md text-fg">{{ phase.title }}</h2>
               <p class="mt-3 font-serif text-2xl italic text-fg/60">{{ phase.lead }}</p>
-              <p class="mt-6 inline-flex rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{{ phase.duration }}</p>
+              <p class="mt-6 inline-flex rounded-full border border-[var(--line)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{{ phase.meta }}</p>
             </div>
 
             <div class="lg:col-span-7">
@@ -115,14 +111,17 @@ const phases = [
                 <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-cantaloupe">Ergebnis</p>
                 <p class="mt-2 text-[15px] leading-7 text-fg">{{ phase.outcome }}</p>
               </div>
+              <NuxtLink v-if="phase.link" :to="phase.link.to" class="reveal btn-ghost mt-8">
+                {{ phase.link.label }} <span class="arrow" aria-hidden="true">→</span>
+              </NuxtLink>
             </div>
           </article>
         </div>
       </section>
 
-      <FaqSection />
+      <FaqListe :items="faqAblauf" />
     </main>
 
-    <FooterSection />
+    <FooterSection title="Bereit für den" accent="ersten Schritt?" />
   </div>
 </template>

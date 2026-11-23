@@ -1,34 +1,39 @@
 <script setup lang="ts">
-// Links auf die Branchenseiten folgen mit Etappe 2 (dann `to` je Karte ergänzen)
 const cases = [
   {
     area: 'Photovoltaik',
     title: 'Anfragen vorqualifizieren',
+    to: '/branchen/photovoltaik',
     steps: ['Anfrage über Website oder Portal', 'KI fragt Dachfläche, Verbrauch und Speicherwunsch ab', 'Vollständige Anfrage im CRM', 'Termin für Vor-Ort-Besichtigung'],
   },
   {
     area: 'Photovoltaik',
     title: 'Angebote nachfassen',
+    to: '/branchen/photovoltaik',
     steps: ['PV-Angebot verschickt', 'Automatische Erinnerung', 'Rückfragen beantwortet', 'Termin für den Abschluss'],
   },
   {
     area: 'Wärmepumpen',
     title: 'Angebot vorbereiten',
+    to: '/branchen/waermepumpen',
     steps: ['Anfrage mit Gebäudedaten', 'KI erstellt Angebotsentwurf', 'Freigabe per Klick', 'Versand und Nachfassen'],
   },
   {
     area: 'Wärmepumpen',
     title: 'Wartung planen',
+    to: '/branchen/waermepumpen',
     steps: ['Wartungsvertrag im System', 'Fälligkeit erkannt', 'Kunde bekommt Terminvorschlag', 'Termin im Kalender des Technikers'],
   },
   {
     area: 'Elektrotechnik',
     title: 'Regieberichte & Protokolle',
+    to: '/branchen/elektrotechnik',
     steps: ['Monteur diktiert oder fotografiert', 'KI erstellt Bericht', 'Prüfung im Büro', 'Ablage und Rechnung'],
   },
   {
     area: 'Alle Energiebetriebe',
     title: 'Eingangsrechnungen',
+    to: '/branchen/weitere',
     steps: ['Rechnung per E-Mail', 'KI liest Betrag und Lieferant', 'Prüfung und Ablage', 'Übergabe an Buchhaltung'],
   },
 ]
@@ -54,7 +59,7 @@ const cases = [
 
       <p class="reveal mt-12 text-center text-[14px] text-muted">
         Andere Branche?
-        <a href="#kontakt" class="text-fg underline decoration-cantaloupe/60 underline-offset-4 transition-colors hover:text-cantaloupe" @click.prevent="useScrollTo('kontakt')">Erzählen Sie uns von Ihrem Ablauf →</a>
+        <NuxtLink to="/branchen/weitere" class="text-fg underline decoration-cantaloupe/60 underline-offset-4 transition-colors hover:text-cantaloupe">So arbeiten wir auch für Sie →</NuxtLink>
       </p>
     </div>
   </section>

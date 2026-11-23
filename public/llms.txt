@@ -25,3 +25,8 @@
 ## Seiten
 - AI Ready Check: https://www.doblyx.com/ai-ready-check
 - Ablauf: https://www.doblyx.com/ablauf
+- Photovoltaik: https://www.doblyx.com/branchen/photovoltaik
+- Wärmepumpen: https://www.doblyx.com/branchen/waermepumpen
+- Elektrotechnik: https://www.doblyx.com/branchen/elektrotechnik
+- Andere Branchen: https://www.doblyx.com/branchen/weitere
+- Über uns: https://www.doblyx.com/ueber-uns

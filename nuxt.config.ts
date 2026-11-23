@@ -70,7 +70,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/', '/ai-ready-check', '/ablauf', '/impressum', '/datenschutz'],
+      routes: ['/', '/ai-ready-check', '/ablauf', '/branchen/photovoltaik', '/branchen/waermepumpen', '/branchen/elektrotechnik', '/branchen/weitere', '/ueber-uns', '/impressum', '/datenschutz'],
     },
   },
 

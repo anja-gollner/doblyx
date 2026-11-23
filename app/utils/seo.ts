@@ -21,6 +21,31 @@ export const pageMeta: Record<string, { name: string, title: string, description
     title: 'So arbeiten wir: vom AI Ready Check zur Lösung | Doblyx AI',
     description: 'Erst der AI Ready Check, dann ein konkreter Vorschlag für Ihren Betrieb. Umfang und Preis kennen Sie vor dem Start.',
   },
+  '/branchen/photovoltaik': {
+    name: 'Photovoltaik',
+    title: 'KI für PV-Betriebe | Doblyx AI',
+    description: 'Anfragen vorqualifizieren, Angebote schneller erstellen, Unterlagen für Netzanmeldung und Förderung vorbereiten. KI für Photovoltaik-Betriebe.',
+  },
+  '/branchen/waermepumpen': {
+    name: 'Wärmepumpen',
+    title: 'KI für Wärmepumpen- und Heizungsbetriebe | Doblyx AI',
+    description: 'Anfragen mit Gebäudedaten, Angebote, Förderunterlagen und Wartungstermine automatisieren. KI für Wärmepumpen-Betriebe.',
+  },
+  '/branchen/elektrotechnik': {
+    name: 'Elektrotechnik',
+    title: 'KI für Elektrobetriebe | Doblyx AI',
+    description: 'Auftragseingang, Regieberichte, Prüfprotokolle und Angebote mit KI entlasten. Für Elektrotechnik-Betriebe in Österreich und Deutschland.',
+  },
+  '/branchen/weitere': {
+    name: 'Andere Branchen',
+    title: 'KI-Automatisierung für Handwerk und Mittelstand | Doblyx AI',
+    description: 'Unser Schwerpunkt ist die Energiebranche. Anfragen, Angebote und Dokumente automatisieren wir auch für andere Betriebe.',
+  },
+  '/ueber-uns': {
+    name: 'Über uns',
+    title: 'Über Doblyx AI und Eric Dobler | Doblyx AI',
+    description: 'Doblyx AI GmbH aus Hartberg: ein Ansprechpartner von der Analyse bis zum laufenden Betrieb.',
+  },
 }
 
 export const description = pageMeta['/']!.description

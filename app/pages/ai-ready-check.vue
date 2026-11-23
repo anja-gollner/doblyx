@@ -118,9 +118,9 @@ const noFit = [
               </ul>
             </div>
           </div>
-          <!-- Etappe 2: Link auf /branchen/weitere -->
           <p class="reveal mt-10 text-[14px] text-muted">
-            Nicht aus der Energiebranche? Sprechen Sie uns trotzdem an.
+            Nicht aus der Energiebranche?
+            <NuxtLink to="/branchen/weitere" class="text-fg underline decoration-cantaloupe/60 underline-offset-4 transition-colors hover:text-cantaloupe">Hier erfahren Sie, wie wir mit anderen Betrieben arbeiten.</NuxtLink>
           </p>
         </div>
       </section>

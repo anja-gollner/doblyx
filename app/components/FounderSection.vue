@@ -6,17 +6,18 @@ const chapters = [
 </script>
 
 <template>
-  <section id="ueber" class="relative overflow-hidden bg-ink-800 py-20 sm:py-28 lg:py-36">
+  <section class="relative overflow-hidden bg-ink-800 py-20 sm:py-28 lg:py-36">
     <div class="container-site grid items-center gap-16 lg:grid-cols-12">
       <div class="reveal relative lg:col-span-5">
         <div class="relative overflow-hidden rounded-3xl border border-[var(--line)]">
           <img
-            src="/eric.jpg"
+            src="/eric.webp"
             alt="Eric Dobler, Gründer von Doblyx AI"
             class="aspect-[4/5] w-full object-cover object-[48%_center]"
             loading="lazy"
-            width="1080"
-            height="1080"
+            width="864"
+            height="864"
+            decoding="async"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" aria-hidden="true" />
           <div class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
@@ -38,12 +39,12 @@ const chapters = [
       </div>
 
       <div class="lg:col-span-7 lg:pl-8">
-        <p class="reveal eyebrow">Über Doblyx</p>
+        <p class="reveal eyebrow">Eric Dobler</p>
         <h2 class="reveal heading mt-6">
           Der Mensch <span class="accent">hinter Doblyx.</span>
         </h2>
         <p class="reveal mt-6 max-w-xl text-[15px] leading-7 text-fg/75">
-          Eric Dobler kommt aus dem Leistungssport. Dort hat er gelernt, dass Ergebnisse nicht aus großen Worten entstehen, sondern aus Disziplin, Präzision und Wiederholung. Genau so baut er heute Automatisierungen: durchdacht, sauber umgesetzt und so, dass sie jeden Tag zuverlässig laufen.
+          Eric Dobler kommt aus dem Leistungssport. Dort hat er gelernt, dass Ergebnisse nicht aus großen Worten entstehen, sondern aus Disziplin, Präzision und Wiederholung. Genau so baut er heute KI-Lösungen: durchdacht, sauber umgesetzt und so, dass sie jeden Tag zuverlässig laufen.
         </p>
 
         <ol class="mt-10 space-y-3">
@@ -61,6 +62,10 @@ const chapters = [
           </p>
           <footer class="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Eric Dobler</footer>
         </blockquote>
+
+        <a :href="site.linkedin" target="_blank" rel="noopener noreferrer" class="reveal btn-ghost mt-10">
+          LinkedIn-Profil <span class="arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
   </section>

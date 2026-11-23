@@ -1,17 +1,20 @@
 <script setup lang="ts">
 // Schluss-CTA je Seite: Überschrift aus zwei Teilen, der zweite kursiv
-const props = withDefaults(defineProps<{ title?: string, accent?: string }>(), {
+const props = withDefaults(defineProps<{ title?: string, accent?: string, ctaLabel?: string, ctaNote?: string }>(), {
   title: 'Weniger Büro.',
   accent: 'Mehr Anlagen.',
+  ctaLabel: undefined,
+  ctaNote: undefined,
 })
 
 const year = new Date().getFullYear()
 
-// Etappe 2 ergänzt: Über uns und die Spalte „Branchen“
 const pages = [
   { to: '/ai-ready-check', label: 'AI Ready Check' },
   { to: '/ablauf', label: 'Ablauf' },
+  { to: '/ueber-uns', label: 'Über uns' },
 ]
+const branchLinks = branchen.map(b => ({ to: `/branchen/${b.slug}`, label: b.name }))
 </script>
 
 <template>
@@ -22,12 +25,12 @@ const pages = [
       <h2 class="reveal mx-auto mt-6 max-w-4xl font-serif text-display-lg font-normal text-fg">
         {{ props.title }} <span class="accent">{{ props.accent }}</span>
       </h2>
-      <CtaReadyCheck class="reveal mt-10" center />
+      <CtaReadyCheck class="reveal mt-10" center :label="props.ctaLabel" :note="props.ctaNote" />
     </div>
 
     <div class="container-site">
       <div class="grid gap-12 border-t border-[var(--line)] py-16 sm:grid-cols-2 lg:grid-cols-12">
-        <div class="lg:col-span-5">
+        <div class="sm:col-span-2 lg:col-span-4">
           <NuxtLink to="/" class="inline-block text-fg" aria-label="Doblyx AI, Startseite">
             <Logo class="h-7 w-auto" />
           </NuxtLink>
@@ -45,7 +48,16 @@ const pages = [
           </ul>
         </nav>
 
-        <div class="lg:col-span-3">
+        <nav class="lg:col-span-2" aria-label="Branchen">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Branchen</p>
+          <ul class="mt-5 space-y-3">
+            <li v-for="p in branchLinks" :key="p.to">
+              <RollingLink :to="p.to" :label="p.label" class-name="text-[14px] text-fg/80" />
+            </li>
+          </ul>
+        </nav>
+
+        <div class="lg:col-span-2">
           <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Kontakt</p>
           <ul class="mt-5 space-y-3 text-[14px] text-fg/80">
             <li><a :href="site.phoneHref" class="transition-colors hover:text-cantaloupe">{{ site.phone }}</a></li>

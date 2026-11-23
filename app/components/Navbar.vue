@@ -3,11 +3,16 @@ const route = useRoute()
 const scrolled = ref(false)
 const mobileOpen = ref(false)
 
-// Etappe 2 ergänzt: Branchen (Dropdown) und Über uns
 const links = [
   { to: '/ai-ready-check', label: 'AI Ready Check' },
   { to: '/ablauf', label: 'Ablauf' },
+  { to: '/ueber-uns', label: 'Über uns' },
 ]
+const branchLinks = branchen.map(b => ({ to: `/branchen/${b.slug}`, label: b.name }))
+
+// Dropdown „Branchen“: öffnet bei Hover, Klick und Tastatur
+const branchenOpen = ref(false)
+const branchenActive = computed(() => route.path.startsWith('/branchen'))
 
 function closeMenu() {
   // Sperre sofort lösen, sonst ignoriert die Scroll-Engine das Ziel
@@ -39,11 +44,17 @@ function onScroll() {
 }
 
 function onKey(event: KeyboardEvent) {
-  if (event.key === 'Escape') mobileOpen.value = false
+  if (event.key === 'Escape') {
+    mobileOpen.value = false
+    branchenOpen.value = false
+  }
 }
 
 watch(mobileOpen, (open) => useScrollLock(open))
-watch(() => route.fullPath, () => { mobileOpen.value = false })
+watch(() => route.fullPath, () => {
+  mobileOpen.value = false
+  branchenOpen.value = false
+})
 
 onMounted(() => {
   onScroll()
@@ -70,8 +81,40 @@ onBeforeUnmount(() => {
         </NuxtLink>
 
         <ul class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 font-mono lg:flex">
-          <li v-for="(link, i) in links" :key="link.to" class="flex items-center gap-2">
-            <span v-if="i === 0" class="h-1 w-1 rounded-full bg-cantaloupe" aria-hidden="true" />
+          <li class="flex items-center gap-2">
+            <span class="h-1 w-1 rounded-full bg-cantaloupe" aria-hidden="true" />
+            <RollingLink :to="links[0]!.to" :label="links[0]!.label" class-name="text-[12px] text-fg/85" />
+          </li>
+          <li class="relative" @mouseenter="branchenOpen = true" @mouseleave="branchenOpen = false" @focusout="(e: FocusEvent) => { if (!(e.currentTarget as HTMLElement).contains(e.relatedTarget as Node)) branchenOpen = false }">
+            <button
+              type="button"
+              class="flex items-center gap-1.5 text-[12px] transition-colors hover:text-white"
+              :class="branchenActive ? 'text-white' : 'text-fg/85'"
+              :aria-expanded="branchenOpen"
+              aria-controls="branchen-menu"
+              @click="branchenOpen = !branchenOpen"
+            >
+              Branchen
+              <svg class="h-3 w-3 transition-transform duration-300" :class="{ 'rotate-180': branchenOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+            <Transition name="drop">
+              <div v-show="branchenOpen" id="branchen-menu" class="absolute left-1/2 top-full -translate-x-1/2 pt-4">
+                <ul class="w-56 rounded-2xl border border-[var(--line)] bg-ink/95 p-2 shadow-2xl backdrop-blur-xl">
+                  <li v-for="b in branchLinks" :key="b.to">
+                    <NuxtLink
+                      :to="b.to"
+                      class="block rounded-xl px-4 py-2.5 text-[12px] transition-colors hover:bg-white/[0.06] hover:text-white"
+                      :class="route.path.replace(/\/$/, '') === b.to ? 'text-cantaloupe' : 'text-fg/85'"
+                      @click="branchenOpen = false"
+                    >
+                      {{ b.label }}
+                    </NuxtLink>
+                  </li>
+                </ul>
+              </div>
+            </Transition>
+          </li>
+          <li v-for="link in links.slice(1)" :key="link.to" class="flex items-center">
             <RollingLink :to="link.to" :label="link.label" class-name="text-[12px] text-fg/85" />
           </li>
         </ul>
@@ -120,6 +163,14 @@ onBeforeUnmount(() => {
               </NuxtLink>
             </li>
           </ul>
+          <p class="menu-item mt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-muted" style="--i: 4">Branchen</p>
+          <ul class="menu-item mt-3 grid grid-cols-2 gap-2" style="--i: 5">
+            <li v-for="b in branchLinks" :key="b.to">
+              <NuxtLink :to="b.to" class="block rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-[14px] text-fg active:text-cantaloupe" @click="closeMenu">
+                {{ b.label }}
+              </NuxtLink>
+            </li>
+          </ul>
 
           <div class="mt-auto pt-10">
             <NuxtLink to="/ai-ready-check#anfrage" class="menu-item btn-primary w-full" style="--i: 7" @click="onCta">
@@ -135,7 +186,8 @@ onBeforeUnmount(() => {
                 <span class="mt-1.5 block truncate text-fg">{{ site.email }}</span>
               </a>
             </div>
-            <p class="menu-item mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted" style="--i: 9">
+            <!-- Auf /branchen/weitere keine Aussage „ohne Kosten“ (gilt nur für Energiebetriebe) -->
+            <p v-if="!route.path.startsWith('/branchen/weitere')" class="menu-item mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted" style="--i: 9">
               <span class="live-dot" /> Wert {{ site.readyCheckValue }}, für Energiebetriebe aktuell ohne Kosten
             </p>
           </div>
@@ -192,6 +244,17 @@ onBeforeUnmount(() => {
 .menu-enter-from .menu-item {
   opacity: 0;
   transform: translateY(24px);
+}
+
+.drop-enter-active,
+.drop-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s var(--ease);
+}
+
+.drop-enter-from,
+.drop-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -6px);
 }
 
 @media (prefers-reduced-motion: reduce) {

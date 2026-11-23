@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{ eyebrow?: string }>(), { eyebrow: 'Unser Versprechen' })
+
 const promises = [
   { title: 'Ehrlich statt Hype', text: 'Wir sagen Ihnen auch, wenn sich eine Automatisierung (noch) nicht lohnt.' },
   { title: 'Kosten vorab klar', text: 'Sie kennen Umfang und Preis, bevor wir mit der Umsetzung starten.' },
@@ -11,7 +13,7 @@ const promises = [
   <section class="relative bg-ink py-20 sm:py-28 lg:py-32">
     <div class="container-site">
       <div class="mx-auto max-w-2xl text-center">
-        <p class="reveal eyebrow">Unser Versprechen</p>
+        <p class="reveal eyebrow">{{ props.eyebrow }}</p>
         <h2 class="reveal heading mt-6">
           Vertrauen entsteht durch <span class="accent">Klarheit.</span>
         </h2>

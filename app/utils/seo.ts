@@ -4,6 +4,9 @@
 // Hauptdomain: doblyx.com leitet in Vercel dauerhaft (308) hierher weiter
 export const SITE_URL = 'https://www.doblyx.com'
 
+// Letzte inhaltliche Änderung der Website, erscheint als lastmod in der Sitemap
+export const SITE_UPDATED = '2026-11-23'
+
 // Title und Description je Seite (auch für og:/twitter:), Name für die Breadcrumbs
 export const pageMeta: Record<string, { name: string, title: string, description: string }> = {
   '/': {
@@ -14,7 +17,7 @@ export const pageMeta: Record<string, { name: string, title: string, description
   '/ai-ready-check': {
     name: 'AI Ready Check',
     title: 'AI Ready Check für Energiebetriebe | Doblyx AI',
-    description: 'Wie bereit ist Ihr Betrieb für KI? Score über 4 Dimensionen, größter Hebel und passende Anwendungsfälle in 45 bis 60 Minuten.',
+    description: 'Der KI-Readiness-Check für Energiebetriebe: Score über 4 Dimensionen, größter Hebel und passende Anwendungsfälle in 45 bis 60 Minuten.',
   },
   '/ablauf': {
     name: 'Ablauf',
@@ -23,7 +26,7 @@ export const pageMeta: Record<string, { name: string, title: string, description
   },
   '/branchen/photovoltaik': {
     name: 'Photovoltaik',
-    title: 'KI für PV-Betriebe | Doblyx AI',
+    title: 'KI für Photovoltaik-Betriebe | Doblyx AI',
     description: 'Anfragen vorqualifizieren, Angebote schneller erstellen, Unterlagen für Netzanmeldung und Förderung vorbereiten. KI für Photovoltaik-Betriebe.',
   },
   '/branchen/waermepumpen': {
@@ -33,7 +36,7 @@ export const pageMeta: Record<string, { name: string, title: string, description
   },
   '/branchen/elektrotechnik': {
     name: 'Elektrotechnik',
-    title: 'KI für Elektrobetriebe | Doblyx AI',
+    title: 'KI für Elektrobetriebe: Regieberichte & Angebote | Doblyx AI',
     description: 'Auftragseingang, Regieberichte, Prüfprotokolle und Angebote mit KI entlasten. Für Elektrotechnik-Betriebe in Österreich und Deutschland.',
   },
   '/branchen/weitere': {
@@ -44,7 +47,7 @@ export const pageMeta: Record<string, { name: string, title: string, description
   '/ueber-uns': {
     name: 'Über uns',
     title: 'Über Doblyx AI und Eric Dobler | Doblyx AI',
-    description: 'Doblyx AI GmbH aus Hartberg: ein Ansprechpartner von der Analyse bis zum laufenden Betrieb.',
+    description: 'Doblyx AI GmbH aus Hartberg in der Steiermark: KI-Lösungen für Solar-, Wärmepumpen- und Elektrobetriebe. Ein Ansprechpartner von der Analyse bis zum Betrieb.',
   },
 }
 
